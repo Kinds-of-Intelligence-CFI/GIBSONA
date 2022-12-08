@@ -1,0 +1,80 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    # pass_mark: 0
+    # t: 250
+
+    items:
+    - !Item
+      # name: Agent
+      id: agent
+      - !ProcIf
+        variable: wall1.positions.0.z # I ASSUME NO COMMA HERE? IN YORUR EXAMPLES THERE IS COMMA. 
+        cases: [1, 4, 7]
+        then: !Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7} # WOULD THIS BE CORRECT? WE ONLY AHD EXAMPLES WITH ROTATION 
+        # WHEREAS THIS IS POSITION. DO WE NEED TO PUT VECTORS IN A LIST? 
+        # ALSO IS IT A PROBLEM THAT I REFER TO WALL1 HERE BUT THIS OBJECT ONLY COMES LATER IN CODE? 
+        # HOW DOES COMPUTER KNOW NOW THAT WE DO NOT HAVE LABELS ANYMORE THAT "THEN" REFERS TO POSITION VALUES? 
+        default: 0
+      # rotations: [0]
+
+    - !Item
+      # name: Wall
+      id: wall1
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7}]
+      colors: 
+      - !ProcColor 8
+      # sizes:
+      # - !Vector3 {x: 4, y: 3, z: 2}
+      # rotations: [0]
+
+    - !Item
+      # name: Wall
+      id: wall2 # THESE ARE THREE WALLS BUT THEY CHANGE SIMULTANEOUSLY IN COLOUR - CAN I CALL ALL OF THEM WALL2 OR SHOULD THEY BE WALL 2, 3, 4? 
+      # positions:
+      # - !Vector3 {x: 20, y: 0, z: 25}
+      # - !Vector3 {x: 25, y: 0, z: 22}
+      # - !Vector3 {x: 15, y: 0, z: 22}
+      colors: !ProcRepeatChoice
+        amount: 3 
+        value: !ProcColor 8 
+      sizes:
+      - !ProcList [!Vector3 {x: 8, y: 1, z: 2}, !Vector3 {x: 8, y: 2, z: 2}, !Vector3 {x: 8, y: 3, z: 2}] # THIS OK? WE CAN USE PROCLIST FOR COLOURS ALSO NOT ONLY POSITIONS?
+                                                                                                          # WHAT DOES FUNCTION PROCLIST DO, THIS WOULD HELP ME IN ANSWERING THIS QUESTION MYSELF :p
+      - !ProcList [!Vector3 {x: 8, y: 1, z: 2}, !Vector3 {x: 8, y: 2, z: 2}, !Vector3 {x: 8, y: 3, z: 2}]
+      - !ProcList [!Vector3 {x: 8, y: 1, z: 2}, !Vector3 {x: 8, y: 2, z: 2}, !Vector3 {x: 8, y: 3, z: 2}]
+      # rotations: [0, 90, 90] 
+
+    - !Item
+      # name: LObject2
+      # positions:
+      # - !Vector3 {x: 23, y: 0, z: 15.5}
+      sizes:
+      - !ProcList [!Vector3 {x: 25, y: 0.5, z: 15}, !Vector3 {x: 25, y: 1, z: 15}, !Vector3 {x: 25, y: 1.5, z: 15}] 
+      # rotations: [180]
+
+    - !Item
+      # name: DeathZone
+      # positions:
+      # - !Vector3 {x: 25, y: 0, z: 17}
+      # - !Vector3 {x: 15, y: 0, z: 17}
+      # sizes:
+      # - !Vector3 {x: 2, y: 0, z: 2}
+      # - !Vector3 {x: 2, y: 0, z: 2}
+      # rotations: [0, 0]
+
+    - !Item
+      # name: GoodGoal
+      # positions:
+      # - !Vector3 {x: 20, y: 0, z: 21} 
+      sizes:
+      - !ProcVector3Scaled
+        base: !Vector3 {x: 2, y: 2, z: 2}
+        range: [2, 5]
+        amount: 3
+
+
+ 
+
+
