@@ -11,8 +11,7 @@ arenas:
 
     items:
     - !Item
-      name: Agent
-        id: agent
+      id: agent
       - !ProcIf
         variable: wall1.positions.0.z # I ASSUME NO COMMA HERE? IN YORUR EXAMPLES THERE IS COMMA. 
         cases: [1, 4, 7]
@@ -78,7 +77,6 @@ arenas:
       rotations: [0, 0]
 
     - !Item
-      name: GoodGoal
       id: GoodGoal
       positions:
       - !Vector3 {x: 20, y: 0, z: 21} 
