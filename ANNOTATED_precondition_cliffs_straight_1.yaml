@@ -7,7 +7,7 @@ arenas:
     cases: [1, 2, 3]
     then: [9, 1, 2]
     default: 0 
-    t: 500
+    t: 250
     
     items:
     - !Item
