@@ -1,11 +1,18 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    # pass_mark: 0
-    # t: 250
+    pass_mark: 0
+	  pass: 
+	  - !ProcIf
+	    value: GoodGoal.sizes.0.x,
+	    cases: [1.5, 2.2, 2.9]
+	    then: [0.5, 1.2, 1.9]
+	    default: 0
+	    t: 400
+      
     items:
     - !Item
-      # name: Agent
+      name: Agent
       id: agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 1, y: 0, z: 25}, !Vector3 {x: 39, y: 0, z: 25}, !Vector3 {x: 20, y: 0, z: 39}]
@@ -16,23 +23,23 @@ arenas:
         default: 0
 
     - !Item
-      # name: Cardbox1
-      # positions:
-      # - !Vector3 {x: 20, y: 0, z: 29}
+      name: Cardbox1
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 29}
       sizes:
       - !ProcList[!Vector3 {x: 6, y: 1.2, z: 2}, !Vector3 {x: 6, y: 1.8, z: 2}, !Vector3 {x: 6, y: 2.6, z: 2}]
-      # rotations: [0]
+      rotations: [0]
 
     - !Item
-      # name: Wall
-      # positions:
-      # - !Vector3 {x: 16, y: 0, z: 23}
-      # - !Vector3 {x: 16, y: 0, z: 26}
-      # - !Vector3 {x: 24, y: 0, z: 23}
-      # - !Vector3 {x: 24, y: 0, z: 26}
-      # - !Vector3 {x: 18.5, y: 0, z: 20}
-      # - !Vector3 {x: 21.5, y: 0, z: 20}
-      # rotations: [90, 90, 90, 90, 0, 0]
+      name: Wall
+      positions:
+      - !Vector3 {x: 16, y: 0, z: 23}
+      - !Vector3 {x: 16, y: 0, z: 26}
+      - !Vector3 {x: 24, y: 0, z: 23}
+      - !Vector3 {x: 24, y: 0, z: 26}
+      - !Vector3 {x: 18.5, y: 0, z: 20}
+      - !Vector3 {x: 21.5, y: 0, z: 20}
+      rotations: [90, 90, 90, 90, 0, 0]
       colors: !ProcRepeatChoice
         amount: 6 
         value: !ProcColor 8
@@ -46,13 +53,14 @@ arenas:
 
 
     - !Item
-      # name: GoodGoal
-      # positions:
-      # - !Vector3 {x: 20, y: 0, z: 23} 
+      name: GoodGoal
+      id: GoodGoal 
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 23} 
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 1.5, y: 1.5, z: 1.5}
-        range: [1.5, 3]
+        range: [1.5, 2.9]
         amount: 3
 
 
