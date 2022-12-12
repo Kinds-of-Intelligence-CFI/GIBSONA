@@ -1,10 +1,18 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    # pass_mark: 0
-    # t: 500
+    pass_mark: 0
+    pass: 
+    - !ProcIf
+      value: GoodGoal.sizes.0.x,
+      cases: [3, 4, 5]
+      then: [2, 3, 4]
+      default: 0
+      t: 400
+      
     items:
     - !Item
+      name: Agent
       id: agent
       - !ProcList [!Vector3 {x: 20, y: 0, z: 2}, !Vector3{x: 2, y: 0, z: 24}, !Vector3 {x: 33, y: 0, z: 35}] 
       rotations:
@@ -15,51 +23,52 @@ arenas:
         default: 0
 
    - !Item
-   #   name: Wall
-   #   positions:
-   #   - !Vector3 {x: 24.5, y: 0, z: 25}
-   #   - !Vector3 {x: 34, y: 0, z: 36}
-   #   - !Vector3 {x: 29, y: 0, z: 20}
-   #   - !Vector3 {x: 36, y: 0, z: 20}
-   #   - !Vector3 {x: 5, y: 0, z: 10}
-   #   - !Vector3 {x: 13, y: 0, z: 25}
-   #   - !Vector3 {x: 8, y: 0, z: 35}
-   #   - !Vector3 {x: 35, y: 0, z: 10}
-   #   - !Vector3 {x: 33, y: 0, z: 15}
-   #   - !Vector3 {x: 7, y: 0, z: 20}
-   #   - !Vector3 {x: 10, y: 0, z: 4}
-   #   - !Vector3 {x: 15, y: 0, z: 8}
-   #   - !Vector3 {x: 22, y: 0, z: 8}
-   #   - !Vector3 {x: 23, y: 0, z: 15}
-   #   - !Vector3 {x: 17, y: 0, z: 15}
-   #   - !Vector3 {x: 30, y: 0, z: 27}
-   #   - !Vector3 {x: 21, y: 0, z: 30}
-   #   - !Vector3 {x: 32, y: 0, z: 3}
-   #   - !Vector3 {x: 21, y: 0, z: 5}
-   #   rotations: [310, 310, 45, 0, 0, 0, 200, 45, 90,0, 0, 0, 0, 0, 90, 0, 200, 45, 90]
-      colors: !ProcRepeatChoice
-        amount: 19 
-        value: !ProcColor 8 
-   #   sizes:
-   #   - !Vector3 {x: 1, y: 1.5, z: 5}
-   #   - !Vector3 {x: 1, y: 1.5, z: 6}
-   #   - !Vector3 {x: 1, y: 1.5, z: 5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 4}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 6}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 2.5, y: 1.5, z: 6}
-   #   - !Vector3 {x: 2.5, y: 5, z: 2.5}
-   #   - !Vector3 {x: 4, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 4, y: 1.5, z: 2.5}
-   #   - !Vector3 {x: 2, y: 0.6, z: 2}
+     name: Wall
+     positions:
+     - !Vector3 {x: 24.5, y: 0, z: 25}
+     - !Vector3 {x: 34, y: 0, z: 36}
+     - !Vector3 {x: 29, y: 0, z: 20}
+     - !Vector3 {x: 36, y: 0, z: 20}
+     - !Vector3 {x: 5, y: 0, z: 10}
+     - !Vector3 {x: 13, y: 0, z: 25}
+     - !Vector3 {x: 8, y: 0, z: 35}
+     - !Vector3 {x: 35, y: 0, z: 10}
+     - !Vector3 {x: 33, y: 0, z: 15}
+     - !Vector3 {x: 7, y: 0, z: 20}
+     - !Vector3 {x: 10, y: 0, z: 4}
+     - !Vector3 {x: 15, y: 0, z: 8}
+     - !Vector3 {x: 22, y: 0, z: 8}
+     - !Vector3 {x: 23, y: 0, z: 15}
+     - !Vector3 {x: 17, y: 0, z: 15}
+     - !Vector3 {x: 30, y: 0, z: 27}
+     - !Vector3 {x: 21, y: 0, z: 30}
+     - !Vector3 {x: 32, y: 0, z: 3}
+     - !Vector3 {x: 21, y: 0, z: 5}
+     rotations: [310, 310, 45, 0, 0, 0, 200, 45, 90,0, 0, 0, 0, 0, 90, 0, 200, 45, 90]
+     colors: !ProcRepeatChoice
+       amount: 19 
+       value: !ProcColor 8 
+     sizes:
+     - !Vector3 {x: 1, y: 1.5, z: 5}
+     - !Vector3 {x: 1, y: 1.5, z: 6}
+     - !Vector3 {x: 1, y: 1.5, z: 5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 4}
+     - !Vector3 {x: 2.5, y: 1.5, z: 6}
+     - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 2.5}
+     - !Vector3 {x: 2.5, y: 1.5, z: 6}
+     - !Vector3 {x: 2.5, y: 5, z: 2.5}
+     - !Vector3 {x: 4, y: 1.5, z: 2.5}
+     - !Vector3 {x: 4, y: 1.5, z: 2.5}
+     - !Vector3 {x: 2, y: 0.6, z: 2}
+     
     - !Item
       name: GoodGoal
       positions:
