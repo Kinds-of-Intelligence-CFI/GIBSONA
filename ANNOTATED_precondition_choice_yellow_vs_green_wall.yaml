@@ -37,6 +37,7 @@ arenas:
 
     - !Item
       name: GoodGoal
+      id: GoodGoal 
       positions:
       - !Vector3 {x: 37, y: 0, z: 20}      
       sizes:
