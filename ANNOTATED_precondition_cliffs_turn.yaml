@@ -2,7 +2,14 @@
 arenas:
   0: !Arena
     pass_mark: 0
-    t: 500
+    pass: 
+    - !ProcIf
+    value: GoodGoal.sizes.0.x,
+    cases: [1, 2, 3]
+    then: [0, 1, 2]
+    default: 0    
+    t: 250
+    
     items:
     - !Item
       name: Agent
@@ -30,7 +37,7 @@ arenas:
       - !Vector3 {x: 6, y: 1, z: 2} 
 
     - !Item
-      name: GoodGoal
+      id: GoodGoal
       positions:
       - !Vector3 {x: 25, y: 1, z: 20} 
       sizes:
