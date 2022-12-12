@@ -2,6 +2,12 @@
 arenas:
   0: !Arena
     # pass_mark: 0
+    pass: 
+    - !ProcIf
+    value: GoodGoal.sizes.0.x,
+    cases: [2, 3, 4]
+    then: [1, 2, 3]
+    default: 0
     # t: 400
 
     items:
@@ -11,7 +17,8 @@ arenas:
       - !ProcIf
         variable: wall1.positions.0.z # I ASSUME NO COMMA HERE? IN YORUR EXAMPLES THERE IS COMMA. 
         cases: [1, 4, 7]
-        then: !Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7} # WOULD THIS BE CORRECT? WE ONLY AHD EXAMPLES WITH ROTATION 
+        then: !Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7} 
+        # WOULD THIS BE CORRECT? WE ONLY AHD EXAMPLES WITH ROTATION 
         # WHEREAS THIS IS POSITION. DO WE NEED TO PUT VECTORS IN A LIST? 
         # ALSO IS IT A PROBLEM THAT I REFER TO WALL1 HERE BUT THIS OBJECT ONLY COMES LATER IN CODE? 
         # HOW DOES COMPUTER KNOW NOW THAT WE DO NOT HAVE LABELS ANYMORE THAT "THEN" REFERS TO POSITION VALUES? 
@@ -78,10 +85,5 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 2, y: 2, z: 2}
-        range: [2, 5]
+        range: [2, 4]
         amount: 3
-
-
- 
-
-
