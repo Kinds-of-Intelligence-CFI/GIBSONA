@@ -1,6 +1,7 @@
 !ArenaConfig
 arenas:
   0: !Arena
+    pass_mark: 0
     pass: 
     - !ProcIf
     value: GoodGoal.sizes.0.x,
@@ -11,6 +12,7 @@ arenas:
 
     items:
     - !Item
+      name: Agent
       id: agent
       - !ProcIf
         variable: wall1.positions.0.z # I ASSUME NO COMMA HERE? IN YORUR EXAMPLES THERE IS COMMA. 
@@ -77,6 +79,7 @@ arenas:
       rotations: [0, 0]
 
     - !Item
+      name: GoodGoal 
       id: GoodGoal
       positions:
       - !Vector3 {x: 20, y: 0, z: 21} 
