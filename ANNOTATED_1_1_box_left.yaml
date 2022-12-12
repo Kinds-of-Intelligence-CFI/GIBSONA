@@ -1,40 +1,40 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    # pass_mark: 0
-    # t: 250
+    pass_mark: 0
+    t: 250
     items:
     - !Item
-      # name: Agent
+      name: Agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, {x: 20, y: 7, z: 1}, {x: 20, y: 1, z: 13}]
-      # rotations: [0]
+      rotations: [0]
 
     - !Item
-      # name: Wall
-      # positions:
-      # - !Vector3 {x: 20, y: 0, z: 10}
-      # sizes:
-      # - !Vector3 {x: 4.5, y: 1, z: 20}
+      name: Wall
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 10}
+      sizes:
+      - !Vector3 {x: 4.5, y: 1, z: 20}
       colors: 
       - !ProcColor 8
-      # rotations: [0]
+      rotations: [0]
 
     - !Item
-      # name: DeathZone
-      # positions:
-      # - !Vector3 {x: 20, y: 0, z: 30}
+      name: DeathZone
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 30}
       sizes:
       - !ProcList [!Vector3 {x: 1, y: 0, z: 20}, {x: 2.5, y: 0, z: 20}, {x: 4, y: 0, z: 20}]
-      # rotations: [0]
+      rotations: [0]
 
     - !Item
-      # name: Wall
-      # positions:
-      # - !Vector3 {x: 29, y: 0, z: 20}
-      # - !Vector3 {x: 33.5, y: 0, z: 20}
-      # - !Vector3 {x: 38, y: 0, z: 20} 
-      # - !Vector3 {x: 24.5, y: 0, z: 20}]
+      name: Wall
+      positions:
+      - !Vector3 {x: 29, y: 0, z: 20}
+      - !Vector3 {x: 33.5, y: 0, z: 20}
+      - !Vector3 {x: 38, y: 0, z: 20} 
+      - !Vector3 {x: 24.5, y: 0, z: 20}
       sizes:
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
@@ -42,45 +42,40 @@ arenas:
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
 
 # ARE THESE WALLS NOW GOING TO CHANGE SIMULTANEOUSLY, AS IN ONE YAML FILE ALL WALLS SAME XYZ, ANOTHER FILE A DIFFERENT XYZ COMBO? 
-
+# Wout: No, all segments of the wall will change independently. If you want them to change at the same time, use !ProcRepeatChoice.
       colors: !ProcRepeatChoice
         amount: 4 
         value: !ProcColor 8 
-      # rotations: [0]
+      rotations: [0]
 
     - !Item
-      # name: Cardbox1
-      # positions:
-      # - !Vector3 {x: 2, y: 0, z: 20}
-      # - !Vector3 {x: 6.5, y: 0, z: 20}
-      # - !Vector3 {x: 11, y: 0, z: 20}
-      # - !Vector3 {x: 15.5, y: 0, z: 20}
+      name: Cardbox1
+      positions:
+      - !Vector3 {x: 2, y: 0, z: 20}
+      - !Vector3 {x: 6.5, y: 0, z: 20}
+      - !Vector3 {x: 11, y: 0, z: 20}
+      - !Vector3 {x: 15.5, y: 0, z: 20}
       sizes:
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      # rotations: [0]
+      rotations: [0]
 
     - !Item
-      # name: GoodGoal
-      # positions:
-      # - !Vector3 {x: 14, y: 0, z: 30}, {x: 3, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 37}
-      sizes:
-      - !ProcVector3Scaled
-        base: !Vector3 {x: 3, y: 3, z: 3}
-        range: [3, 5]
-        amount: 3
-
-    - !Item
-      # name: GoodGoal
-      # positions:
-      # - !Vector3 {x: 26, y: 0, z: 30}, {x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 37}
+      name: GoodGoal
+      positions:
+      - !ProcList [!Vector3 {x: 14, y: 0, z: 30}, {x: 3, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 37}]
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 3, y: 3, z: 3}
-        range: [3, 5]
-        amount: 3
+        base: !Vector3 {x: 3, y: 3, z: 3} # Wout: Do you mean 1,1,1 here? The factors in scales will multiply.
+        scales: [3, 4, 5] # Wout: Maybe less thinking needed for you if you use scales instead of range + amount?
 
-
-
+    - !Item
+      name: GoodGoal
+      positions:
+      - !ProcList [!Vector3 {x: 26, y: 0, z: 30}, {x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 37}]
+      sizes:
+      - !ProcVector3Scaled
+        base: !Vector3 {x: 3, y: 3, z: 3} # Wout: Same as above.
+        scales: [3, 4, 5]

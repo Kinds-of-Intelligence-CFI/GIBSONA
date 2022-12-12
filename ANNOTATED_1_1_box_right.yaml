@@ -1,14 +1,13 @@
 !ArenaConfig
 arenas:
   0: !Arena
-   pass_mark: 0
-   pass: 
-	 - !ProcIf
-	   value: GoodGoal.sizes.0.x,
-	   cases: [3, 4, 5]
-	   then: [2, 3, 4]
-	   default: 0
-	   t: 400
+    pass_mark: 0
+    pass: !ProcIf # Wout: Is pass a different field than pass_mark?
+      value: GoodGoal.sizes.0.x,
+      cases: [3, 4, 5]
+      then: [2, 3, 4]
+      default: 0
+    t: 400
 
     items:
     - !Item
@@ -41,7 +40,7 @@ arenas:
       - !Vector3 {x: 2, y: 0, z: 20}
       - !Vector3 {x: 6.5, y: 0, z: 20}
       - !Vector3 {x: 11, y: 0, z: 20} 
-      - !Vector3 {x: 15.5, y: 0, z: 20}]
+      - !Vector3 {x: 15.5, y: 0, z: 20}
       sizes:
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
@@ -70,26 +69,19 @@ arenas:
     - !Item
       name: GoodGoal
       positions:
-      - !Vector3 {x: 14, y: 0, z: 30}, {x: 3, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 37}
+      - !ProcList [!Vector3 {x: 14, y: 0, z: 30}, !Vector3 {x: 3, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 37}]
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 3, y: 3, z: 3}
-        range: [3, 5]
-        amount: 3
+        base: !Vector3 {x: 3, y: 3, z: 3} # Wout: I think you mean 1,1,1 here?  Given the !ProcIf above.
+        scales: [3, 4, 5]
 
     - !Item
       name: GoodGoal
       id: GoodGoal 
       positions:
-      - !Vector3 {x: 26, y: 0, z: 30}, {x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 37}
+      - !ProcList [!Vector3 {x: 26, y: 0, z: 30}, {x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 37}]
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 3, y: 3, z: 3}
         range: [3, 5]
         amount: 3
-
-
-
-
-
-

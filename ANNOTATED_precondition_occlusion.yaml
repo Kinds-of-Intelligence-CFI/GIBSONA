@@ -3,22 +3,21 @@ arenas:
   0: !Arena
     pass: 
     - !ProcIf
-    value: GoodGoal.sizes.0.x,
-    cases: [3, 4, 5]
-    then: [2, 3, 4]
-    default: 0 
+      value: GoodGoal.sizes.0.x,
+      cases: [3, 4, 5]
+      then: [2, 3, 4]
+      default: 0 
     t: 250
     
     items:
     - !Item
       name: Agent
-      positions: 
-     - !ProcList [!Vector3 {x: 1, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 39, y: 0, z: 1}, 
-         !Vector3 {x: 1, y: 0, z: 3.5}, !Vector3 {x: 20, y: 0, z: 3.5}, !Vector3 {x: 39, y: 0, z: 3.5}, 
-         !Vector3 {x: 1, y: 0, z: 6}, !Vector3 {x: 20, y: 0, z: 6}, !Vector3 {x: 39, y: 0, z: 6}]
+      positions:
+      - !Vector3 { x: !ProcList [1, 20, 39], y: 0, z: [1, 3.5, 6]}
 # IS THERE A FASTER WAY TO DO THIS ABOVE? I WANT TO CONSTRAIN X BETWEEN 1 AND 39, 3 EQUALLY SPACED APART POSITIONS. 
 # AND I WANT Z TO BE BETWEEN 1 AND 6, ALSO 3 EQUALLY SPACED APART POSITIONS. 
 # I CAN ALSO CODE IT MANUALLY OFC, JUST THOUGHT THERE MIGHT BE A MORE EFFICIENT WAY 
+# Wout: Yes, see above.
       rotations: [0]
     
     - !Item
@@ -34,14 +33,11 @@ arenas:
     - !Item
       id: GoodGoal
       positions:
-      - !ProcList [!Vector3 {x: 10, y: 0, z: 22}, !Vector3 {x: 20, y: 0, z: 22}, !Vector3 {x: 30, y: 0, z: 22},       
-        !Vector3 {x: 10, y: 0, z: 27.5}, !Vector3 {x: 20, y: 0, z: 27.5}, !Vector3 {x: 30, y: 0, z: 27.5},  
-        !Vector3 {x: 10, y: 0, z: 33}, !Vector3 {x: 20, y: 0, z: 33}, !Vector3 {x: 30, y: 0, z: 33}] 
+      - !Vector3 { x: !ProcList [10, 20, 30], y: 0, z: !ProcList [22, 27.5, 33]}
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 3, y: 3, z: 3}
-        range: [3, 5]
-        amount: 3
+        base: !Vector3 {x: 3, y: 3, z: 3} # Wout: 1,1,1 here?
+        scales: [3, 4, 5]
 
 
 

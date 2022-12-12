@@ -44,8 +44,7 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 1, y: 1, z: 1}
-        range: [1, 3]
-        amount: 3
+        scales: [1, 2, 3]
 
     - !Item
       name: GoodGoal
@@ -55,6 +54,5 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 1, y: 1, z: 1}
-        range: [1, 3]
-        amount: 3
+        scales: [1, 2, 3]
 

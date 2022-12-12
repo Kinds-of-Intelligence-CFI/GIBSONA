@@ -2,25 +2,22 @@
 arenas:
   0: !Arena
     pass_mark: 0
-    pass: 
-    - !ProcIf
-    value: GoodGoal.sizes.0.x,
-    cases: [2, 3, 4]
-    then: [1, 2, 3]
-    default: 0
+    pass: !ProcIf
+      value: GoodGoal.sizes.0.x,
+      cases: [2, 3, 4]
+      then: [1, 2, 3]
+      default: 0
     t: 400
 
     items:
     - !Item
       name: Agent
-      id: agent # IF WE CREATE ID OF AN OBJECT THEN WE CAN DELETE IT'S ORIGINAL NAME, CORRECT? 
+      id: agent
+      positions:
       - !ProcIf
-        variable: wall1.positions.0.z # I ASSUME NO COMMA HERE? IN YORUR EXAMPLES THERE IS COMMA. 
+        variable: wall1.positions.0.z
         cases: [1, 4, 7]
-        then: !Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7} # WOULD THIS BE CORRECT? WE ONLY AHD EXAMPLES WITH ROTATION 
-        # WHEREAS THIS IS POSITION. DO WE NEED TO PUT VECTORS IN A LIST? 
-        # ALSO IS IT A PROBLEM THAT I REFER TO WALL1 HERE BUT THIS OBJECT ONLY COMES LATER IN CODE? 
-        # HOW DOES COMPUTER KNOW NOW THAT WE DO NOT HAVE LABELS ANYMORE THAT "THEN" REFERS TO POSITION VALUES? 
+        then: [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7}]
         default: 0
       rotations: [0]
 
@@ -37,7 +34,7 @@ arenas:
 
     - !Item
       name: Wall
-      id: wall2 # THESE ARE THREE WALLS BUT THEY CHANGE SIMULTANEOUSLY IN COLOUR - CAN I CALL ALL OF THEM WALL2 OR SHOULD THEY BE WALL 2, 3, 4? 
+      id: wall2
       positions:
       - !Vector3 {x: 20, y: 0, z: 25}
       - !Vector3 {x: 25, y: 0, z: 22}
@@ -46,10 +43,9 @@ arenas:
         amount: 3 
         value: !ProcColor 8 
       sizes:
-      - !ProcList [!Vector3 {x: 8, y: 1, z: 2}, !Vector3 {x: 8, y: 2, z: 2}, !Vector3 {x: 8, y: 3, z: 2}] # THIS OK? WE CAN USE PROCLIST FOR COLOURS ALSO NOT ONLY POSITIONS?
-                                                                                                          # WHAT DOES FUNCTION PROCLIST DO, THIS WOULD HELP ME IN ANSWERING THIS QUESTION MYSELF :p
-      - !ProcList [!Vector3 {x: 8, y: 1, z: 2}, !Vector3 {x: 8, y: 2, z: 2}, !Vector3 {x: 8, y: 3, z: 2}]
-      - !ProcList [!Vector3 {x: 8, y: 1, z: 2}, !Vector3 {x: 8, y: 2, z: 2}, !Vector3 {x: 8, y: 3, z: 2}]
+      - !Vector3 {x: 8, y: !ProcList [1, 2, 3], z: 2}
+      - !Vector3 {x: 8, y: !ProcList [1, 2, 3], z: 2}
+      - !Vector3 {x: 8, y: !ProcList [1, 2, 3], z: 2}
       rotations: [0, 90, 90] 
 
     - !Item
@@ -57,7 +53,7 @@ arenas:
       positions:
       - !Vector3 {x: 23, y: 0, z: 15.5}
       sizes:
-      - !ProcList [!Vector3 {x: 25, y: 0.5, z: 15}, !Vector3 {x: 25, y: 1, z: 15}, !Vector3 {x: 25, y: 1.5, z: 15}] 
+      - !Vector3 { x: 25, y: !ProcList [0.5, 1, 1.5], z: 15}
       rotations: [180]
 
     - !Item
@@ -78,9 +74,9 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 2, y: 2, z: 2}
-        range: [2, 4]
-        amount: 3
-
+        # Wout: Are you sure this is what you want (in combination with !ProcIf above)? These scales do multiplication.
+        # E.g. x will be 4, 6 and 8. But the !If conditions on 2,3,4. You change the base to 1,1,1 if you want.
+        scales: [2, 3, 4]
 
  
 

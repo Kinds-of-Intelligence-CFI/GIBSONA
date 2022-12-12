@@ -8,13 +8,14 @@ arenas:
       cases: [3, 4, 5]
       then: [2, 3, 4]
       default: 0
-      t: 400
+    t: 400
       
     items:
     - !Item
       name: Agent
       id: agent
-      - !ProcList [!Vector3 {x: 20, y: 0, z: 2}, !Vector3{x: 2, y: 0, z: 24}, !Vector3 {x: 33, y: 0, z: 35}] 
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 2}, !Vector3 {x: 2, y: 0, z: 24}, !Vector3 {x: 33, y: 0, z: 35}] 
       rotations:
       - !ProcIf
         variable: [agent.positions.0.x, agents.positions.0.z]
@@ -22,7 +23,7 @@ arenas:
         then: [0, 90, 210]
         default: 0
 
-   - !Item
+    - !Item
      name: Wall
      positions:
      - !Vector3 {x: 24.5, y: 0, z: 25}
@@ -76,12 +77,5 @@ arenas:
       - !Vector3 {x: 21, y: 0, z: 20} 
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 3, y: 3, z: 3}
-        range: [3, 5]
-        amount: 3    
-
-
-
-
-
-
+        base: !Vector3 {x: 3, y: 3, z: 3} # 1,1,1 here?
+        scales: [3, 4, 5]
