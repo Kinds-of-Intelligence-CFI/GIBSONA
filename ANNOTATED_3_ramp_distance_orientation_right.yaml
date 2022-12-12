@@ -1,8 +1,14 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: 0
-    t: 500
+    pass: 
+    - !ProcIf
+    value: GoodGoal.sizes.0.x,
+    cases: [4, 4.5, 5]
+    then: [3, 3.5, 4]
+    default: 0
+    t: 400
+    
     items:
     - !Item
       name: Agent
