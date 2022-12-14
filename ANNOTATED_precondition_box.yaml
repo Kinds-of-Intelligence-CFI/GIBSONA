@@ -39,9 +39,8 @@ arenas:
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 24}, !Vector3 {x: 3, y: 0, z: 30}, !Vector3 {x: 37, y: 0, z: 30}, !Vector3 {x: 37, y: 0, z: 37}]  
       sizes:
-      # Wout: This does not make much sense? It's 3 times the same one.
-      - !ProcList [!Vector3 {x: 3, y: 3, z: 3},  !Vector3 {x: 3, y: 3, z: 3},  !Vector3 {x: 3, y: 3, z: 3}]
-      rotations: [0]
-
+      - !ProcVector3Scaled
+        base: !Vector3 {x: 1, y: 1, z: 1} # Wout: Same as above.
+        scales: [3.5, 4.2, 4.9]
 
 
