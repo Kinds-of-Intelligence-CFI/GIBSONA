@@ -39,7 +39,7 @@ arenas:
       - !Vector3 {x: 2.5, y: !ProcList [2.5, 2, 1.5], z: 2.5}
       - !Vector3 {x: 2.5, y: !ProcList [2.5, 2, 1.5], z: 2.5}
       - !Vector3 {x: 2.5, y: !ProcList [2.5, 2, 1.5], z: 6}
-      - !Vector3 {x: 2.5, y: !ProcList [5, 2, 1.5], z: 2.5} # Wout: Sure this one is correct?
+      - !Vector3 {x: 2.5, y: !ProcList [2.5, 2, 1.5], z: 2.5} # Wout: Sure this one is correct?
       - !ProcList [!Vector3 {x: 4, y: 2.5, z: 2.5}, !Vector3 {x: 2.5, y: 2, z: 2.5}, !Vector3 {x: 2.5, y: 1.5, z: 2.5}]
       - !ProcList [!Vector3 {x: 4, y: 2.5, z: 2.5}, !Vector3 {x: 2.5, y: 2, z: 2.5}, !Vector3 {x: 2.5, y: 1.5, z: 2.5}]
       - !Vector3 {x: 2, y: 0.4, z: 2}
