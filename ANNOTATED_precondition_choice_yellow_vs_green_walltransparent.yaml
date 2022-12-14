@@ -8,7 +8,7 @@ arenas:
       cases: [1, 3, 5]
       then: [0, 2, 4]
       default: 0
-      t: 250
+    t: 250
 
     items:
     - !Item
@@ -43,8 +43,7 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 1, y: 1, z: 1}
-        range: [1, 5]
-        amount: 3
+        scales: [1, 3, 5]
 
     - !Item
       name: GoodGoalMulti
@@ -53,11 +52,5 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 1, y: 1, z: 1}
-        range: [1, 5]
-        amount: 3
+        scales: [1, 3, 5]
 
-
-
-
-
-     	

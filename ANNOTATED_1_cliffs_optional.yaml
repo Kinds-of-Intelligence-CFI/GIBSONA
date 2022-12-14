@@ -32,7 +32,7 @@ arenas:
     - !Item
       name: GoodGoalMulti
       positions:
-      - ProcList [!Vector3 {x: 6 , y: 1, z: 8}, !Vector3 {x: 14 , y: 1, z: 8}, !Vector3 {x: 22 , y: 1, z: 8}]         
+      - !ProcList [!Vector3 {x: 6 , y: 1, z: 8}, !Vector3 {x: 14 , y: 1, z: 8}, !Vector3 {x: 22 , y: 1, z: 8}]         
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 1, y: 1, z: 1}
@@ -61,13 +61,5 @@ arenas:
       positions: 
       - !Vector3 {x: 20, y: 0, z: 20}
       sizes: 
-      - ProcList [!Vector3 {x: 40, y: 1.5, z: 40}, {x: 40, y: 1, z: 40}, {x: 40, y: 0.5, z: 40}]
+      - !ProcList [!Vector3 {x: 40, y: 1.5, z: 40}, {x: 40, y: 1, z: 40}, {x: 40, y: 0.5, z: 40}]
       rotations: [0]
-      
-
-
-
-
-
-
-

@@ -4,10 +4,10 @@ arenas:
     pass_mark: 0
     pass: 
     - !ProcIf
-    value: GoodGoal.sizes.0.x,
-    cases: [4, 4.5, 5]
-    then: [3, 3.5, 4]
-    default: 0
+      value: GoodGoal.sizes.0.x,
+      cases: [4, 4.5, 5]
+      then: [3, 3.5, 4]
+      default: 0
     t: 400
     
     items:
@@ -23,7 +23,7 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 21.5}
       - !Vector3 {x: 20, y: 0, z: 2}
       rotations: [270, 270]
-     colors: !ProcRepeatChoice
+      colors: !ProcRepeatChoice
         amount: 2 
         value: !ProcColor 8 
       sizes:
@@ -38,9 +38,9 @@ arenas:
       rotations: [0, 0]
       sizes:
       - !ProcList [!Vector3 {x: 1, y: 0, z: 16}, !Vector3 {x: 2, y: 0, z: 16} , !Vector3 {x: 3, y: 0, z: 16}] 
-      - !ProcList [!Vector3 [!Vector3 {x: 1, y: 0, z: 16}, !Vector3 {x: 2, y: 0, z: 16} , !Vector3 {x: 3, y: 0, z: 16}] 
+      - !ProcList [!Vector3 {x: 1, y: 0, z: 16}, !Vector3 {x: 2, y: 0, z: 16} , !Vector3 {x: 3, y: 0, z: 16}] 
       # DO THESE TWO DEATHZONES CHANGE SIMULTANEOUSLY OR INDEPENDENT OF ONE ANOTHER? 
-
+      # Wout: Independently. If you don't want that, use !ProcRepeatChoice.
 
     - !Item
       name: Ramp
@@ -64,14 +64,8 @@ arenas:
       name: GoodGoal
       id: GoodGoal 
       positions:
-      - ProcList [!Vector3 {x: 20, y: 0, z: 24}, !Vector3 {x: 4, y: 0, z: 30}, !Vector3 {x: 36, y: 0, z: 30}, !Vector3 {x: 20, y: 0, z: 36}]
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 24}, !Vector3 {x: 4, y: 0, z: 30}, !Vector3 {x: 36, y: 0, z: 30}, !Vector3 {x: 20, y: 0, z: 36}]
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 4, y: 4, z: 4}
-        range: [4, 5]
-        amount: 3
-
-
-   
-
-
+        scales: [4, 4.5, 5]

@@ -2,13 +2,12 @@
 arenas:
   0: !Arena
     pass_mark: 0
-	  pass: 
-	  - !ProcIf
-	    value: GoodGoal.sizes.0.x,
-	    cases: [1.5, 2.2, 2.9]
-	    then: [0.5, 1.2, 1.9]
-	    default: 0
-	    t: 400
+    pass: !ProcIf
+      value: GoodGoal.sizes.0.x,
+      cases: [1.5, 2.2, 2.9]
+      then: [0.5, 1.2, 1.9]
+      default: 0
+    t: 400
       
     items:
     - !Item
@@ -16,10 +15,13 @@ arenas:
       id: agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 1, y: 0, z: 25}, !Vector3 {x: 39, y: 0, z: 25}, !Vector3 {x: 20, y: 0, z: 39}]
+      rotations:
       - !ProcIf
         variable: [agent.positions.0.x, agents.positions.0.z]
         cases: [[20, 1], [1, 25], [39, 25], [20, 39]] 
-        then: [0, 90, 270, 180] # HOW DOES COMPUTER KNOW NOW THAT WE DO NOT HAVE LABELS ANYMORE THAT "THEN" REFERS TO ROTATION VALUES? 
+        then: [0, 90, 270, 180] 
+        # HOW DOES COMPUTER KNOW NOW THAT WE DO NOT HAVE LABELS ANYMORE THAT "THEN" REFERS TO ROTATION VALUES?
+        # Wout: It doesn't, you need to start the rotations list first (as i've done now)
         default: 0
 
     - !Item
@@ -27,7 +29,7 @@ arenas:
       positions:
       - !Vector3 {x: 20, y: 0, z: 29}
       sizes:
-      - !ProcList[!Vector3 {x: 6, y: 1.2, z: 2}, !Vector3 {x: 6, y: 1.8, z: 2}, !Vector3 {x: 6, y: 2.6, z: 2}]
+      - !Vector3 {x: 6, y: !ProcList [1.2, 1.8, 2.6] , z: 2} # Wout: Like this it's shorter. Means the same as before.
       rotations: [0]
 
     - !Item
@@ -60,8 +62,7 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         base: !Vector3 {x: 1.5, y: 1.5, z: 1.5}
-        range: [1.5, 2.9]
-        amount: 3
+        scales: [1.5, 2.2, 2.9]
 
 
  

@@ -4,10 +4,10 @@ arenas:
     pass_mark: 0
     pass: 
     - !ProcIf
-    value: GoodGoal.sizes.0.x,
-    cases: [1, 2, 3]
-    then: [0, 1, 2]
-    default: 0    
+      value: GoodGoal.sizes.0.x,
+      cases: [1, 2, 3]
+      then: [0, 1, 2]
+      default: 0
     t: 250
     
     items:
@@ -16,13 +16,14 @@ arenas:
       id: agent 
       positions:	
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 8}, !Vector3 {x: 20, y: 1, z: 15}, 
-      !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 20, y: 1, z: 32}, !Vector3 {x: 20, y: 1, z: 25}]
+        !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 20, y: 1, z: 32}, !Vector3 {x: 20, y: 1, z: 25}]
     - !ProcIf
       value: agent.positions.0.z,
-      cases: [R![1, 15], [R![25, 39]]]
+      cases: [!R [1, 15], !R [25, 39]]
       then: [0, 180]
       default: 0
-# THIS IS CORRECT? I WANT TO SAY FOR VALUES Z IN RANGE 1-15 [INCLUDING!], ORIENTATION IS 180 AND FOR 25-39 IT IS 180? 
+# THIS IS CORRECT? I WANT TO SAY FOR VALUES Z IN RANGE 1-15 [INCLUDING!], ORIENTATION IS 180 AND FOR 25-39 IT IS 180?
+# Wout: Exactly!
     - !Item
       name: Wall
       positions:

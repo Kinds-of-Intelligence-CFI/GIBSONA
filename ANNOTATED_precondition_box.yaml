@@ -5,23 +5,23 @@ arenas:
     t: 250
     items:
     - !Item
-      # name: Agent
+      name: Agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 1, y: 0, z: 12}, !Vector3 {x: 39, y: 0, z: 12}]
-      # rotations: [0]
+      rotations: [0]
 
     - !Item
-      # name: Cardbox1
-      # positions:
-      # - !Vector3 {x: 2, y: 0, z: 20}
-      # - !Vector3 {x: 6.5, y: 0, z: 20}
-      # - !Vector3 {x: 11, y: 0, z: 20}
-      # - !Vector3 {x: 15.5, y: 0, z: 20}
-      # - !Vector3 {x: 20, y: 0, z: 20}
-      # - !Vector3 {x: 24.5, y: 0, z: 20}
-      # - !Vector3 {x: 29, y: 0, z: 20}
-      # - !Vector3 {x: 33.5, y: 0, z: 20}
-      # - !Vector3 {x: 38, y: 0, z: 20}
+      name: Cardbox1
+      positions:
+      - !Vector3 {x: 2, y: 0, z: 20}
+      - !Vector3 {x: 6.5, y: 0, z: 20}
+      - !Vector3 {x: 11, y: 0, z: 20}
+      - !Vector3 {x: 15.5, y: 0, z: 20}
+      - !Vector3 {x: 20, y: 0, z: 20}
+      - !Vector3 {x: 24.5, y: 0, z: 20}
+      - !Vector3 {x: 29, y: 0, z: 20}
+      - !Vector3 {x: 33.5, y: 0, z: 20}
+      - !Vector3 {x: 38, y: 0, z: 20}
       sizes:
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
@@ -32,15 +32,16 @@ arenas:
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
-      # rotations: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+      rotations: [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     - !Item
-      # name: GoodGoal
+      name: GoodGoal
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 24}, !Vector3 {x: 3, y: 0, z: 30}, !Vector3 {x: 37, y: 0, z: 30}, !Vector3 {x: 37, y: 0, z: 37}]  
       sizes:
+      # Wout: This does not make much sense? It's 3 times the same one.
       - !ProcList [!Vector3 {x: 3, y: 3, z: 3},  !Vector3 {x: 3, y: 3, z: 3},  !Vector3 {x: 3, y: 3, z: 3}]
-      # rotations: [0]
+      rotations: [0]
 
 
 

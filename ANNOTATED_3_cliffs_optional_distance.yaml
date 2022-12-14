@@ -2,15 +2,18 @@
 arenas:
   0: !Arena
     pass_mark: 0
-    pass: 
-    - !ProcIf # GOODGOAL AND MULTIGOODGOALS CHANGE INDEPENDENT IN SIZE. FOR EACH COMBINATION I NEED TO SPECIFY PASS MARK. 
+     # GOODGOAL AND MULTIGOODGOALS CHANGE INDEPENDENT IN SIZE. FOR EACH COMBINATION I NEED TO SPECIFY PASS MARK. 
      # IF I AM NOT WRONG THERE ARE 27 POSSIBLE COMBINATIONS? THEN WRITING IF STATEMENENTS FOR EACH WILL BE VERY TIME CONSUMING.
      # ANY IDEA WHAT TO DO? OR SHALL WE JUST MAKE IT SUCH THAT SIZES CHANGE TOGETHER AND HENCE ONLY HAVE 3 COMBINATIONS AS BELOW?
      # ALSO IMPORTANT, ATM VECTORS AFTER VALUE ARE "AND", WHAT WOULD WE DO IF WE WANTED "OR"? 
-    value: [GoodGoalMulti.sizes.0.x, GoodGoalMulti.sizes.1.x, GoodGoal.sizes.0.x]
-    cases: [[2, 3, 4], [2, 3, 4], [2, 3, 4]]
-    then: [[5, 8, 11], [5, 8, 11], [5, 8, 11]]
-    default: 0   
+     # Wout: GoodGoalMulti 0 and 1 change together, so we only need one of them. This reduces the situation to 3 x 3 = 9 cases.
+     # Wout: If some cases result in the same value, maybe you can group some together with !R ranges? If need be we can introduce another notation for a set of as well, e.g. !S [2,10,28]
+     # Wout: Also, does this need to be pass_mark instead of pass, or is this some other field?
+    pass: !ProcIf
+      value: [GoodGoalMulti.sizes.0.x, GoodGoalMulti.sizes.1.x, GoodGoal.sizes.0.x]
+      cases: [[2, 3, 4], [2, 3, 4], [2, 3, 4]]
+      then: [[5, 8, 11], [5, 8, 11], [5, 8, 11]]
+      default: 0
     t: 500
     
     items:
@@ -44,25 +47,22 @@ arenas:
       - !Vector3 {x: 2, y: 1, z: 4}
 
     - !Item
+      name: GoodGoal
       id: GoodGoalMulti
       positions:
-      - ProcList [!Vector3 {x: 6 , y: 1, z: 8}, !Vector3 {x: 14 , y: 1, z: 8}, !Vector3 {x: 22 , y: 1, z: 8}] 
+      - !Vector3 {x: !ProcList [6, 14, 22], y: 1, z: 8}
       - !Vector3 {x: 20 , y: 1, z: 27}
       - !Vector3 {x: 15, y: 1, z: 25} 
       - !Vector3 {x: 25, y: 1, z: 29}      
-      sizes: # HOW DO I CHANGE SIZE OF ALL THESE REWARDS? SHALL I WRITE THIS BELOW FOUR TIMES, OR SHALL I JUST MAKE 
-             #LIST OF VECTORS AND SPECIFY SIZE LIKE WITH OTHER OBJECTS THAT ARE NOT REWARD? I WANT FOR THE GOAL SIZES TO CHANGE SIMULTANEOUSLY
-             # size varies between 2, 3 and 4 
-      sizes:
-      - !ProcVector3Scaled
-        base: !Vector3 {x: 1, y: 1, z: 1}
-        range: [2, 4]
-        amount: 3
-
-      - !Vector3 {x: 1, y: 1, z: 1}
-      - !Vector3 {x: 1, y: 1, z: 1}
-      - !Vector3 {x: 1, y: 1, z: 1}
-      - !Vector3 {x: 1, y: 1, z: 1}
+      # HOW DO I CHANGE SIZE OF ALL THESE REWARDS? SHALL I WRITE THIS BELOW FOUR TIMES, OR SHALL I JUST MAKE 
+      #LIST OF VECTORS AND SPECIFY SIZE LIKE WITH OTHER OBJECTS THAT ARE NOT REWARD? I WANT FOR THE GOAL SIZES TO CHANGE SIMULTANEOUSLY
+      # size varies between 2, 3 and 4
+      # Wout: Like this.
+      sizes: !ProcRepeatChoice 
+        amount: 4
+        item: !ProcVector3Scaled
+          base: !Vector3 {x: 1, y: 1, z: 1}
+          scales: [2, 3, 4]
 
     - !Item
       name: GoodGoal 
@@ -80,10 +80,5 @@ arenas:
       positions: 
       - !Vector3 {x: 20, y: 0, z: 20}
       sizes: 
-      - ProcList [!Vector3 {x: 40, y: 1.5, z: 40}, {x: 40, y: 1, z: 40}, {x: 40, y: 0.5, z: 40}]
+      - !Vector3 {x: 40, y: !ProcList [1.5, 1, 0.5]}
       rotations: [0]
-      
-
-
-
-
