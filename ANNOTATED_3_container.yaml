@@ -1,0 +1,26 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 0
+    t: 250
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 1, z: 4}, !Vector3 {x: 20, y: 1, z: 36}, !Vector3 {x: 4, y: 1, z: 4},
+!Vector3 {x: 36, y: 1, z: 4}, !Vector3 {x: 4, y: 1, z: 36}, !Vector3 {x: 36, y: 1, z: 36}]
+      rotations:
+      !ProcIf
+      value: agent.positions.0.z
+      cases: [36]
+      then: [180]
+      default: 0
+
+
+    - !Item
+      name: SpawnerContainer
+      positions:
+      - !Proclist [!Vector3 {x: 5, y: 0, z: 30}, !Vector3 {x: 15, y: 0, z: 30}, !Vector3 {x: 25, y: 0, z: 30}, !Vector3 {x: 35, y: 0, z: 30}, 
+      !Vector3 {x: 12, y: 0, z: 10}, !Vector3 {x: 12, y: 0, z: 20}, !Vector3 {x: 12, y: 0, z: 30}, !Vector3 {x: 25, y: 0, z: 10}, !Vector3 {x: 35, y: 0, z: 20}]
+
+    
