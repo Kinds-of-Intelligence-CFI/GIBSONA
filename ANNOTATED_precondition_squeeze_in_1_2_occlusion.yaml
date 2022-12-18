@@ -33,7 +33,6 @@ arenas:
       - !Proclist [!Vector3 {x: 17, y: 0, z: 26}, !Vector3 {x: 10, y: 0, z: 26}, !Vector3 {x: 3, y: 0, z: 26}]
       sizes:
       - !ProcVector3Scaled
-      base: !Vector3 {x: 3, y: 3, z: 3}
       scales: [3, 4, 5]
       
 
