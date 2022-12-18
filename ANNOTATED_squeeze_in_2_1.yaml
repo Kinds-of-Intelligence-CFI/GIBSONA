@@ -108,7 +108,6 @@ arenas:
       then: [2.5]
       else:
       - !ProcVector3Scaled
-      base: !Vector3 {x: 1.5, y: 1.5, z: 1.5}
-      range: [1.5, 3.5]
-      amount: 3
+      scales: [1.5, 2.5, 3.5]
+
 
