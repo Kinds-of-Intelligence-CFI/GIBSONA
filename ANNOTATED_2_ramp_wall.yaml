@@ -130,8 +130,7 @@ arenas:
       then: [!Vector3 {x: 12, y: 6, z: 30}, !Vector3 {x: 16, y: 6, z: 30},!Vector3 {x: 12, y: 6, z: 15},!Vector3 {x: 16, y: 6, z: 15},]
       sizes:
       - !ProcVector3Scaled
-      base: !Vector3 {x: 1, y: 1, z: 1}
-      range: [1, 5]
-      amount: 3
+      scales: [1, 2, 3, 4, 5]
+
 
     
