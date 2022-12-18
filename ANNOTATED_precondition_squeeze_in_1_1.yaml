@@ -33,7 +33,6 @@ arenas:
       - !Proflist [!Vector3 {x: 24, y: 0, z: 36}, !Vector3 {x: 24, y: 0, z: 26}, !Vector3 {x: 24, y: 0, z: 31}] 
       sizes:
       - !ProcVector3Scaled
-      base: !Vector3 {x: 3, y: 3, z: 3}
       range: [2, 5]
       amount: 3
 
