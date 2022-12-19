@@ -1,11 +1,10 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: - !Procif
-      value: Goodgoal.sizes.0.x
+    pass_mark: - !ProcIf
+      value: GoodGoal.sizes.0.x
       cases: [2,3,4,5]
       then: [1,2,3,4]
-      default: 0 
     t: 500 # time limit 
     items:
     - !Item
@@ -33,8 +32,8 @@ arenas:
       - !Proflist [!Vector3 {x: 24, y: 0, z: 36}, !Vector3 {x: 24, y: 0, z: 26}, !Vector3 {x: 24, y: 0, z: 31}] 
       sizes:
       - !ProcVector3Scaled
-      range: [2, 5]
-      amount: 3
+      scales: [2, 3, 4, 5]
+
 
 
 
