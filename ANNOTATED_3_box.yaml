@@ -1,13 +1,11 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: 0
-    pass:
+    pass_mark:
     - !ProcIf
       value: GoodGoal.sizes.0.x,
       cases: [2, 3, 4]
       then: [1, 2, 3]
-      default: 0
     t: 400
 
     items:
@@ -16,7 +14,7 @@ arenas:
       id: agent
       position:
       - !ProcIf
-        variable: wall1.positions.0.z
+        variable: wall.positions.0.z
         cases: [1, 4, 7]
         then: [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7}]
         default: 0
@@ -24,6 +22,7 @@ arenas:
  
     - !Item
       name: Wall
+      id: wall 
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7}]
       colors: 
@@ -81,6 +80,4 @@ arenas:
       positions:
       - !Vector3 {x: 20, y: 0, z: 21} 
       sizes:
-      - !ProcVector3Scaled
-        base: !Vector3 {x: 2, y: 2, z: 2} # Wout: 1,1,1?
         scales: [2, 3, 4]
