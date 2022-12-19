@@ -1,11 +1,10 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: - !Procif
-      value: Goodgoal.sizes.0.x
+    pass_mark: - !ProcIf
+      value: GoodGoal.sizes.0.x
       cases: [1,2,3,4,5]
       then: [0,1,2,3,4]
-      default: 0
     t: 250
     items:
     - !Item
@@ -18,13 +17,10 @@ arenas:
       value: agent.positions.0.z
       cases: [36]
       then: [180]
-      default: 0
-
-
 
     - !Item
       name: Wall
-      Id: Wall1
+      id: Wall1
       positions:
       - !Proclist [!Vector3 {x: 10, y: 0, z: 30}, !Vector3 {x: 24, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 15}, !Vector3 {x: 24, y: 0, z: 15}]
       rotations: 
@@ -35,17 +31,16 @@ arenas:
       sizes:
        - !Proclist [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 1, z: 1}, !Vector3 {x: 3, y: 3, z: 1}, !Vector3 {x: 9, y: 3, z: 1}]
 
-
     - !Item
       name: Wall
-      Id: Wall2
+      id: Wall2
       positions:
-      - !Procif 
+      - !ProcIf 
       value: Wall1.positions.0.x, Wall1.positions.0.z
       cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
       then: [!Vector3 {x: 14, y: 0, z: 30}, !Vector3 {x: 28, y: 0, z: 30}, !Vector3 {x: 14, y: 0, z: 15}, !Vector3 {x: 28, y: 0, z: 15},]
       rotations: 
-      - !Procif
+      - !ProcIf
       value: Wall1.rotations
       cases:  [[90], [0]]
       then: [[90], [0]]
@@ -53,7 +48,7 @@ arenas:
 	      amount: 1 
 	      value: !ProcColor 8
       sizes:
-      - !Procif 
+      - !ProcIf 
       value: Wall1.sizes.0.x, Wall1.sizes.0.y
       cases: [[6, 3], [6, 1], [3, 3], [9, 3]]
       then: [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 1, z: 1}, !Vector3 {x: 3, y: 3, z: 1}, !Vector3 {x: 9, y: 3, z: 1}]
@@ -61,14 +56,14 @@ arenas:
 
     - !Item
       name: Wall
-      Id: Wall3
+      id: Wall3
       positions:
-      - !Procif 
+      - !ProcIf 
       value: Wall1.positions.0.x, Wall1.positions.0.z
       cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
       then: [!Vector3 {x: 12, y: 3.5, z: 30}, !Vector3 {x: 16, y: 3.5, z: 30},!Vector3 {x: 12, y: 3.5, z: 15},!Vector3 {x: 16, y: 3.5, z: 15},]
       rotations:
-       - !Procif
+       - !ProcIf
       value: Wall1.rotations
       cases:  [[90], [0]]
       then: [[90], [0]]
@@ -76,7 +71,7 @@ arenas:
 	      amount: 1 
 	      value: !ProcColor 8
       sizes:
-      - !Procif 
+      - !ProcIf 
       value: Wall1.sizes.0.x
       cases: [6, 3]
       then: [!Vector3 {x: 6, y: 1, z: 5}, !Vector3 {x: 3, y: 1, z: 5}]
@@ -85,11 +80,11 @@ arenas:
       name: Wall
       Id: Wall4
       positions:
-      - !Procif 
+      - !ProcIf 
       value: Wall1.positions.0.x, Wall1.positions.0.z
       cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
       then: [!Vector3 {x: 12, y: 1.5, z: 22}, !Vector3 {x: 26, y: 1.5, z: 22}, !Vector3 {x: 12, y: 1.5, z: 7}, !Vector3 {x: 26, y: 1.5, z: 7}]
-       - !Procif
+       - !ProcIf
       value: Wall1.rotations
       cases:  [[90], [0]]
       then: [[90], [0]]
@@ -97,7 +92,7 @@ arenas:
 	      amount: 1 
 	      value: !ProcColor 8
       sizes:
-      - !Procif 
+      - !ProcIf 
       value: Wall1.sizes.0.x
       cases: [6, 3]
       then: [!Vector3 {x: 0.1, y: 6.5, z: 5}, !Vector3 {x: 0.1, y: 8, z: 5}]
@@ -106,12 +101,12 @@ arenas:
     - !Item
       name: Ramp
       positions:
-      - !Procif 
+      - !ProcIf 
       value: Wall4.positions.0.x, Wall4.positions.0.z
       cases: [[12,22], [26,22], [12,7], [26,7]]
       then: [!Vector3 {x: 12, y: 0, z: 22}, !Vector3 {x: 26, y: 1.5, z: 22}, !Vector3 {x: 12, y: 1.5, z: 7}, !Vector3 {x: 26, y: 1.5, z: 7}]
       positions: 
-       - !Procif
+       - !ProcIf
       value: Wall1.rotations
       cases:  [[0], [90]]
       then: [[0], [90]]
@@ -124,7 +119,7 @@ arenas:
     - !Item
       name: GoodGoal
       positions:
-      - !Procif
+      - !ProcIf
       value: Wall1.positions.0.x, Wall1.positions.0.z
       cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
       then: [!Vector3 {x: 12, y: 6, z: 30}, !Vector3 {x: 16, y: 6, z: 30},!Vector3 {x: 12, y: 6, z: 15},!Vector3 {x: 16, y: 6, z: 15},]
