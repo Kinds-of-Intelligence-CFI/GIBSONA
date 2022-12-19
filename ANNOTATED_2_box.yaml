@@ -1,12 +1,11 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: 0
-    pass: !ProcIf
-      value: GoodGoal.sizes.0.x,
-      cases: [2, 3, 4]
-      then: [1, 2, 3]
-      default: 0
+    pass_mark: 
+    -!ProcIf
+     value: GoodGoal.sizes.0.x,
+     cases: [2, 3, 4]
+     then: [1, 2, 3]
     t: 400
 
     items:
@@ -15,15 +14,14 @@ arenas:
       id: agent
       positions:
       - !ProcIf
-        variable: wall1.positions.0.z
+        variable: wall.positions.0.z
         cases: [1, 4, 7]
         then: [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7}]
-        default: 0
       rotations: [0]
 
     - !Item
       name: Wall
-      id: wall1
+      id: wall
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7}]
       colors: 
@@ -34,7 +32,6 @@ arenas:
 
     - !Item
       name: Wall
-      id: wall2
       positions:
       - !Vector3 {x: 20, y: 0, z: 25}
       - !Vector3 {x: 25, y: 0, z: 22}
@@ -73,9 +70,6 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 21} 
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 2, y: 2, z: 2}
-        # Wout: Are you sure this is what you want (in combination with !ProcIf above)? These scales do multiplication.
-        # E.g. x will be 4, 6 and 8. But the !If conditions on 2,3,4. You change the base to 1,1,1 if you want.
         scales: [2, 3, 4]
 
  
