@@ -77,6 +77,13 @@ arenas:
       then: [2.5]
       else:
       - !ProcVector3Scaled
-      range: [1.5, 3.5]
+      range: [1.5, 3.5] 
       amount: 3
+      
+      # WOUT changed format of the goal size like this, we do not have range anymore:   
+      sizes:
+      - !ProcVector3Scaled
+        scales: [4, 4.5, 5]
+	
+  
 
