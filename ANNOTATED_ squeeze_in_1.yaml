@@ -1,11 +1,13 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: - !Procif
-      value: Goodgoal.sizes.0.x
+    pass_mark: - !Procif # if needs to be If
+      value: Goodgoal.sizes.0.x # you have goodgoal 1 and 2 and here you have goodgoal only. This needs to match. I also 
+      # don't think you need 0 here because there is no list given that both goals are seperate objects. 
+      # Also note here you have Goodgoal below you have GoodGoal - upper case and lower case need to match 
       cases: [1.5,2.5,3.5]
       then: [0.5,1.5,2.5]
-      default: 0 
+      default: 0 # we said we would delete this 
     t: 250
     items:
     - !Item
@@ -17,7 +19,7 @@ arenas:
       value: agent.positions.0.z
       cases: [39, 27]
       then: [180]
-      default: 0
+      default: 0 # again, delete
 
 
     - !Item
