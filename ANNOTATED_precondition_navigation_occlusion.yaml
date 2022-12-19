@@ -4,10 +4,9 @@ arenas:
     pass_mark: 0
     pass: 
     - !ProcIf
-      value: GoodGoal.sizes.0.x,
+      value: GoodGoal.sizes.0.x
       cases: [3, 4, 5]
       then: [2, 3, 4]
-      default: 0
     t: 400
       
     items:
@@ -21,7 +20,6 @@ arenas:
         variable: [agent.positions.0.x, agents.positions.0.z]
         cases: [[20, 2], [2, 24], [33, 35]]
         then: [0, 90, 210]
-        default: 0
 
     - !Item
      name: Wall
@@ -77,5 +75,4 @@ arenas:
       - !Vector3 {x: 21, y: 0, z: 20} 
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 3, y: 3, z: 3} # 1,1,1 here?
         scales: [3, 4, 5]
