@@ -1,11 +1,10 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: - !Procif
-      value: Goodgoal.sizes.0.x
+    pass_mark: - !ProcIf
+      value: GoodGoal.sizes.0.x
       cases: [1.5,2.5,3.5]
       then: [0.5,1.5,2.5]
-      default: 0 
     t: 250
     items:
     - !Item
@@ -88,17 +87,15 @@ arenas:
       rotations: [90, 90, 90, 90, 90, 90, 90, 90]
     - !Item
       name: GoodGoal
-      Id: GoodGoal1
+      id: GoodGoal1
       positions:
       - !Vector3 {x: 3.5, y: 0, z: 19}       
       sizes:
        - !ProcVector3Scaled
-      base: !Vector3 {x: 1.5, y: 1.5, z: 1.5}
-      range: [1.5, 3.5]
-      amount: 3
+      scales: [1.5, 2.5, 3.5]
    - !Item
       name: GoodGoal
-      Id: GoodGoal2
+      id: GoodGoal2
       positions:  
       - !Vector3 {x: 36.5, y: 0, z: 19}     
       sizes:
