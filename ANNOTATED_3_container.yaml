@@ -14,7 +14,6 @@ arenas:
       value: agent.positions.0.z
       cases: [36]
       then: [180]
-      default: 0
 
 
     - !Item
