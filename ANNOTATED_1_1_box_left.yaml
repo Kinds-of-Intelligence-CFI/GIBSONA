@@ -3,7 +3,7 @@ arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf
-      value: GoodGoal2.sizes.0.x,
+      value: GoodGoal.sizes.0.x,
       cases: [2, 3, 4]
       then: [1, 2, 3]
     t: 250
@@ -68,7 +68,7 @@ arenas:
 
     - !Item
       name: GoodGoal
-      id: GoodGoal1
+      id: GoodGoal
       positions:
       - !ProcList [!Vector3 {x: 14, y: 0, z: 30}, {x: 3, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 37}]
       sizes:
@@ -77,7 +77,6 @@ arenas:
 
     - !Item
       name: GoodGoal
-      id: GoodGoal2
       positions:
       - !ProcList [!Vector3 {x: 26, y: 0, z: 30}, {x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 37}]
       sizes:
