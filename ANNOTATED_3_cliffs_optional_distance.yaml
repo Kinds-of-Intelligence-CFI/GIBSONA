@@ -1,19 +1,18 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: 0
-     # GOODGOAL AND MULTIGOODGOALS CHANGE INDEPENDENT IN SIZE. FOR EACH COMBINATION I NEED TO SPECIFY PASS MARK. 
-     # IF I AM NOT WRONG THERE ARE 27 POSSIBLE COMBINATIONS? THEN WRITING IF STATEMENENTS FOR EACH WILL BE VERY TIME CONSUMING.
-     # ANY IDEA WHAT TO DO? OR SHALL WE JUST MAKE IT SUCH THAT SIZES CHANGE TOGETHER AND HENCE ONLY HAVE 3 COMBINATIONS AS BELOW?
-     # ALSO IMPORTANT, ATM VECTORS AFTER VALUE ARE "AND", WHAT WOULD WE DO IF WE WANTED "OR"? 
-     # Wout: GoodGoalMulti 0 and 1 change together, so we only need one of them. This reduces the situation to 3 x 3 = 9 cases.
-     # Wout: If some cases result in the same value, maybe you can group some together with !R ranges? If need be we can introduce another notation for a set of as well, e.g. !S [2,10,28]
-     # Wout: Also, does this need to be pass_mark instead of pass, or is this some other field?
-    pass: !ProcIf
-      value: [GoodGoalMulti.sizes.0.x, GoodGoalMulti.sizes.1.x, GoodGoal.sizes.0.x]
-      cases: [[2, 3, 4], [2, 3, 4], [2, 3, 4]]
-      then: [[5, 8, 11], [5, 8, 11], [5, 8, 11]]
-      default: 0
+    pass_mark: 
+    !ProcIf
+      value: GoodGoalMulti.sizes.0
+      cases: [1, 2.5, 4]
+      then: [0, 1.5, 3]
+    t: 500
+    
+    pass_mark: 
+    !ProcIf
+      value: GoodGoalMulti.sizes.0
+      cases: [1, 2.5, 4]
+      then: [0, 1.5, 3]
     t: 500
     
     items:
