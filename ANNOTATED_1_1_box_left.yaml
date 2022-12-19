@@ -1,7 +1,11 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: 0
+    pass_mark: 
+    - !ProcIf
+      value: GoodGoal2.sizes.0.x,
+      cases: [2, 3, 4]
+      then: [1, 2, 3]
     t: 250
     items:
     - !Item
@@ -64,18 +68,18 @@ arenas:
 
     - !Item
       name: GoodGoal
+      id: GoodGoal1
       positions:
       - !ProcList [!Vector3 {x: 14, y: 0, z: 30}, {x: 3, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 37}]
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 3, y: 3, z: 3} # Wout: Do you mean 1,1,1 here? The factors in scales will multiply.
         scales: [3, 4, 5] # Wout: Maybe less thinking needed for you if you use scales instead of range + amount?
 
     - !Item
       name: GoodGoal
+      id: GoodGoal2
       positions:
       - !ProcList [!Vector3 {x: 26, y: 0, z: 30}, {x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 37}]
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 3, y: 3, z: 3} # Wout: Same as above.
         scales: [3, 4, 5]
