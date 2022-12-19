@@ -1,8 +1,13 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: 0
+    pass_mark: 
+    - !ProcIf
+      value: GoodGoal.sizes.0.x,
+      cases: [3.5, 4.2, 4.9]
+      then: [2.5, 4.2, 4.9]
     t: 250
+    
     items:
     - !Item
       name: Agent
@@ -36,11 +41,11 @@ arenas:
 
     - !Item
       name: GoodGoal
+      id: GoodGoal 
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 24}, !Vector3 {x: 3, y: 0, z: 30}, !Vector3 {x: 37, y: 0, z: 30}, !Vector3 {x: 37, y: 0, z: 37}]  
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 1, y: 1, z: 1} # Wout: Same as above.
         scales: [3.5, 4.2, 4.9]
 
 
