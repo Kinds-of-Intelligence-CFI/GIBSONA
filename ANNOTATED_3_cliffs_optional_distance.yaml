@@ -8,6 +8,8 @@ arenas:
       then: [0, 1.5, 3]
     t: 500
     
+# CURRENTLY IF STATEMENT IS FOR "AND" CASES. WHAT ABOUT WHEN I WANT AN "OR" CASE? DO I JUST DO ANOTHER PASS_MARK AS BELOW? 
+
     pass_mark: 
     !ProcIf
       value: GoodGoalMulti.sizes.0
