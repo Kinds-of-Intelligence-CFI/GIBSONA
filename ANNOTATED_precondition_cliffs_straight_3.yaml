@@ -1,13 +1,11 @@
 !ArenaConfig
 arenas: 
   0: !Arena
-    pass_mark: 0
-    pass: 
+    pass_mark: 
     - !ProcIf
-      value: GoodGoal.sizes.0.x,
+      value: GoodGoal.sizes.0.x
       cases: [1, 2, 3]
       then: [9, 1, 2]
-      default: 0 
     t: 250
     
     items:
@@ -21,7 +19,6 @@ arenas:
       value: agent.positions.0.z,
       cases: [!R [1, 15], !R [25, 39]]
       then: [0, 180]
-      default: 0
 
     - !Item
       name: Wall
@@ -40,5 +37,4 @@ arenas:
       - !Vector3 {x: 20, y: 1, z: 20} 
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 1, y: 1, z: 1}
         scales: [1, 2, 3]
