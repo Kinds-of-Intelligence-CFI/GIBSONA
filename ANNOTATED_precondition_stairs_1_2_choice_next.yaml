@@ -51,7 +51,10 @@ arenas:
       positions:
       - !Vector3 {x: 7, y: 0, z: 20}   
       - !Vector3 {x: 33, y: 2.5, z: 20}     
-      sizes: !ProcRestrictCombinations # I WANT FOR BOT REWARDS TO CHANGE INDEPENDENT OF EACH OTHER. HOW *EXACTLY* DO I DO THIS?
-        amount: 2
-        item: !ProcVector3Scaled
-          scales: [1, 2.5, 4]
+      sizes: # IS THIS THE CORECT WAY TO ANNOTATE IF I WANT FOR BOTH REWARD TO CHANGE INDEPENDENTLY IN SIZE? 
+      - !ProcVector3Scaled
+        scales: [1, 2.5, 4]
+      - !ProcVector3Scaled
+        scales: [1, 2.5, 4]
+        
+
