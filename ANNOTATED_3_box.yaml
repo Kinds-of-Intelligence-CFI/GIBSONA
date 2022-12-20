@@ -80,4 +80,5 @@ arenas:
       positions:
       - !Vector3 {x: 20, y: 0, z: 21} 
       sizes:
+      - !ProcVector3Scaled
         scales: [2, 3, 4]
