@@ -1,7 +1,7 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: - !ProcIf
+    pass_mark: - !ProcIf # I don't know if - ProcIf can be written like that. I always put it below the pass-mark. 
       value: Goodgoal.sizes.0.x
       cases: [3,4,5]
       then: [2,3,4]
@@ -16,7 +16,7 @@ arenas:
 
     - !Item
       name: Wall
-      Id: Wall1
+      Id: Wall1 # Please make Id to id
       positions:
         - !ProcIf
         value: DeathZone1.positions.0.x
@@ -35,13 +35,15 @@ arenas:
       name: Wall
       Id: Wall2
       positions:
-        - !ProcIf
+        - !ProcIf # I think here the indentation is off
         value: DeathZone1.positions.0.x
         condition: 13
-        then: - !Vector3 {x: 26, y: 0, z: 30}
+        then: - !Vector3 {x: 26, y: 0, z: 30} # get rid of - before !Vector3
         default: !Vector3 {x: 14, y: 0, z: 30} 
       #rotations: [90]
-      colors: !ProcRepeatChoice
+      colors: !ProcRepeatChoice # also here not sure if this is correct, I always write it in a new line. Maybe check Wout's 
+      # examples again and make it as he does it. I think all Proclist, Procif etc. need to be done in the same way whereas you 
+      # sometimes write them directly after features and sometimes in a new line. 
 	      amount: 1 
 	      value: !ProcColor 8
       sizes:
@@ -57,7 +59,7 @@ arenas:
         condition: 13
         then: !Vector3 {x: 24, y: 3.5, z: 30} 
         default: !Vector3 {x: 12, y: 3.5, z: 30} 
-      #rotations: [90]
+      #rotations: [90] # Why is rotation commented out? We decided not to comment out anything. 
       colors: !ProcRepeatChoice
 	      amount: 1 
 	      value: !ProcColor 8
