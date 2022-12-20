@@ -3,7 +3,7 @@ arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf
-      value: GoodGoal.sizes.0.x, 
+      value: GoodGoal.sizes.0.x 
       cases: [1, 1.8, 2.8]
       then: [0.8, 1.8]
     t: 250
@@ -29,7 +29,6 @@ arenas:
       - !RGB {r: 0, g: 0, b: 255}
       sizes:
       - !Vector3 {x:!ProcList [0.5, 1.5, 2.5], y:!ProcList [0, 1, 2], z: 26} 
-
 
 
     - !Item
