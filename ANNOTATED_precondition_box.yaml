@@ -6,7 +6,7 @@ arenas:
       value: GoodGoal.sizes.0.x
       cases: [3.5, 4.2, 4.9]
       then: [2.5, 4.2, 4.9]
-    t: 250
+    t: 400
     
     items:
     - !Item
