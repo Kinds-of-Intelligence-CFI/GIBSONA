@@ -41,9 +41,7 @@ arenas:
         then: - !Vector3 {x: 26, y: 0, z: 30} # get rid of - before !Vector3
         default: !Vector3 {x: 14, y: 0, z: 30} 
       #rotations: [90]
-      colors: !ProcRepeatChoice # also here not sure if this is correct, I always write it in a new line. Maybe check Wout's 
-      # examples again and make it as he does it. I think all Proclist, Procif etc. need to be done in the same way whereas you 
-      # sometimes write them directly after features and sometimes in a new line. 
+      colors: !ProcRepeatChoice 
 	      amount: 1 
 	      value: !ProcColor 8
       sizes:
