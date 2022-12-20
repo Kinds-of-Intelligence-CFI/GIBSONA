@@ -11,7 +11,7 @@ arenas:
 !Vector3 {x: 36, y: 1, z: 4}, !Vector3 {x: 4, y: 1, z: 36}, !Vector3 {x: 36, y: 1, z: 36}]
       rotations:
       !ProcIf
-      value: agent.positions.0.z
+      value: agent.positions.0.z # you forgot agent id above
       cases: [36]
       then: [180]
 
