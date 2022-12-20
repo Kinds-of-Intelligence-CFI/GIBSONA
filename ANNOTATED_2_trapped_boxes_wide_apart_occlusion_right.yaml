@@ -3,7 +3,7 @@ arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf
-      value: GoodGoal.sizes.1.x,
+      value: GoodGoal.sizes.1.x
       cases: [2, 3, 4]
       then: [1, 2, 3]
     t: 400
@@ -96,8 +96,10 @@ arenas:
       positions:
       - !Vector3 {x: 3, y: 0, z: 19}   
       - !Vector3 {x: 37, y: 0, z: 19}     
-      sizes: !ProcRestrictCombinations # I WANT FOR BOT REWARDS TO CHANGE INDEPENDENT OF EACH OTHER. HOW *EXACTLY* DO I DO THIS?
-        amount: 2
-        item: !ProcVector3Scaled
-          scales: [2, 3, 4]
+      sizes:
+      - !ProcVector3Scaled
+      scales: [2, 3, 4]
+      - !ProcVector3Scaled
+      scales: [2, 3, 4]
+
 
