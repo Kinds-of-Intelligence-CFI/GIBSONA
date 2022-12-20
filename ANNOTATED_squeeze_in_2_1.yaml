@@ -2,7 +2,9 @@
 arenas:
   0: !Arena
     pass_mark: - !ProcIf
-      value: GoodGoal.sizes.0.x
+      value: GoodGoal.sizes.0.x # I think we discussed this; if you have GoodGoal here then you need to have this exact name in 
+      # id as well, but you have GoodGoal 1 and 2. I think they both need to be GoodGoal and then you just vary position in the list
+      # so 0 and 1
       cases: [1.5,2.5,3.5]
       then: [0.5,1.5,2.5]
     t: 250
@@ -13,7 +15,7 @@ arenas:
       - !Proclist [!Vector3 {x: 20, y: 0.5, z: 1}, !Vector3 {x: 23, y: 0.5, z: 13}, !Vector3 {x: 17, y: 0.5, z: 13}, !Vector3 {x: 20, y: 0.5, z: 39}, !Vector3 {x: 23, y: 0.5, z: 27}, !Vector3 {x: 17, y: 0.5, z: 27}]
       rotations:
       - !ProcIf
-      value: agent.positions.0.z
+      value: agent.positions.0.z # agent id is missing
       cases: [39, 27]
       then: [180]
       default: 0
