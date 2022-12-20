@@ -1,0 +1,103 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 
+    - !ProcIf
+      value: GoodGoal.sizes.1.x,
+      cases: [2, 3, 4]
+      then: [1, 2, 3]
+    t: 400
+
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !Vector3 {x: 20, y: 2, z: 1}
+      rotations: [0]
+
+    - !Item
+      name: DeathZone
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 22.5}
+      rotations: [0]
+      sizes:
+      - !Vector3 {x:!ProcList [0.5, 1.5, 2.5], y:!ProcList [0, 1, 2], z: 35} 
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 2.5}
+      rotations: [0]
+      colors: !
+         value: !ProcColor 8
+      sizes:
+      - !Vector3 {x: 5, y: 3, z: 5}
+   
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 33, y: 0, z: 19}
+      rotations: [0]
+      colors: !
+         value: !ProcColor 8
+      sizes:
+      - !Vector3 {x: 3, y: 3, z: 3}
+   
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 1.5, y: 0, z: 11.5}
+      - !Vector3 {x: 4, y: 0, z: 14}
+      - !Vector3 {x: 6.5, y: 0, z: 16.5}
+      - !Vector3 {x: 9, y: 0, z: 19}
+      - !Vector3 {x: 6.5, y: 0, z: 21.5} 
+      - !Vector3 {x: 4, y: 0, z: 24}
+      - !Vector3 {x: 1.5, y: 0, z: 26.5}
+      sizes:
+      - !Vector3 {x: 2.5, y: 0.7, z: 2.5}
+      - !Vector3 {x: 2.5, y: 0.7, z: 2.5}
+      - !Vector3 {x: 2.5, y: 0.7, z: 2.5}
+      - !Vector3 {x: 2.5, y: 0.7, z: 2.5}
+      - !Vector3 {x: 2.5, y: 0.7, z: 2.5}
+      - !Vector3 {x: 2.5, y: 0.7, z: 2.5}
+      - !Vector3 {x: 2.5, y: 0.7, z: 2.5}
+      colors: !ProcRepeatChoice
+         amount: 7
+         value: !ProcColor 8    
+      rotations: [90, 90, 90, 90, 90, 90, 90]
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 38.5, y: 0, z: 2}
+      - !Vector3 {x: 33, y: 0, z: 12.5}
+      - !Vector3 {x: 27.5, y: 0, z: 13}
+      - !Vector3 {x: 23, y: 0, z: 35}
+      - !Vector3 {x: 27, y: 0, z: 27} 
+      - !Vector3 {x: 33, y: 0, z: 33}
+      - !Vector3 {x: 38.5, y: 0, z: 37}
+      sizes:
+      - !Vector3 {x: 2.5, y: 2, z: 2.5}
+      - !Vector3 {x: 2.5, y: 2, z: 2.5}
+      - !Vector3 {x: 2.5, y: 2, z: 2.5}
+      - !Vector3 {x: 2.5, y: 2, z: 2.5}
+      - !Vector3 {x: 2.5, y: 2, z: 2.5}
+      - !Vector3 {x: 2.5, y: 2, z: 2.5}
+      - !Vector3 {x: 2.5, y: 2, z: 2.5}
+      colors: !ProcRepeatChoice
+         amount: 7
+         value: !ProcColor 8      
+      rotations: [90, 90, 90, 90, 90, 90, 90]
+    
+    - !Item
+      name: GoodGoal
+      id: GoodGoal
+      positions:
+      - !Vector3 {x: 3, y: 0, z: 19}   
+      - !Vector3 {x: 37, y: 0, z: 19}     
+      sizes: !ProcRestrictCombinations # I WANT FOR BOT REWARDS TO CHANGE INDEPENDENT OF EACH OTHER. HOW *EXACTLY* DO I DO THIS?
+        amount: 2
+        item: !ProcVector3Scaled
+          scales: [2, 3, 4]
+
