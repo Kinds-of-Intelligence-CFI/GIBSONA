@@ -3,7 +3,7 @@ arenas:
   0: !Arena
     pass_mark: 
     !ProcIf
-      value: GoodGoalMulti.sizes.0
+      value: [GoodGoalMulti.sizes.0, GoodGoalMulti.sizes.1]
       cases: [1, 2.5, 4]
       then: [0, 1.5, 3]
     t: 500
@@ -12,7 +12,7 @@ arenas:
 
     pass_mark: 
     !ProcIf
-      value: GoodGoalMulti.sizes.0
+      value: GoodGoal.sizes.0
       cases: [1, 2.5, 4]
       then: [0, 1.5, 3]
     t: 500
@@ -63,7 +63,7 @@ arenas:
         amount: 4
         item: !ProcVector3Scaled
           base: !Vector3 {x: 1, y: 1, z: 1}
-          scales: [2, 3, 4]
+          scales: [1, 2.5, 4]
 
     - !Item
       name: GoodGoal 
@@ -72,9 +72,7 @@ arenas:
       - !Vector3 {x: 32, y: 1, z: 21}    
       sizes:
       - !ProcVector3Scaled
-        base: !Vector3 {x: 1, y: 1, z: 1}
-        range: [2, 4]
-        amount: 3
+        scales: [1, 2.5, 4]
 
     - !Item
       name: DeathZone
