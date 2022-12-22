@@ -85,7 +85,7 @@ arenas:
       - !RGB {r: 0, g: 0, b: 255}   
       - !RGB {r: 0, g: 0, b: 255}   
       - !RGB {r: 0, g: 0, b: 255}    
-      rotations: [90, 90, 90, 90, 90, 90, 90, 90]
+      rotations: [90, 90, 90, 90, 90, 90, 90]
     - !Item
       name: GoodGoal
       id: GoodGoal1
