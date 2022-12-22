@@ -1,7 +1,8 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: - !ProcIf
+    pass_mark: 
+    - !ProcIf
       value: GoodGoal.sizes.0.x
       cases: [2,3,4,5]
       then: [1,2,3,4]
@@ -11,7 +12,7 @@ arenas:
       name: Agent
       positions:
       - !Proclist [!Vector3 {x: 23, y: 0, z: 1}, !Vector3 {x: 23, y: 0, z: 7}, !Vector3 {x: 23, y: 0, z: 13}]
-      #rotations: [0]
+      rotations: [0]
      
     - !Item
       name: Wall
@@ -28,6 +29,7 @@ arenas:
 
     - !Item
       name: GoodGoal
+      id: GoodGoal
       positions:
       - !Proflist [!Vector3 {x: 24, y: 0, z: 36}, !Vector3 {x: 24, y: 0, z: 26}, !Vector3 {x: 24, y: 0, z: 31}] 
       sizes:
