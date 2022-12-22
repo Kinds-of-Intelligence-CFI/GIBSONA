@@ -1,10 +1,9 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: - !ProcIf # if needs to be If
-      value: GoodGoal1.sizes.0.x # you have goodgoal 1 and 2 and here you have goodgoal only. This needs to match. I also 
-      # don't think you need 0 here because there is no list given that both goals are seperate objects. 
-      # Also note here you have Goodgoal below you have GoodGoal - upper case and lower case need to match 
+    pass_mark: 
+    - !ProcIf 
+      value: GoodGoal1.sizes.0.x
       cases: [1.5,2.5,3.5]
       then: [0.5,1.5,2.5]
     t: 250
