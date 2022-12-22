@@ -38,8 +38,8 @@ arenas:
       positions:
       - !Vector3 {x: 7, y: 0, z: 19}
       rotations: [0]
-      colors: !
-         value: !ProcColor 8
+      colors: 
+      - !ProcColor 8
       sizes:
       - !Vector3 {x: 3, y: 3, z: 3}
 
