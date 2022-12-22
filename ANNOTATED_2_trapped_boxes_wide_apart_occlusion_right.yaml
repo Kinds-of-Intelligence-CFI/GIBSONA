@@ -31,7 +31,7 @@ arenas:
       colors: !
          value: !ProcColor 8
       sizes:
-      - !Vector3 {x: 5, y: 3, z: 5}
+      - !Vector3 {x: 5, y: 2, z: 5}
    
     - !Item
       name: Wall
