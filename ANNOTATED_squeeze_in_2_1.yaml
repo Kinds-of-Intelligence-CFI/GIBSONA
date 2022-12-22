@@ -5,6 +5,7 @@ arenas:
       value: GoodGoal.sizes.0.x # I think we discussed this; if you have GoodGoal here then you need to have this exact name in 
       # id as well, but you have GoodGoal 1 and 2. I think they both need to be GoodGoal and then you just vary position in the list
       # so 0 and 1
+      # ALSO THE CONDITION ABOVE SHOULD BE ON 1 NOT ON 0 BECAUSE ONLY GOOD GOAL ON THE RIGHT [1] IN THE LIST, CAN BE RETRIEVED
       cases: [1.5,2.5,3.5]
       then: [0.5,1.5,2.5]
     t: 250
