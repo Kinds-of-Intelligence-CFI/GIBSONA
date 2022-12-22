@@ -1,7 +1,8 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: - !ProcIf
+    pass_mark: 
+    - !ProcIf
       value: Goodgoal.sizes.0.x
       cases: [3,4,5]
       then: [2,3,4]
@@ -12,7 +13,7 @@ arenas:
       positions: #the agent can start at 6 different positions in the arena
       - !ProcList [!Vector3 {x: 20, y: 1, z: 4}, !Vector3 {x: 20, y: 1, z: 20}, 
 !Vector3 {x: 4, y: 1, z: 4},!Vector3 {x: 36, y: 1, z: 4}, !Vector3 {x: 4, y: 1, z: 20}, !Vector3 {x: 36, y: 1, z: 20}]
-      #rotations:[0]
+      rotations:[0]
 
 
 #the color of the tunnel will vary with 10 different colors
@@ -25,7 +26,7 @@ arenas:
       condition:27
       then: !Vector3 {x: 11, y: 0, z: 30} 
       else: !Vector3 {x: 29, y: 0, z: 30} 
-      #rotations: [0]
+      rotations: [0]
       colors: !ProcRepeatChoice
       amount: 1 #There is only one tunnel, so this should be 1?
       value: !ProcColor 8
@@ -41,7 +42,7 @@ arenas:
       sizes:
       - !ProcList [!Vector3 {x: 26, y: 1.5, z: 5}, !Vector3 {x: 26, y: 1.5, z: 1}, !Vector3 {x: 26, y: 1.5, z: 10}, !Vector3 {x: 26, y: 3, z: 5!}, 
 Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 0, z: 5}, !Vector3 {x: 26, y: 0, z: 1}, !Vector3 {x: 26, y: 3, z: 10}]
-      #rotations: [0]
+      rotations: [0]
     - !Item
       name: DeathZone
       id: DeathZone2
@@ -58,6 +59,7 @@ Vector3 {x: 8, y: 3, z: 1}, !Vector3 {x: 8, y: 0, z: 10}, !Vector3 {x: 8, y: 0, 
 
     - !Item
       name: GoodGoal
+      id: GoodGoal
       positions:
       - !ProcList [!Vector3 {x: 5, y: 0, z: 37}, !Vector3 {x: 20, y: 0, z: 37}, !Vector3 {x: 35, y: 0, z: 37}]
       sizes:
