@@ -1,18 +1,16 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: - !ProcIf
-      value: GoodGoal.sizes.0.x # I think we discussed this; if you have GoodGoal here then you need to have this exact name in 
-      # id as well, but you have GoodGoal 1 and 2. I think they both need to be GoodGoal and then you just vary position in the list
-      # so 0 and 1
-      # ALSO THE CONDITION ABOVE SHOULD BE ON 1 NOT ON 0 BECAUSE ONLY GOOD GOAL ON THE RIGHT [1] IN THE LIST, CAN BE RETRIEVED
+    pass_mark: 
+    - !ProcIf
+      value: GoodGoal.sizes.1.x 
       cases: [1.5,2.5,3.5]
       then: [0.5,1.5,2.5]
     t: 250
     items:
     - !Item
       name: Agent
-      id: agent # id was missing
+      id: agent 
       positions:
       - !Proclist [!Vector3 {x: 20, y: 0.5, z: 1}, !Vector3 {x: 23, y: 0.5, z: 13}, !Vector3 {x: 17, y: 0.5, z: 13}, !Vector3 {x: 20, y: 0.5, z: 39}, !Vector3 {x: 23, y: 0.5, z: 27}, !Vector3 {x: 17, y: 0.5, z: 27}]
       rotations:
@@ -27,8 +25,9 @@ arenas:
       positions:
       - !Vector3 {x: 20, y: 0, z: 20}
       rotations: [0]
-      colors: 
-      - !RGB {r: 0, g: 0, b: 255} # you forgot to vary the colour of the walls 
+      colors: !ProcRepeatChoice
+	      amount: 1
+	      value: !ProcColor 8
       sizes:
       - !Vector3 {x: 8, y: 0.5, z: 40}
     - !Item
@@ -49,14 +48,9 @@ arenas:
       - !Vector3 {x: 2.5, y: 1, z: 2.5}
       - !Vector3 {x: 2.5, y: 1, z: 2.5}
       - !Vector3 {x: 2.5, y: 1, z: 2.5}
-      colors:
-      - !RGB {r: 0, g: 0, b: 255}   # you forgot to vary the colour of the walls 
-      - !RGB {r: 0, g: 0, b: 255}    
-      - !RGB {r: 0, g: 0, b: 255}   
-      - !RGB {r: 0, g: 0, b: 255}   
-      - !RGB {r: 0, g: 0, b: 255}   
-      - !RGB {r: 0, g: 0, b: 255}   
-      - !RGB {r: 0, g: 0, b: 255}    
+      colors: !ProcRepeatChoice
+	      amount: 7
+	      value: !ProcColor 8
       rotations: [90, 90, 90, 90, 90, 90, 90]
 
     - !Item
@@ -77,18 +71,13 @@ arenas:
       - !Vector3 {x: 2.5, y: 0.8, z: 2.5}
       - !Vector3 {x: 2.5, y: 0.8, z: 2.5}
       - !Vector3 {x: 2.5, y: 0.8, z: 2.5}
-      colors:
-      - !RGB {r: 0, g: 0, b: 255} # you forgot to vary the colour of the walls 
-      - !RGB {r: 0, g: 0, b: 255}   
-      - !RGB {r: 0, g: 0, b: 255}   
-      - !RGB {r: 0, g: 0, b: 255} 
-      - !RGB {r: 0, g: 0, b: 255}   
-      - !RGB {r: 0, g: 0, b: 255}   
-      - !RGB {r: 0, g: 0, b: 255}    
+      colors: !ProcRepeatChoice
+	      amount: 7
+	      value: !ProcColor 8    
       rotations: [90, 90, 90, 90, 90, 90, 90]
     - !Item
       name: GoodGoal
-      id: GoodGoal1
+      id: GoodGoal
       positions:
       - !Vector3 {x: 3.5, y: 0, z: 19}       
       sizes:
@@ -96,7 +85,7 @@ arenas:
       scales: [1.5, 2.5, 3.5]
    - !Item
       name: GoodGoal
-      id: GoodGoal2
+      id: GoodGoal
       positions:  
       - !Vector3 {x: 36.5, y: 0, z: 19}     
       sizes:
