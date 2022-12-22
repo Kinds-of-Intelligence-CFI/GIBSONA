@@ -13,7 +13,7 @@ arenas:
       positions:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 4}, !Vector3 {x: 20, y: 1, z: 20}, !Vector3 {x: 4, y: 1, z: 4},
 !Vector3 {x: 36, y: 1, z: 4}, !Vector3 {x: 4, y: 1, z: 20}, !Vector3 {x: 36, y: 1, z: 20}]
-      #rotations: [0]
+      rotations: [0]
 
     - !Item
       name: Wall
@@ -24,7 +24,7 @@ arenas:
         condition: 13
         then: {x: 22, y: 0, z: 30} 
         default: !Vector3 {x: 10, y: 0, z: 30} 
-      #rotations: [90]
+      rotations: [90]
       colors: !ProcRepeatChoice
 	      amount: 1 
 	      value: !ProcColor 10
@@ -91,6 +91,7 @@ Vector3 {x: 9, y: 3, z: 1}, !Vector3 {x: 9, y: 0, z: 10}, !Vector3 {x: 9, y: 0, 
 
     - !Item
       name: GoodGoal
+      id: GoodGoal
       positions:
       - !ProcList [!Vector3 {x: 5, y: 0, z: 37}, !Vector3 {x: 20, y: 0, z: 37}, !Vector3 {x: 35, y: 0, z: 37}]
       sizes:
