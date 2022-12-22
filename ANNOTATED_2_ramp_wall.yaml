@@ -123,7 +123,7 @@ arenas:
       - !ProcIf
       value: Wall1.positions.0.x, Wall1.positions.0.z
       cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
-      then: [!Vector3 {x: 12, y: 6, z: 30}, !Vector3 {x: 16, y: 6, z: 30},!Vector3 {x: 12, y: 6, z: 15},!Vector3 {x: 16, y: 6, z: 15},]
+      then: [!Vector3 {x: 12, y: 6, z: 30}, !Vector3 {x: 16, y: 6, z: 30},!Vector3 {x: 12, y: 6, z: 15},!Vector3 {x: 16, y: 6, z: 15}] # deleted teh commna
       sizes:
       - !ProcVector3Scaled
       scales: [1, 2, 3, 4, 5]
