@@ -15,10 +15,10 @@ arenas:
       - !Proclist [!Vector3 {x: 20, y: 0.5, z: 1}, !Vector3 {x: 23, y: 0.5, z: 13}, !Vector3 {x: 17, y: 0.5, z: 13}, !Vector3 {x: 20, y: 0.5, z: 39}, !Vector3 {x: 23, y: 0.5, z: 27}, !Vector3 {x: 17, y: 0.5, z: 27}]
       rotations:
       - !ProcIf
-      value: agent.positions.0.z 
-      cases: [39, 27]
-      then: [180]
-      default: 0
+        value: agent.positions.0.z 
+        cases: [39, 27]
+        then: [180]
+        default: 0
 
     - !Item
       name: Wall
@@ -90,11 +90,11 @@ arenas:
       - !Vector3 {x: 36.5, y: 0, z: 19}     
       sizes:
       - !Procif
-      value: GoodGoal1.sizes.0.x 
-      cases: [2.5]
-      then: [2.5]
-      else:
-      - !ProcVector3Scaled
-      scales: [1.5, 2.5, 3.5]
+        value: GoodGoal1.sizes.0.x 
+        cases: [2.5]
+        then: [2.5]
+        else:
+        - !ProcVector3Scaled
+        scales: [1.5, 2.5, 3.5]
 
 
