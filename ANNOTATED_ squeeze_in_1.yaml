@@ -11,6 +11,7 @@ arenas:
     items:
     - !Item
       name: Agent
+      id: agent # id agent was missing 
       positions:
       - !Proclist [!Vector3 {x: 20, y: 0.5, z: 1}, !Vector3 {x: 23, y: 0.5, z: 13}, !Vector3 {x: 17, y: 0.5, z: 13}, !Vector3 {x: 20, y: 0.5, z: 39}, !Vector3 {x: 23, y: 0.5, z: 27}, !Vector3 {x: 17, y: 0.5, z: 27}]
       rotations:
@@ -69,7 +70,7 @@ arenas:
       - !Vector3 {x: 36.5, y: 0, z: 19}     
       sizes:
       - !Procif
-      value: GoodGoal1.sizes.0.x 
+      value: GoodGoal1.sizes.0.x # NOT SURE ABOUT THIS, CHECK WITH WOUT
       cases: [2.5]
       then: [2.5]
       else:
