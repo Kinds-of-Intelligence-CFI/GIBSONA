@@ -13,19 +13,16 @@ arenas:
       positions: #the agent can start at 6 different positions in the arena
       - !ProcList [!Vector3 {x: 20, y: 1, z: 4}, !Vector3 {x: 20, y: 1, z: 20}, 
 !Vector3 {x: 4, y: 1, z: 4},!Vector3 {x: 36, y: 1, z: 4}, !Vector3 {x: 4, y: 1, z: 20}, !Vector3 {x: 36, y: 1, z: 20}]
-      rotations:[0]
-
-
-#the color of the tunnel will vary with 10 different colors
+      rotations: [0]
 
     - !Item
       name: CylinderTunnel
       positions:
       - !ProcIf 
-      value: DeathZone1.positions.0.x
-      condition:27
-      then: !Vector3 {x: 11, y: 0, z: 30} 
-      else: !Vector3 {x: 29, y: 0, z: 30} 
+        value: DeathZone1.positions.0.x
+        condition: 27
+        then: !Vector3 {x: 11, y: 0, z: 30} 
+        else: !Vector3 {x: 29, y: 0, z: 30} 
       rotations: [0]
       colors: !ProcRepeatChoice
       amount: 1 #There is only one tunnel, so this should be 1?
@@ -48,14 +45,14 @@ Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 
       id: DeathZone2
       positions:
       - !ProcIf 
-      value: DeathZone1.positions.0.x
-      condition:27
-      then: - !Vector3 {x: 4, y: 0, z: 30} 
-      else: - !Vector3 {x: 36, y: 0, z: 30} 
+        value: DeathZone1.positions.0.x
+        condition: 27
+        then: !Vector3 {x: 4, y: 0, z: 30} 
+        else: !Vector3 {x: 36, y: 0, z: 30} 
       sizes: 
       - ProcList [!Vector3 {x: 8, y: 1.5, z: 5}, !Vector3 {x: 8, y: 1.5, z: 1}, !Vector3 {x: 8, y: 1.5, z: 10}, !Vector3 {x: 8, y: 3, z: 5!}, 
 Vector3 {x: 8, y: 3, z: 1}, !Vector3 {x: 8, y: 0, z: 10}, !Vector3 {x: 8, y: 0, z: 5}, !Vector3 {x: 8, y: 0, z: 1}, !Vector3 {x: 8, y: 3, z: 10}]
-      #rotations: [0]
+      rotations: [0]
 
     - !Item
       name: GoodGoal
