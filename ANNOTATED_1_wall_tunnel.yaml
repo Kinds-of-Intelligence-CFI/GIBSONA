@@ -19,7 +19,7 @@ arenas:
       name: Wall
       id: Wall1 
       positions:
-        - !ProcIf
+      - !ProcIf
         value: DeathZone1.positions.0.x
         condition: 13
         then: {x: 22, y: 0, z: 30} 
@@ -53,7 +53,7 @@ arenas:
       name: Wall
       id: Wall3
       positions:
-        - !ProcIf
+      - !ProcIf
         value: DeathZone1.positions.0.x
         condition: 13
         then: !Vector3 {x: 24, y: 3.5, z: 30} 
@@ -81,7 +81,7 @@ Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 
       positions:
       - !ProcIf 
         value: DeathZone1.positions.0.x
-        condition:27
+        condition: 27
         then: !Vector3 {x: 5, y: 0, z: 30} 
         else: !Vector3 {x: 35, y: 0, z: 30} 
       sizes:
