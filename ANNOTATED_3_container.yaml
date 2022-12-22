@@ -6,14 +6,15 @@ arenas:
     items:
     - !Item
       name: Agent
+      id: agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 4}, !Vector3 {x: 20, y: 1, z: 36}, !Vector3 {x: 4, y: 1, z: 4},
 !Vector3 {x: 36, y: 1, z: 4}, !Vector3 {x: 4, y: 1, z: 36}, !Vector3 {x: 36, y: 1, z: 36}]
       rotations:
-      !ProcIf
-      value: agent.positions.0.z # you forgot agent id above
-      cases: [36]
-      then: [180]
+      - !ProcIf
+        value: agent.positions.0.z 
+        cases: [36]
+        then: [180]
 
 
     - !Item
