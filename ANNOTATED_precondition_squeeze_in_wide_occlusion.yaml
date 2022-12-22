@@ -12,7 +12,7 @@ arenas:
       name: Agent
       positions:
       - !Proclist [!Vector3 {x: 23, y: 0, z: 1}, !Vector3 {x: 23, y: 0, z: 7}, !Vector3 {x: 23, y: 0, z: 13}]
-      #rotations: [0]
+      rotations: [0]
      
     - !Item
       name: Wall
