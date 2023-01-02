@@ -13,12 +13,12 @@ arenas:
       name: Agent
       id: agent
       positions:
-      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 1, y: 0, z: 25}, !Vector3 {x: 39, y: 0, z: 25}, !Vector3 {x: 20, y: 0, z: 39}]
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 15}, !Vector3 {x: 1, y: 0, z: 25}, !Vector3 {x: 39, y: 0, z: 25}, !Vector3 {x: 20, y: 0, z: 39}]
       rotations:
       - !ProcIf
         variable: [agent.positions.0.x, agents.positions.0.z]
-        cases: [[20, 1], [1, 25], [39, 25], [20, 39]] 
-        then: [0, 90, 270, 180] 
+        cases: [[20, 1], [20, 15], [1, 25], [39, 25], [20, 39]] 
+        then: [0, 0, 90, 270, 180] 
 
     - !Item
       name: Cardbox1
