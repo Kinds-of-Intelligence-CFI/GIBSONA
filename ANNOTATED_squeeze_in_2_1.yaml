@@ -15,10 +15,9 @@ arenas:
       - !Proclist [!Vector3 {x: 20, y: 0.5, z: 1}, !Vector3 {x: 23, y: 0.5, z: 13}, !Vector3 {x: 17, y: 0.5, z: 13}, !Vector3 {x: 20, y: 0.5, z: 39}, !Vector3 {x: 23, y: 0.5, z: 27}, !Vector3 {x: 17, y: 0.5, z: 27}]
       rotations:
       - !ProcIf
-        value: agent.positions.0.z 
-        cases: [39, 27]
-        then: [180]
-        default: 0
+      value: agent.positions.0.z
+      cases: [1, 13, 27, 39]
+      then: [0, 0, 180, 180]
 
     - !Item
       name: Wall
