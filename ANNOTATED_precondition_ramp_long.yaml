@@ -14,9 +14,8 @@ arenas:
       name: Agent
       id: agent 
       positions:	
-      - [!Vector3 {x: 7.5, y: 0, z: 1}, !Vector3 {x: 7.5, y: 0, z: 7}, 
-        !Vector3 {x: 7.5, y: 0, z: 14}, !Vector3 {x: 1, y: 0, z: 39},
-        !Vector3 {x: 39, y: 0, z: 1}, !Vector3 {x: 39, y: 0, z: 39}]
+      - [!Vector3 {x: 7.5, y: 0, z: 1}, !Vector3 {x: 7.5, y: 0, z: 10}, 
+         !Vector3 {x: 1, y: 0, z: 39},!Vector3 {x: 39, y: 0, z: 1}, !Vector3 {x: 39, y: 0, z: 39}]
       rotations: 
       !ProcIf 
       variable: [agent.positions.0.x, agent.positions.0.z]                             
