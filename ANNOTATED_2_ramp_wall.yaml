@@ -25,8 +25,7 @@ arenas:
       id: Wall1
       positions:
       - !Proclist [!Vector3 {x: 10, y: 0, z: 30}, !Vector3 {x: 24, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 15}, !Vector3 {x: 24, y: 0, z: 15}]
-      rotations: 
-      - !Proclist [[90], [0]]
+      rotations: [90]
       colors: !ProcRepeatChoice
 	      amount: 1 
 	      value: !ProcColor 8
@@ -41,11 +40,7 @@ arenas:
         value: Wall1.positions.0.x, Wall1.positions.0.z
         cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
         then: [!Vector3 {x: 14, y: 0, z: 30}, !Vector3 {x: 28, y: 0, z: 30}, !Vector3 {x: 14, y: 0, z: 15}, !Vector3 {x: 28, y: 0, z: 15},]
-      rotations: 
-      - !ProcIf
-        value: Wall1.rotations
-        cases:  [[90], [0]]
-        then: [[90], [0]]
+      rotations: [90]
       colors: !ProcRepeatChoice
 	      amount: 1 
 	      value: !ProcColor 8
@@ -61,14 +56,11 @@ arenas:
       id: Wall3
       positions:
       - !ProcIf 
-        value: Wall1.positions.0.x, Wall1.positions.0.z
+        value: Wall1.positions.0.x, Wall1.posit
+	ions.0.z
         cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
         then: [!Vector3 {x: 12, y: 3.5, z: 30}, !Vector3 {x: 16, y: 3.5, z: 30},!Vector3 {x: 12, y: 3.5, z: 15},!Vector3 {x: 16, y: 3.5, z: 15},]
-      rotations:
-       - !ProcIf
-        value: Wall1.rotations
-        cases:  [[90], [0]]
-        then: [[90], [0]]
+      rotations: [90]
       colors: !ProcRepeatChoice
 	      amount: 1 
 	      value: !ProcColor 8
@@ -86,10 +78,7 @@ arenas:
         value: Wall1.positions.0.x, Wall1.positions.0.z
         cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
         then: [!Vector3 {x: 12, y: 1.5, z: 22}, !Vector3 {x: 26, y: 1.5, z: 22}, !Vector3 {x: 12, y: 1.5, z: 7}, !Vector3 {x: 26, y: 1.5, z: 7}]
-       - !ProcIf
-        value: Wall1.rotations
-        cases:  [[90], [0]]
-        then: [[90], [0]]
+      rotations: [90]
       colors: !ProcRepeatChoice
 	      amount: 1 
 	      value: !ProcColor 8
@@ -107,11 +96,7 @@ arenas:
         value: Wall4.positions.0.x, Wall4.positions.0.z
         cases: [[12,22], [26,22], [12,7], [26,7]]
         then: [!Vector3 {x: 12, y: 0, z: 22}, !Vector3 {x: 26, y: 1.5, z: 22}, !Vector3 {x: 12, y: 1.5, z: 7}, !Vector3 {x: 26, y: 1.5, z: 7}]
-      positions: 
-       - !ProcIf
-        value: Wall1.rotations
-        cases:  [[0], [90]]
-        then: [[0], [90]]
+      rotations: [0]
       colors: 
       - !RGB {r: 0, g: 0, b: 255}
       sizes:
