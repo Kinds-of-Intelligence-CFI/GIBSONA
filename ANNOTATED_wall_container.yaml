@@ -76,7 +76,9 @@ arenas:
       sizes:
       - !Vector3 {x: 6, y: 1, z: 5}
       colors: 
-      - !RGB {r: 255, g: 0, b: 0}
+      - !ProcColor 8
+      
+    
     - !Item
       name: Wall
       id: Wall4
@@ -89,7 +91,7 @@ arenas:
       sizes:
       - !Vector3 {x: 6, y: 0.1, z: 5}
       colors: 
-      - !RGB {r: 255, g: 0, b: 0}
+      - !ProcColor 8
 
 
     - !Item
@@ -114,9 +116,7 @@ arenas:
       rotations: [180]
       sizes:
       - !Vector3 {x: 5, y: 0.9, z: 1}
-
-
-
+      
 
     - !Item
       name: GoodGoal
