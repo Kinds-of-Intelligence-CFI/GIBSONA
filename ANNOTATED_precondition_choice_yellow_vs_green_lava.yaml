@@ -32,10 +32,6 @@ arenas:
       - !Vector3 {x: 21, y: 0, z: 0.5}
       - !Vector3 {x: 20, y: 0, z: 2.5}
       rotations: [90, 90, 0]
-      colors: 
-      - !RGB {r: 0, g: 0, b: 255}
-      - !RGB {r: 0, g: 0, b: 255}
-      - !RGB {r: 0, g: 0, b: 255}
       sizes:
       - !Vector3 {x: 1, y: 1.5, z: 1}
       - !Vector3 {x: 1, y: 1.5, z: 1}
