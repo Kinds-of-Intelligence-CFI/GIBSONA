@@ -12,7 +12,8 @@ arenas:
       name: Agent
       positions:
       - !Proclist [!Vector3 {x: 23, y: 0, z: 1}, !Vector3 {x: 23, y: 0, z: 7}, !Vector3 {x: 23, y: 0, z: 13}]
-      rotations: [0]
+      rotations: [0] # WHEN ALL AGENT LOCATIONS HAVE THE SAME ORIENTATION, CAN WE JUST WRITE IT LIKE THIS OR DO WE NEED AN IF STATEMENT 
+      # WHERE WE'D SAY THAT FOR ALL THREE LOCATIONS ROTATION IS 0? 
      
     - !Item
       name: Wall
