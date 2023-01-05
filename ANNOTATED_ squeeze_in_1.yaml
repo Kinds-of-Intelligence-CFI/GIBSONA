@@ -32,7 +32,7 @@ arenas:
 	      amount: 1
 	      value: !ProcColor 8
       sizes:
-      - !Vector3 {x: 8, y: 0.5, z: 40}
+      - !Vector3 {x: 8, y: 1, z: 40}
     - !Item
       name: Wall
       positions:
