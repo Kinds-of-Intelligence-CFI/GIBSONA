@@ -32,63 +32,34 @@ arenas:
       sizes:
       - !ProcList [!Vector3 {x: 1, y: 0, z: 20}, {x: 2.5, y: 0, z: 20}, {x: 4, y: 0, z: 20}]
       rotations: [0]
-
    
-    # small wall 1
+
     - !Item
       name: Wall
       positions:
       - !Vector3 {x: 11, y: 0, z: 38}
       - !Vector3 {x: 6.5, y: 0, z: 38}
       - !Vector3 {x: 2, y: 0, z: 38}
-      - !Vector3 {x: 15.5, y: 0, z: 38}
-      sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
+      - !Vector3 {x: 15.5, y: 0, z: 38}   
+      sizes: !ProcRepeatChoice
+        amount: 4 
+        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
       colors: 
       - !ProcColor 8
       rotations: [0]
 
-
-
-
-
-
-    # cardbox 1
     - !Item
       name: Cardbox1
       positions:
       - !Vector3 {x: 38, y: 0, z: 38}
-      sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      rotations: [0]
-
-    # cardbox 2
-    - !Item
-      name: Cardbox1
-      positions:
       - !Vector3 {x: 33.5, y: 0, z: 38}
-      sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      rotations: [0]
-
-    # cardbox 3
-    - !Item
-      name: Cardbox1
-      positions:
       - !Vector3 {x: 29, y: 0, z: 38}
-      sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      rotations: [0]
-
-    # cardbox 4
-    - !Item
-      name: Cardbox1
-      positions:
       - !Vector3 {x: 24.5, y: 0, z: 38}
       sizes:
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
       rotations: [0]
 
+ 
     - !Item
       name: GoodGoal
       positions:
