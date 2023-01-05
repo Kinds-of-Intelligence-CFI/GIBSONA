@@ -1,0 +1,39 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 
+    - !ProcIf
+      value: GoodGoal.sizes.0.x
+      cases: [1, 3, 5]
+      then: [0, 2, 4]
+    t: 250
+
+
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 13, y: 0, z: 7}, !Vector3 {x: 35, y: 0, z: 7}, !Vector3 {x: 20, y: 0, z: 13}]
+      rotations: [0]
+    
+    - !Item
+      name: DeathZone
+      positions:
+      - !Vector3 {x: 24, y: 0, z: 17}
+      rotations: [0]
+      sizes:
+      - !ProcList [!Vector3 {x: 25, y: 1, z: 1}, !Vector3 {x: 25, y: 1, z: 3}, !Vector3 {x: 25, y: 5, z: 5}]
+
+     - !Item
+      id: GoodGoal 
+      name: GoodGoal
+      positions:
+      - !Vector3 {x: 6, y: 0, z: 17}          
+      sizes:
+      - !ProcVector3Scaled
+        scales: [1, 3, 5]
+
+
+
+
+

@@ -1,0 +1,39 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 
+    - !ProcIf
+      value: GoodGoal.sizes.0.x
+      cases: [3, 4, 5]
+      then: [2, 3, 4]
+    t: 250
+
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !Vector3 { x: !ProcList [1, 20, 39], y: 0, z: 1}
+      rotations: [0]
+    
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 17}
+      rotations: [0]
+      colors: 
+      - !ProcColor 8
+      sizes:
+      - !Vector3 {x: 30, y: 2, z: 2.5}
+
+    - !Item
+      name: GoodGoal
+      positions:
+      - !Vector3 { x: !ProcList [10, 20, 30], y: 0, z: !ProcList [4, 9, 13]}    
+       sizes:
+      - !ProcVector3Scaled
+        scales: [3, 4, 5]
+
+
+
+
+
