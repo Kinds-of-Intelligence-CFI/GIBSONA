@@ -44,11 +44,15 @@ arenas:
       - !Vector3 {x: 33.5, y: 0, z: 20}
       - !Vector3 {x: 38, y: 0, z: 20} 
       - !Vector3 {x: 24.5, y: 0, z: 20}
-      sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
+      sizes: !ProcRepeatChoice
+        amount: 4 
+        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
+# I CHANGED THE ANNOTATION AS YOU SUGGESTED BELOW. SO THIS IS OK NOW? 
+
+      #- !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
+      #- !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
+      #- !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
+      #- !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
 
 # ARE THESE WALLS NOW GOING TO CHANGE SIMULTANEOUSLY, AS IN ONE YAML FILE ALL WALLS SAME XYZ, ANOTHER FILE A DIFFERENT XYZ COMBO? 
 # Wout: No, all segments of the wall will change independently. If you want them to change at the same time, use !ProcRepeatChoice.
