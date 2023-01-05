@@ -3,7 +3,7 @@ arenas:
   0: !Arena
     pass_mark: 
     -!ProcIf 
-     value: GoodGoal.sizes.0.x,
+     value: GoodGoal.sizes.0.x
      cases: [3, 4, 5]
      then: [2, 3, 4]
     t: 400
@@ -39,44 +39,16 @@ arenas:
       name: Wall
       positions:
       - !Vector3 {x: 11, y: 0, z: 38}
-      sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      colors: 
-      - !ProcColor 8
-      rotations: [0]
-
-    # small wall 2
-    - !Item
-      name: Wall
-      positions:
       - !Vector3 {x: 6.5, y: 0, z: 38}
-      sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      colors: 
-      - !ProcColor 8
-      rotations: [0]
-
-    # small wall 3
-    - !Item
-      name: Wall
-      positions:
       - !Vector3 {x: 2, y: 0, z: 38}
-      sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      colors: 
-      - !ProcColor 8
-      rotations: [0]
-
-    # small wall 4
-    - !Item
-      name: Wall
-      positions:
       - !Vector3 {x: 15.5, y: 0, z: 38}
       sizes:
       - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
       colors: 
       - !ProcColor 8
       rotations: [0]
+
+
 
 
 
