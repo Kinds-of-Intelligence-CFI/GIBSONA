@@ -87,7 +87,7 @@ arenas:
       colors: 
       - !ProcColor 8  
       sizes:
-      - !Vector3 {x: 14, y: 0.5, z: 40}
+      - !Vector3 {x: 14, y: 0.1, z: 40}
 
     - !Item
       name: Wall
