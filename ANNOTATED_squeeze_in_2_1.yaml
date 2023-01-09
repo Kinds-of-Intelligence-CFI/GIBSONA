@@ -16,9 +16,9 @@ arenas:
         !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 23, y:1, z: 27}, !Vector3 {x: 17, y: 1, z: 27}]
       rotations:
       - !ProcIf
-      value: agent.positions.0.z
-      cases: [1, 13, 27, 39]
-      then: [0, 0, 180, 180]
+      	value: agent.positions.0.z
+      	cases: [1, 13, 27, 39]
+      	then: [0, 0, 180, 180]
 
     - !Item
       name: Wall
@@ -26,8 +26,8 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 20}
       rotations: [0]
       colors: !ProcRepeatChoice
-	      amount: 1
-	      value: !ProcColor 8
+      	amount: 1
+	value: !ProcColor 8
       sizes:
       - !Vector3 {x: 8, y: 1, z: 40}
     - !Item
@@ -49,8 +49,8 @@ arenas:
       - !Vector3 {x: 2.5, y: 1, z: 2.5}
       - !Vector3 {x: 2.5, y: 1, z: 2.5}
       colors: !ProcRepeatChoice
-	      amount: 7
-	      value: !ProcColor 8
+      	amount: 7
+        value: !ProcColor 8
       rotations: [90, 90, 90, 90, 90, 90, 90]
 
     - !Item
@@ -72,8 +72,8 @@ arenas:
       - !Vector3 {x: 2.5, y: 0.8, z: 2.5}
       - !Vector3 {x: 2.5, y: 0.8, z: 2.5}
       colors: !ProcRepeatChoice
-	      amount: 7
-	      value: !ProcColor 8    
+      	amount: 7
+	value: !ProcColor 8    
       rotations: [90, 90, 90, 90, 90, 90, 90]
     - !Item
       name: GoodGoal
@@ -81,8 +81,9 @@ arenas:
       positions:
       - !Vector3 {x: 3.5, y: 0, z: 19}       
       sizes:
-       - !ProcVector3Scaled
-      scales: [1.5, 2.5, 3.5]
+      - !ProcVector3Scaled
+      	scales: [1.5, 2.5, 3.5]
+      
    - !Item
       name: GoodGoal
       id: GoodGoal
@@ -95,6 +96,6 @@ arenas:
         then: [2.5]
         else:
         - !ProcVector3Scaled
-        scales: [1.5, 2.5, 3.5]
+          scales: [1.5, 2.5, 3.5]
 
 
