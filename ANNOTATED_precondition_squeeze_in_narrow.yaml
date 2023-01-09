@@ -20,8 +20,8 @@ arenas:
       - !Vector3 {x: 15.5, y: 0, z: 20}
       - !Vector3 {x: 36, y: 0, z: 20}
       colors: !ProcRepeatChoice
-	      amount: 2
-	      value: !ProcColor 8
+	amount: 2
+	value: !ProcColor 8
       sizes:
       - !Vector3 {x: 31, y: 0.6, z: 1}
       - !Vector3 {x: 8, y: 0.6, z: 1}
@@ -34,7 +34,7 @@ arenas:
       - !Proclist [!Vector3 {x: 31, y: 0, z: 36}, !Vector3 {x: 31, y: 0, z: 31}, !Vector3 {x: 31, y: 0, z: 26}]
       sizes:
       - !ProcVector3Scaled
-      scales: [3, 4, 5]    
+      	scales: [3, 4, 5]    
 
 
 
