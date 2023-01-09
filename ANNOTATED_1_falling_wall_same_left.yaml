@@ -5,11 +5,11 @@ arenas:
     - !ProcIf
       value: GoodGoal.sizes.0.x 
       cases: [1, 1.8, 2.8]
-      then: [0.8, 1.8]
+      then: [0, 0.8, 1.8]
     t: 250
 
 
-    items::
+    items:
     - !Item
       name: Agent
       id: agent
@@ -35,8 +35,8 @@ arenas:
       - !Vector3 {x: 5, y: 0, z: 21}
       rotations: [270, 90]
       colors: !ProcRepeatChoice
-         amount: 2 
-         value: !ProcColor 8         
+        amount: 2 
+        value: !ProcColor 8         
       sizes:
       - !Vector3 {x: 0.1, y: 0.1, z: 0.1}
       - !Vector3 {x: 0.1, y: 0.1, z: 0.1}
@@ -48,8 +48,8 @@ arenas:
       - !Vector3 {x: 5, y: .1, z: 21}
       rotations: [0,0]
       colors: !ProcRepeatChoice
-         amount: 2 
-         value: !ProcColor 8  
+        amount: 2 
+        value: !ProcColor 8  
       sizes:
       - !Vector3 {x: 0.6, y: 13, z: 1.5}
       - !Vector3 {x: 0.6, y: 13, z: 1.5}
@@ -96,8 +96,8 @@ arenas:
       - !Vector3 {x: 15, y: 0, z: 22.5}
       rotations: [90, 90]
       colors: !ProcRepeatChoice
-         amount: 2 
-         value: !ProcColor 8  
+        amount: 2 
+        value: !ProcColor 8  
       sizes:
       - !Vector3 {x: 1, y: 0.4, z: 6}
       - !Vector3 {x: 6.3, y: 0.4, z: 6}
