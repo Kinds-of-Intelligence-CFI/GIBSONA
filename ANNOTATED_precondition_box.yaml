@@ -5,7 +5,7 @@ arenas:
     - !ProcIf
       value: GoodGoal.sizes.0.x
       cases: [3.5, 4.2, 4.9]
-      then: [2.5, 4.2, 4.9]
+      then: [2.5, 3.2, 3.9]
     t: 400
     
     items:
@@ -27,16 +27,9 @@ arenas:
       - !Vector3 {x: 29, y: 0, z: 20}
       - !Vector3 {x: 33.5, y: 0, z: 20}
       - !Vector3 {x: 38, y: 0, z: 20}
-      sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
+      sizes: !ProcRepeatChoice
+        amount: 9
+        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
       rotations: [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     - !Item
