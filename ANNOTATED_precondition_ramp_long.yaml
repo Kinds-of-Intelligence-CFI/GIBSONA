@@ -6,7 +6,6 @@ arenas:
       value: GoodGoal.sizes.0.x
       cases: [1, 2.5, 4]
       then: [0, 1.5, 3]
-      default: 0 
     t: 250
 
     items:
@@ -17,10 +16,10 @@ arenas:
       - [!Vector3 {x: 7.5, y: 0, z: 1}, !Vector3 {x: 7.5, y: 0, z: 10}, 
          !Vector3 {x: 1, y: 0, z: 39},!Vector3 {x: 39, y: 0, z: 1}, !Vector3 {x: 39, y: 0, z: 39}]
       rotations: 
-      !ProcIf 
-      variable: [agent.positions.0.x, agent.positions.0.z]                             
-      cases: [[7.5, 1], [7.5, 10], [1, 39], [39, 1], [39, 39]]
-      then: [0, 0, 180, 0, 180]
+      - !ProcIf 
+        variable: [agent.positions.0.x, agent.positions.0.z]                             
+        cases: [[7.5, 1], [7.5, 10], [1, 39], [39, 1], [39, 39]]
+        then: [0, 0, 180, 0, 180]
 
 
     - !Item
