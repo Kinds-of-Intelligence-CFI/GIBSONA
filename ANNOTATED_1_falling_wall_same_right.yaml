@@ -34,8 +34,8 @@ arenas:
       - !Vector3 {x: 35, y: 0, z: 21}
       rotations: [90, 270]
       colors: !ProcRepeatChoice
-         amount: 2 
-         value: !ProcColor 8        
+        amount: 2 
+        value: !ProcColor 8        
       sizes:
       - !Vector3 {x: 0.1, y: 0.1, z: 0.1}
       - !Vector3 {x: 0.1, y: 0.1, z: 0.1}
@@ -48,8 +48,8 @@ arenas:
       - !Vector3 {x: 35, y: .1, z: 21}
       rotations: [0,0]
       colors: !ProcRepeatChoice
-         amount: 2 
-         value: !ProcColor 8  
+        amount: 2 
+        value: !ProcColor 8  
       sizes:
       - !Vector3 {x: 0.6, y: 13, z: 1.5}
       - !Vector3 {x: 0.6, y: 13, z: 1.5}
@@ -61,9 +61,8 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         scales: [1, 1.8, 2.8]
-
-
-
+        
+        
     - !Item
       name: SignPosterboard
       positions:
@@ -97,8 +96,8 @@ arenas:
       - !Vector3 {x: 25, y: 0, z: 22.5}
       rotations: [90, 90]
       colors: !ProcRepeatChoice
-         amount: 2 
-         value: !ProcColor 8  
+        amount: 2 
+        value: !ProcColor 8  
       sizes:
       - !Vector3 {x: 1, y: 0.4, z: 6}
       - !Vector3 {x: 6.3, y: 0.4, z: 6}
