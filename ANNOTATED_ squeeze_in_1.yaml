@@ -16,9 +16,9 @@ arenas:
         !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 23, y: 1, z: 27}, !Vector3 {x: 17, y: 1, z: 27}]
       rotations:
       - !ProcIf
-      value: agent.positions.0.z
-      cases: [1, 13, 27, 29]
-      then: [0, 180]
+      	value: agent.positions.0.z
+      	cases: [1, 13, 27, 29]
+      	then: [0, 180]
 
 
     - !Item
@@ -27,8 +27,8 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 20}
       rotations: [0]
       colors: !ProcRepeatChoice
-	      amount: 1
-	      value: !ProcColor 8
+      	amount: 1
+	value: !ProcColor 8
       sizes:
       - !Vector3 {x: 8, y: 1, z: 40}
     - !Item
@@ -50,8 +50,8 @@ arenas:
       - !Vector3 {x: 2.5, y: 1, z: 2.5}
       - !Vector3 {x: 2.5, y: 1, z: 2.5}
       colors: !ProcRepeatChoice
-	      amount: 7
-	      value: !ProcColor 8   
+      	amount: 7
+	value: !ProcColor 8   
       rotations: [90, 90, 90, 90, 90, 90, 90]
 
     - !Item
@@ -70,13 +70,13 @@ arenas:
       - !Vector3 {x: 36.5, y: 0, z: 19}     
       sizes:
       - !Procif
-      value: GoodGoal1.sizes.0.x # IS IT NECESSARY TO WRITE DOWN THIS CONDITION? WILL WE NOT AUTOMATICALLY GENERATE A SITUATION 
+      	value: GoodGoal1.sizes.0.x # IS IT NECESSARY TO WRITE DOWN THIS CONDITION? WILL WE NOT AUTOMATICALLY GENERATE A SITUATION 
       # WHEN BOTH REWARDS ARE 2.5 IF BOTH REWARDS ARE VARRIED INDEPENDENTLY? 
-      cases: [2.5]
-      then: [2.5]
-      else:
-      - !ProcVector3Scaled
-      scales: [1.5, 2.5, 3.5]
+      	cases: [2.5]
+      	then: [2.5]
+      	else:
+      	- !ProcVector3Scaled
+      	scales: [1.5, 2.5, 3.5]
 	
   
 
