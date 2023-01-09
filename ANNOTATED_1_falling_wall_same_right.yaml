@@ -14,7 +14,7 @@ arenas:
       name: Agent
       id: agent
       positions:	
-      - !ProcList [!Vector3 {x: 20, y: 0.5, z: 1}, !Vector3 {x: 1, y: 0.5, z: 5}, !Vector3 {x: 39, y: 0.5, z: 5}, !Vector3 {x: 20, y: 0.5, z: 10}] 
+      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 1, y: 1, z: 5}, !Vector3 {x: 39, y: 1, z: 5}, !Vector3 {x: 20, y: 1, z: 10}] 
       rotations: [0]
 
 
@@ -88,7 +88,7 @@ arenas:
       colors: 
       - !ProcColor 8  
       sizes:
-      - !Vector3 {x: 14, y: 0.5, z: 40}
+      - !Vector3 {x: 14, y: 1, z: 40}
 
     - !Item
       name: Wall
