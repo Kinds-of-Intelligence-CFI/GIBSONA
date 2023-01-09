@@ -12,7 +12,7 @@ arenas:
     - !Item
       name: Agent
       positions:	
-      - !Vector3 { x: !ProcList [1, 20, 39], y: 1, z: !ProcList [1, 4]}
+      - !Vector3 {x: !ProcList [1, 20, 39], y: 1, z: !ProcList [1, 4]}
       rotations: [0]
 
 
@@ -35,10 +35,9 @@ arenas:
       - !Vector3 {x: 13.3, y: 0, z: 12}
       - !Vector3 {x: 26.6, y: 0, z: 12}
       rotations: [0, 0]
-      sizes:
-      - !Vector3 {x: !ProcList [0.5, 1.5, 3], y: !ProcList [0, 1], z: 16}
-      - !Vector3 {x: !ProcList [0.5, 1.5, 3], y: !ProcList [0, 1], z: 16}
-
+      sizes: !ProcRepeatChoice
+        amount: 2
+        value: !Vector3 {x: !ProcList [0.5, 1.5, 3], y: !ProcList [0, 1], z: 16}
 
     - !Item
       id: ramp 
@@ -56,12 +55,9 @@ arenas:
         amount: 3
         value: !ProcColor 8 
       sizes:
-      !ProcIf 
-      variable: 
       - !Vector3 {x: !ProcList [1, 2, 3, 4], y: 2, z: 2} 
       - !Vector3 {x: !ProcList [1, 2, 3, 4], y: !ProcList [1, 2, 3, 4], z: !ProcList [1, 2, 3, 4]} 
       - !Vector3 {x: !ProcList [1, 2, 3, 4], y: !ProcList [1, 2, 3, 4], z: !ProcList [1, 2, 3, 4]} 
-
 
     - !Item
       name: GoodGoal
