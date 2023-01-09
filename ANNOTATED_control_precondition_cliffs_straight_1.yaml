@@ -5,7 +5,7 @@ arenas:
     - !ProcIf
       value: GoodGoal.sizes.0.x
       cases: [1, 2, 3]
-      then: [9, 1, 2]
+      then: [0, 1, 2]
     t: 250
     
     items:
@@ -15,6 +15,7 @@ arenas:
       positions:	
       - !ProcList [!Vector3 {x: 20, y: 0.1, z: 1}, !Vector3 {x: 20, y: 0.1, z: 8}, !Vector3 {x: 20, y: 0.1, z: 15}, 
           !Vector3 {x: 20, y: 0.1, z: 39}, !Vector3 {x: 20, y: 0.1, z: 32}, !Vector3 {x: 20, y: 0.1, z: 25}]
+      rotations: 
     - !ProcIf
       value: agent.positions.0.z
       cases: [!R [1, 15], !R [25, 39]]
