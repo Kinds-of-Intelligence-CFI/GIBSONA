@@ -3,7 +3,7 @@ arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf
-      value: GoodGoal.sizes.0.x,
+      value: GoodGoal.sizes.0.x
       cases: [4, 4.5, 5]
       then: [3, 3.5, 4]
       default: 0 
@@ -13,7 +13,7 @@ arenas:
     - !Item
       name: Agent
       positions:	
-      - !Vector3 {x: !ProcList [1, 20, 39], y: 0.1, z: !ProcList [1, 4]}
+      - !Vector3 {x: !ProcList [1, 20, 39], y: 1, z: !ProcList [1, 4]}
       rotations: [0]
 
     - !Item
@@ -27,7 +27,7 @@ arenas:
         value: !ProcColor 8 
       sizes:
       - !Vector3 {x: 3, y: 0.1, z: 40}
-      - !Vector3 {x: 4.5, y: 0.1, z: 40} 
+      - !Vector3 {x: 4.5, y: 1, z: 40} 
 
 
     - !Item
