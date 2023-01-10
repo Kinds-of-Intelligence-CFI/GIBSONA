@@ -32,7 +32,10 @@ arenas:
       name: GoodGoal
       id: GoodGoal
       positions:
-      - !Proclist [!Vector3 {x: 17, y: 0, z: 26}, !Vector3 {x: 10, y: 0, z: 26}, !Vector3 {x: 3, y: 0, z: 26}]
+      - !Proclist [!Vector3 {x: 17, y: 0, z: 26}, !Vector3 {x: 10, y: 0, z: 26}, !Vector3 {x: 3, y: 0, z: 26}, 
+                   !Vector3 {x: 36, y: 0, z: 26},
+                   !Vector3 {x: 17, y: 0, z: 35}, !Vector3 {x: 10, y: 0, z: 35}, !Vector3 {x: 3, y: 0, z: 35},
+		    !Vector3 {x: 36, y: 0, z: 35}]
       sizes:
       - !ProcVector3Scaled
       scales: [3, 4, 5]
