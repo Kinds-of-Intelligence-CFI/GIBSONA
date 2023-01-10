@@ -100,4 +100,4 @@ arenas:
          value: !ProcColor 8  
       sizes:
       - !Vector3 {x: 1, y: 0.4, z: 6}
-      - !Vector3 {x: 6.3, y: 0.4,
+      - !Vector3 {x: 6.3, y: 0.4, 6}
