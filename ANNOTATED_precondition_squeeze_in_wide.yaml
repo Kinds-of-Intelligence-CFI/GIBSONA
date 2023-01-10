@@ -19,12 +19,14 @@ arenas:
       positions:
       - !Vector3 {x: 10.5, y: 0, z: 20} # wall 1 position
       - !Vector3 {x: 36, y: 0, z: 20} # wall 2 position 
+  
+      
       colors: !ProcRepeatChoice
 	      amount: 2
 	      value: !ProcColor 8
       sizes:
-      - !Vector3 {x: 21, y: 0.6, z: 5} # wall 1 size
-      - !Vector3 {x: 8, y: 0.6, z: 5} # wall 2 size
+      - !Vector3 {x: 21, y: !ProcList [0.8, 1.5, 2.2], z: 5} 
+      - !Vector3 {x: 8, y: y: !ProcList [0.8, 1.5, 2.2], z: 5}
       rotations: [0, 0] 
 
     - !Item
