@@ -12,7 +12,7 @@ arenas:
     - !Item
       name: Agent
       positions:	
-      - !Vector3 { x: !ProcList [1, 20, 39], y: 0.1, z: !ProcList [1, 4]}
+      - !Vector3 { x: !ProcList [1, 20, 39], y: 1, z: !ProcList [1, 4]}
       rotations: [0]
 
 
@@ -27,7 +27,7 @@ arenas:
         value: !ProcColor 8 
       sizes:
       - !Vector3 {x: 3, y: 0.1, z: 40}
-      - !Vector3 {x: 4.5, y: 0.1, z: 40} 
+      - !Vector3 {x: 4.5, y: 1, z: 40} 
 
     - !Item
       name: DeathZone
