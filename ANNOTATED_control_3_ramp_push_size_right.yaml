@@ -6,7 +6,6 @@ arenas:
       value: GoodGoal.sizes.0.x
       cases: [4, 4.5, 5]
       then: [3, 3.5, 4]
-      default: 0 
     t: 600
 
     items:
@@ -31,8 +30,6 @@ arenas:
       positions:
       - !Vector3 {x: 20, y: 0, z: 10}
       rotations: [0]
-      colors: 
-      - !RGB {r: 0, g: 0, b: 255}
       sizes:
       - !Vector3 {x: !ProcList [0.5, 1.5, 3], y: !ProcList [0, 1], z: 16}
 
