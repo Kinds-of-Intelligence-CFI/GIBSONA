@@ -62,13 +62,13 @@ arenas:
       name: GoodGoal
       id: GoodGoal
       positions:
-      - !Vector3 {x: 4, y: 0, z: 16} 
+      - !Vector3 {x: 4, y: 0.8, z: 20} 
       - !Vector3 {x: 36, y: 4, z: 20}
-
-      sizes: !ProcRestrictCombinations # I WANT FOR BOT REWARDS TO CHANGE INDEPENDENT OF EACH OTHER. HOW *EXACTLY* DO I DO THIS?
-        amount: 2
-        item: !ProcVector3Scaled
-        scales: [1, 2.5, 4]
+      sizes: # SAME QUESTION AGAIN 
+      - !ProcVector3Scaled
+      scales: [1, 2.5, 4]
+      - !ProcVector3Scaled
+      scales: [1, 2.5, 4]
 
 
 
