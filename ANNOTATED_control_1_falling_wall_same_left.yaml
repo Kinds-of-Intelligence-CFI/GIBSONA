@@ -5,7 +5,7 @@ arenas:
     - !ProcIf
       value: GoodGoal.sizes.0.x 
       cases: [1, 1.8, 2.8]
-      then: [0.8, 1.8]
+      then: [0, 0.8, 1.8]
     t: 250
 
 
