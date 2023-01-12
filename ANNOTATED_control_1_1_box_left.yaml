@@ -5,8 +5,8 @@ arenas:
     pass_mark: 
     - !ProcIf
       value: GoodGoal.sizes.0.x
-      cases: [2, 3, 4]
-      then: [1, 2, 3]
+      cases: [3, 4, 5]
+      then: [2, 3, 4]
     t: 400
     items:
     - !Item
