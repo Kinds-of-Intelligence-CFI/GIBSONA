@@ -12,13 +12,13 @@ arenas:
     - !Item
       name: Agent
       positions:
-      - !Vector3 { x: !ProcList [1, 20, 39], y: 0, z: 1}
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 13, y: 0, z: 7}, !Vector3 {x: 35, y: 0, z: 7}, !Vector3 {x: 20, y: 0, z: 13}]
       rotations: [0]
     
     - !Item
       name: Wall
       positions:
-      - !Vector3 {x: 20, y: 0, z: 17}
+      - !Vector3 {x: 20, y: 0, z: 37}
       rotations: [0]
       colors: 
       - !ProcColor 8
@@ -28,12 +28,9 @@ arenas:
     - !Item
       name: GoodGoal
       positions:
-      - !Vector3 { x: !ProcList [10, 20, 30], y: 0, z: !ProcList [4, 9, 13]}    
+      - !Vector3 {x: !ProcList[10, 20, 30] , y: 0, z: !ProcList [20, 26, 33]}    
        sizes:
       - !ProcVector3Scaled
         scales: [3, 4, 5]
-
-
-
-
-
+        
+  
