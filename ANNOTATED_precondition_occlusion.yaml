@@ -23,7 +23,7 @@ arenas:
       colors: 
       - !ProcColor 8
       sizes:
-      - !Vector3 {x: 30, y: 2, z: 2.5}
+      - !ProcList [!Vector3 {x: 30, y: 1, z: 1}, !Vector3 {x: 30, y: 1, z: 3}]
 
     - !Item
       id: GoodGoal
