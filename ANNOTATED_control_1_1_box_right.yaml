@@ -45,11 +45,12 @@ arenas:
         amount: 4 
         value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
       colors: 
-      - !ProcColor 8
+        amount: 4 
+        value: !ProcColor 8 
       rotations: [0]
 
     - !Item
-      name: Cardbox1
+      name: Cardbox
       positions:
       - !Vector3 {x: 38, y: 0, z: 38}
       - !Vector3 {x: 33.5, y: 0, z: 38}
