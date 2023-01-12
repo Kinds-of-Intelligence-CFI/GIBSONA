@@ -19,10 +19,10 @@ arenas:
     - !Item
       name: DeathZone
       positions:
-      - !Vector3 {x: 24, y: 0, z: 37}
+      - !Vector3 {x: 20, y: 0, z: 37}
       rotations: [0]
       sizes:
-      - !ProcList [!Vector3 {x: 25, y: 1, z: 1}, !Vector3 {x: 25, y: 1, z: 3}, !Vector3 {x: 25, y: 5, z: 5}]
+      - !ProcList [!Vector3 {x: 30, y: 1, z: 1}, !Vector3 {x: 30, y: 1, z: 3}]
 
      - !Item
       id: GoodGoal 
