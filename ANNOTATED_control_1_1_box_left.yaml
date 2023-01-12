@@ -52,8 +52,9 @@ arenas:
       sizes: !ProcRepeatChoice
         amount: 4 
         value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      colors: 
-      - !ProcColor 8
+      colors: !ProcRepeatChoice
+        amount: 4 
+        value: !ProcColor 8 
       rotations: [0]
 
 
