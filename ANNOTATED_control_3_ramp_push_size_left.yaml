@@ -55,7 +55,7 @@ arenas:
         scales: [4, 4.5, 5]
 
     - !Item
-      name: Cardbox2
+      name: Cardbox1
       positions:
       - !Vector3 {x: 5, y: 0, z: 15.5}
       rotations: [90]
@@ -72,7 +72,7 @@ arenas:
       - !Vector3 {x: !ProcList [1, 2, 3, 4], y: 2, z: 3} 
 
     - !Item
-      name: Cardbox2
+      name: Cardbox1
       positions:
       - !Vector3 {x: !ProcList [35, 25], y: 0, z: 15.5}
       rotations: [90] 
