@@ -13,7 +13,7 @@ arenas:
     - !Item
       name: Agent
       positions:
-      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 13, y: 0, z: 7}, !Vector3 {x: 35, y: 0, z: 7}, !Vector3 {x: 20, y: 0, z: 13}]
+      - !Vector3 {x: !ProcList [5, 20, 35], y: 0, z: [1, 7, 13]}
       rotations: [0]
     
     - !Item
