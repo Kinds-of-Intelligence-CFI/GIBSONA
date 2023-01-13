@@ -50,7 +50,7 @@ arenas:
 
 
     - !Item
-      name: Cardbox
+      name: Cardbox1
       positions:
       - !Vector3 {x: 29, y: 0, z: 20}
       - !Vector3 {x: 33.5, y: 0, z: 20}
