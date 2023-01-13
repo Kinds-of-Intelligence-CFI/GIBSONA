@@ -27,7 +27,7 @@ arenas:
 
   
     - !Item
-      name: Cardbox2
+      name: Cardbox1
       positions:
       - !Vector3 {x: 10, y: 0, z: 15.25}
       rotations: [90]
