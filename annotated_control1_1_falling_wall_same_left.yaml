@@ -5,7 +5,7 @@ arenas:
     - !ProcIf
       value: GoodGoal.sizes.0.x 
       cases: [1, 1.8, 2.8]
-      then: [0.8, 1.8]
+      then: [0, 0.8, 1.8]
     t: 250
 
 
@@ -100,7 +100,7 @@ arenas:
          value: !ProcColor 8  
       sizes:
       - !Vector3 {x: 1, y: 0.4, z: 6}
-      - !Vector3 {x: 6.3, y: 0.4, 6}
+      - !Vector3 {x: 6.3, y: 0.4, z: 6}
 
 
 
