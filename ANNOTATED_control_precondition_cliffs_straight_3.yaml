@@ -6,7 +6,7 @@ arenas:
     - !ProcIf
       value: GoodGoal.sizes.0.x
       cases: [1, 2, 3]
-      then: [9, 1, 2]
+      then: [0, 1, 2]
     t: 250
     
     items:
