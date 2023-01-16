@@ -3,11 +3,12 @@ arenas:
   0: !Arena
     pass_mark: 
     !ProcIf
-      value: [GoodGoalMulti.sizes.0, GoodGoalMulti.sizes.2, GoodGoal.sizes.0]
-      I WANT TO SAY WHEN GOODGOAL IS 1 THEN 0, WHEN 
-      2.5 THEN 1.5 AND WHEN 4 THEN 3. AND I WANT TO DO THIS ALSO FOR GOODGOALMULTI. IS THIS CORRECT WAY OF DOING IT? 
-      cases: [[1, 2.5, 4], [1, 2.5, 4], [1, 2.5, 4]]
-      then: [0, 1.5, 3]
+      value: [GoodGoalMulti.sizes.0, GoodGoal.sizes.0]
+      # goodgoal multi 0 and 2 are the same hence here I only need to write 0, however in the calculation below I keep in mind 0 and 2 
+      cases: [[1, 1], [1, 2.5], [1, 4], 
+             [2.5, 1], [2.5, 2.5], [2.5, 4], 
+             [4, 1], [4, 2.5], [4, 4]]
+      then: [2, 3.5, 5, 5, 6.5, 8, 8, 9.5, 11]
     t: 500
    
     
