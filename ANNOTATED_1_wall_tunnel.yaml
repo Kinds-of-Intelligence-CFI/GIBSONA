@@ -43,8 +43,8 @@ arenas:
 	  default: !Vector3 {x: 14, y: 0, z: 30} 
       rotations: [90]
       colors: !ProcRepeatChoice 
-	      amount: 1 
-	      value: !ProcColor 8
+      	amount: 1 
+	value: !ProcColor 8
       sizes:
       - !Proclist [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 1, y: 3, z: 1}, !Vector3 {x: 10, y: 3, z: 1}, !Vector3 {x: 10, y: 2, z: 1}]
 
@@ -60,8 +60,8 @@ arenas:
         default: !Vector3 {x: 12, y: 3.5, z: 30} 
       rotations: [90] 
       colors: !ProcRepeatChoice
-	      amount: 1 
-	      value: !ProcColor 8
+      	amount: 1 
+	value: !ProcColor 8
       sizes:
       - !Proclist [!Vector3 {x: 6, y: 1, z: 5}, !Vector3 {x: 1, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}]
 
