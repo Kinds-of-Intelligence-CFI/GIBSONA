@@ -68,10 +68,8 @@ arenas:
       name: GoodGoal
       id: GoodGoal 
       positions:
-      - !ProcList [!Vector3 {x: 38, y: 0, z: !ProcList [7, 20, 33]}, !Vector3 {x: 31, y: 0, z: 20}] # CAN I DO THIS?   
-      # ESENTIALLY I WANT 38-7, 38-20, 38-33 AND THEN I ALSO WANT THIS !Vector3 {x: 31, y: 0, z: 20}
-      - !Vector3 {x: 2, y: 0, z: 20}     
-      sizes: # SAME AGAIN, IS THIS THE CORRECT WAY TO ANNOTATE IF I WANT BOTH REWARDS TO CHANGE INDEPENDENTLY? 
+      - !ProcList [!Vector3 {x: 38, y: 0, z: 7}, !Vector3 {x: 38, y: 0, z: 20} , !Vector3 {x: 38, y:0, z: 33}, !Vector3 {x: 31, y: 0, z: 20}]
+      sizes:
       - !ProcVector3Scaled
         scales: [2, 3, 4]
       - !ProcVector3Scaled
