@@ -16,7 +16,7 @@ arenas:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 1, y: 1, z: 1}, 
           !Vector3 {x: 39, y: 1, z: 1}, !Vector3 {x: 1, y: 1, z: 39}, !Vector3 {x: 39, y: 1, z: 39}]
       rotations:
-       - !ProcIf
+      - !ProcIf
       value: agent.positions.0.z
       cases: [[1], [39]]
       then: [0, 180]
