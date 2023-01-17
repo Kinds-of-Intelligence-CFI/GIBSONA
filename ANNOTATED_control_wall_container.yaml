@@ -96,5 +96,5 @@ arenas:
       - !ProcList [!Vector3 {x: 26, y: 0, z: 30},!Vector3 {x: 12, y: 0, z: 15},!Vector3 {x: 26, y: 0, z: 15}]     
       sizes:
       - !ProcVector3Scaled
-      scales: [1, 2, 3, 4, 5]
+        scales: [1, 2, 3, 4, 5]
     
