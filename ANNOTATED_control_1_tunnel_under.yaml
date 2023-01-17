@@ -13,8 +13,8 @@ arenas:
       name: Agent
       id: agent
       positions:
-      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 1, y: 1, z: 1}, 
-          !Vector3 {x: 39, y: 1, z: 1}, !Vector3 {x: 1, y: 1, z: 39}, !Vector3 {x: 39, y: 1, z: 39}]
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 39}, !Vector3 {x: 1, y: 0, z: 1}, 
+          !Vector3 {x: 39, y: 0, z: 1}, !Vector3 {x: 1, y: 0, z: 39}, !Vector3 {x: 39, y: 0, z: 39}]
       rotations:
       - !ProcIf
       value: agent.positions.0.z
