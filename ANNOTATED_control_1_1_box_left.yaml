@@ -59,10 +59,10 @@ arenas:
     - !Item
       name: Cardbox1
       positions:
-      - !Vector3 {x: 2, y: 0, z: 28}
-      - !Vector3 {x: 6.5, y: 0, z: 28}
-      - !Vector3 {x: 11, y: 0, z: 28}
-      - !Vector3 {x: 15.5, y: 0, z: 28}
+      - !Vector3 {x: 2, y: 0, z: 38}
+      - !Vector3 {x: 6.5, y: 0, z: 38}
+      - !Vector3 {x: 11, y: 0, z: 38}
+      - !Vector3 {x: 15.5, y: 0, z: 38}
       sizes: !ProcRepeatChoice
         amount: 4 
         value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
@@ -73,7 +73,7 @@ arenas:
       name: GoodGoal
       id: GoodGoal
       positions:
-      - !ProcList [!Vector3 {x: 14, y: 0, z: 24}, {x: 3, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 24}]
+      - !ProcList [!Vector3 {x: 14, y: 0, z: 30}, {x: 3, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 34}]
       sizes:
       - !ProcVector3Scaled
         scales: [3, 4, 5] 
@@ -81,7 +81,7 @@ arenas:
     - !Item
       name: GoodGoal
       positions:
-      - !ProcList [!Vector3 {x: 26, y: 0, z: 24 }, {x: 37, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 24}]
+      - !ProcList [!Vector3 {x: 26, y: 0, z: 30}, {x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 34}]
       sizes:
       - !ProcVector3Scaled
         scales: [3, 4, 5]
