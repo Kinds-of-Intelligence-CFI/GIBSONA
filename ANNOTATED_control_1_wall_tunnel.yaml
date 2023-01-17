@@ -92,7 +92,7 @@ arenas:
     - !Item
       name: GoodGoal
       positions:
-      - !Vector3 {x: 20, y: 0, z: 24}
+      - !ProcList [!Vector3 {x: 5, y: 0, z: 24}, !Vector3 {x: 20, y: 0, z: 24}, !Vector3 {x: 35, y: 0, z: 24}]
       sizes:
       - !ProcVector3Scaled
         scales: [3, 4, 5]
