@@ -78,6 +78,7 @@ arenas:
       positions:
       - !ProcList [!Vector3 {x: 26, y: 0, z: 30},!Vector3 {x: 12, y: 0, z: 15},!Vector3 {x: 26, y: 0, z: 15}]     
       sizes:
-      - !Vector3 {x: 5, y: 5, z: 5}
+      - !ProcVector3Scaled
+      scales: [1, 2, 3, 4, 5]
 
     
