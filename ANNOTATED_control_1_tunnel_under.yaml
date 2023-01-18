@@ -38,7 +38,7 @@ arenas:
       positions:
        - !ProcIf
       value: tunnel.positions.0.x, tunnel.positions.0.z
-      cases: [11, 30], [29, 30], [11, 10], [29, 10]
+      cases: [[11, 30], [29, 30], [11, 10], [29, 10]]
       then: [!Vector3 {x: 17, y: 0, z: 32},!Vector3 {x: 23, y: 0, z: 32}, !Vector3 {x: 17, y: 0, z: 12}, !Vector3 {x: 23, y: 0, z: 12}]
       sizes:
       - !ProcVector3Scaled
