@@ -22,9 +22,8 @@ arenas:
       positions:
       - !ProcIf 
         value: DeathZone1.positions.0.x
-        condition: 27
-        then: !Vector3 {x: 11, y: 0, z: 30} 
-        else: !Vector3 {x: 29, y: 0, z: 30} 
+        cases: [27, 13]
+        then: [!Vector3 {x: 11, y: 0, z: 30}, !Vector3 {x: 29, y: 0, z: 30}]
       rotations: [0]
       colors:
       - !ProcColor 8
@@ -48,9 +47,8 @@ arenas:
       positions:
       - !ProcIf 
         value: DeathZone1.positions.0.x
-        condition: 27
-        then: !Vector3 {x: 4, y: 0, z: 30} 
-        else: !Vector3 {x: 36, y: 0, z: 30} 
+        cases: [27, 13]
+        then: [!Vector3 {x: 4, y: 0, z: 30}, !Vector3 {x: 36, y: 0, z: 30}]
       sizes: 
       - !ProcList [!Vector3 {x: 8, y: 1.5, z: 5}, !Vector3 {x: 8, y: 1.5, z: 1}, !Vector3 {x: 8, y: 1.5, z: 10}, !Vector3 {x: 8, y: 3, z: 5}, 
 !Vector3 {x: 8, y: 3, z: 1}, !Vector3 {x: 8, y: 0, z: 10}, !Vector3 {x: 8, y: 0, z: 5}, !Vector3 {x: 8, y: 0, z: 1}, !Vector3 {x: 8, y: 3, z: 10}]
