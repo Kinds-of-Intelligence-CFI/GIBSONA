@@ -69,11 +69,6 @@ arenas:
       positions:  
       - !Vector3 {x: 36.5, y: 0, z: 19}     
       sizes:
-      - !Procif
-      	value: GoodGoal.sizes.0.x 
-      	cases: [2.5]
-      	then: [2.5]
-      	else:
-      	- !ProcVector3Scaled
-          scales: [1.5, 2.5, 3.5]
+      - !ProcVector3Scaled
+        scales: [1.5, 2.5, 3.5]
 	
