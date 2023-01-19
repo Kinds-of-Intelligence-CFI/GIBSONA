@@ -11,7 +11,7 @@ arenas:
     - !Item
       name: Agent
       positions:
-      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, {x: 20, y: 1, z: 7}, {x: 20, y: 1, z: 13}]
+      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3{x: 20, y: 1, z: 7}, !Vector3{x: 20, y: 1, z: 13}]
       rotations: 
       - !ProcIf 
         variable: agent.positions.0.z                            
@@ -34,7 +34,7 @@ arenas:
       positions:
       - !Vector3 {x: 20, y: 0, z: 30}
       sizes:
-      - !ProcList [!Vector3 {x: 1, y: 0, z: 20}, {x: 2.5, y: 0, z: 20}, {x: 4, y: 0, z: 20}]
+      - !ProcList [!Vector3 {x: 1, y: 0, z: 20}, !Vector3{x: 2.5, y: 0, z: 20}, !Vector3{x: 4, y: 0, z: 20}]
       rotations: [0]
 
     - !Item
@@ -46,15 +46,7 @@ arenas:
       - !Vector3 {x: 24.5, y: 0, z: 20}
       sizes: !ProcRepeatChoice
         amount: 4 
-        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-# I CHANGED THE ANNOTATION AS YOU SUGGESTED BELOW. SO THIS IS OK NOW? 
-
-      #- !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      #- !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      #- !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-      #- !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
-# ARE THESE WALLS NOW GOING TO CHANGE SIMULTANEOUSLY, AS IN ONE YAML FILE ALL WALLS SAME XYZ, ANOTHER FILE A DIFFERENT XYZ COMBO? 
-# Wout: No, all segments of the wall will change independently. If you want them to change at the same time, use !ProcRepeatChoice.
+        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3{x: 4, y: 0.5, z: 2}]
       colors: !ProcRepeatChoice
         amount: 4 
         value: !ProcColor 8 
@@ -69,14 +61,14 @@ arenas:
       - !Vector3 {x: 15.5, y: 0, z: 20}
       sizes: !ProcRepeatChoice
         amount: 4 
-        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, {x: 4, y: 0.5, z: 2}]
+        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3{x: 4, y: 0.5, z: 2}]
       rotations: [0]
 
     - !Item
       name: GoodGoal
       id: GoodGoal
       positions:
-      - !ProcList [!Vector3 {x: 14, y: 0, z: 30}, {x: 3, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 37}]
+      - !ProcList [!Vector3 {x: 14, y: 0, z: 30}, !Vector3{x: 3, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 24}, !Vector3 {x: 10, y: 0, z: 37}]
       sizes:
       - !ProcVector3Scaled
         scales: [3, 4, 5]
@@ -84,7 +76,7 @@ arenas:
     - !Item
       name: GoodGoal
       positions:
-      - !ProcList [!Vector3 {x: 26, y: 0, z: 30}, {x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 37}]
+      - !ProcList [!Vector3 {x: 26, y: 0, z: 30}, !Vector3{x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 37}]
       sizes:
       - !ProcVector3Scaled
         scales: [3, 4, 5]
