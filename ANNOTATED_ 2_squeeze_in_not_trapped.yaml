@@ -69,14 +69,8 @@ arenas:
       positions:  
       - !Vector3 {x: 36.5, y: 0, z: 19}     
       sizes:
-      - !Procif
-      	value: GoodGoal1.sizes.0.x # IS IT NECESSARY TO WRITE DOWN THIS CONDITION? WILL WE NOT AUTOMATICALLY GENERATE A SITUATION 
-      # WHEN BOTH REWARDS ARE 2.5 IF BOTH REWARDS ARE VARRIED INDEPENDENTLY? 
-      	cases: [2.5]
-      	then: [2.5]
-      	else:
-      	- !ProcVector3Scaled
-          scales: [1.5, 2.5, 3.5]
+      - !ProcVector3Scaled
+      scales: [1.5, 2.5, 3.5]
 	
   
 
