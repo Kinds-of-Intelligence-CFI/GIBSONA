@@ -24,7 +24,7 @@ arenas:
 	amount: 2
 	value: !ProcColor 8
       sizes:
-      - Proclist [!Vector3 {x: 21, y: !ProcList [0.8, 1.5, 2.2], z: 5}, !Vector3 {x: 21, y: 1.5, z: 5}, !Vector3 {x: 21, y: 2.2, z: 5}]  
+      - !Proclist [!Vector3 {x: 21, y: 0.8, z: 5}, !Vector3 {x: 21, y: 1.5, z: 5}, !Vector3 {x: 21, y: 2.2, z: 5}]  
       rotations: [0, 0] 
 
     - !Item
