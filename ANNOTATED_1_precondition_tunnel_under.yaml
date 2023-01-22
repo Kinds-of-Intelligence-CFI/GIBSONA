@@ -4,8 +4,8 @@ arenas:
     pass_mark: 
     - !ProcIf
       value: GoodGoal.sizes.0.x
-      cases: [2, 3, 4]
-      then: [1, 2, 3]
+      cases: [1, 2, 3]
+      then: [0, 1, 2]
     t: 250
 
     items:
@@ -13,8 +13,8 @@ arenas:
       name: Agent
       id: agent
       positions:
-      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 1, y: 1, z: 1}, 
-          !Vector3 {x: 39, y: 1, z: 1}, !Vector3 {x: 1, y: 1, z: 39}, !Vector3 {x: 39, y: 1, z: 39}]
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 39}, !Vector3 {x: 1, y: 0, z: 1}, 
+          !Vector3 {x: 39, y: 0, z: 1}, !Vector3 {x: 1, y: 0, z: 39}, !Vector3 {x: 39, y: 0, z: 39}]
       rotations:
        - !ProcIf
       value: agent.positions.0.z
@@ -35,14 +35,15 @@ arenas:
 
     - !Item
       name: GoodGoal
+      id: Goodgoal
       positions:
       - !ProcIf
       value: tunnel.positions.0.x, tunnel.positions.0.z
-      cases: [[11, 30], [29], 30], [11, 10], [29, 10]]
+      cases: [[11, 30], [29, 30], [11, 10], [29, 10]]
       then: [!Vector3 {x: 11, y: 0, z: 30}, !Vector3 {x: 29, y: 0, z: 30}, !Vector3 {x: 11, y: 0, z: 10}, 
           !Vector3 {x: 29, y: 0, z: 10}]     
       sizes:
       - !ProcVector3Scaled
-        scales: [2, 3, 4]
+        scales: [1, 2, 3]
 
     
