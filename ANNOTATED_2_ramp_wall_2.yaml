@@ -74,9 +74,8 @@ arenas:
         cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
         then: [!Vector3 {x: 19, y: 1.5, z: 30}, !Vector3 {x: 19, y: 1.5, z: 30}, !Vector3 {x: 19, y: 1.5, z: 15}, !Vector3 {x: 19, y: 1.5, z: 15}]
       rotations: [0]
-      colors: !ProcRepeatChoice
-      	amount: 1 
-	value: !ProcColor 8
+      colors: 
+      - !ProcColor 8
       sizes:
       - !ProcIf 
         value: Wall1.sizes.0.x
@@ -89,13 +88,13 @@ arenas:
       positions:
       - !ProcIf 
         value: Wall4.positions.0.x, Wall4.positions.0.z
-        cases: [[12,22], [26,22], [12,7], [26,7]]
-        then: [!Vector3 {x: 19, y: 0, z: 30}, !Vector3 {x: 19, y: 1.5, z: 30}, !Vector3 {x: 19, y: 1.5, z: 15}, !Vector3 {x: 19, y: 1.5, z: 15}]
+        cases: [[19,30], [19,15]]
+        then: [!Vector3 {x: 19, y: 0, z: 30}, !Vector3 {x: 19, y: 1.5, z: 15}]
       rotations: 
       - !ProfIf 
         value: Wall4.positions.0.x, Wall4.positions.0.z
-        cases: [[12,22], [26,22], [12,7], [26,7]]
-        then: [270, 90, 270, 90]
+        cases: [[19,30], [19,15]]
+        then: [270, 90]
       colors: 
       - !ProcColor 8
       sizes:
