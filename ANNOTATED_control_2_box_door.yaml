@@ -42,13 +42,10 @@ arenas:
       colors: !ProcRepeatChoice
         amount: 6 
         value: !ProcColor 8
-      sizes:
-      - !ProcList [!Vector3 {x: 2.5, y: 0.5, z: 2}, !Vector3 {x: 2.5, y: 0.8, z: 2}, !Vector3 {x: 2.5, y: 1.1, z: 2}]
-      - !ProcList [!Vector3 {x: 2.5, y: 0.5, z: 2}, !Vector3 {x: 2.5, y: 0.8, z: 2}, !Vector3 {x: 2.5, y: 1.1, z: 2}]
-      - !ProcList [!Vector3 {x: 2.5, y: 0.5, z: 2}, !Vector3 {x: 2.5, y: 0.8, z: 2}, !Vector3 {x: 2.5, y: 1.1, z: 2}]
-      - !ProcList [!Vector3 {x: 2.5, y: 0.5, z: 2}, !Vector3 {x: 2.5, y: 0.8, z: 2}, !Vector3 {x: 2.5, y: 1.1, z: 2}]
-      - !ProcList [!Vector3 {x: 2.5, y: 0.5, z: 2}, !Vector3 {x: 2.5, y: 0.8, z: 2}, !Vector3 {x: 2.5, y: 1.1, z: 2}]
-      - !ProcList [!Vector3 {x: 2.5, y: 0.5, z: 2}, !Vector3 {x: 2.5, y: 0.8, z: 2}, !Vector3 {x: 2.5, y: 1.1, z: 2}]
+      sizes: !ProcRepeatChoice
+        amount: 6
+        value: !ProcList [!Vector3 {x: 2.5, y: 0.5, z: 2}, !Vector3 {x: 2.5, y: 0.8, z: 2}, !Vector3 {x: 2.5, y: 1.1, z: 2}]
+
 
     - !Item
       name: GoodGoal
