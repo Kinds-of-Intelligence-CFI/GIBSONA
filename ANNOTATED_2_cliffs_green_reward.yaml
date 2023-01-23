@@ -45,7 +45,7 @@ arenas:
       - !ProcVector3Scaled
         scales: [1, 2.5, 4]
       - !ProcVector3Scaled
-        scales: [0, 2.5, 4]
+        scales: [1, 2.5, 4]
 
     - !Item
       name: GoodGoal
