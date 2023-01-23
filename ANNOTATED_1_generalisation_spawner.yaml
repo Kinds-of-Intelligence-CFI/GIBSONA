@@ -16,9 +16,8 @@ arenas:
       rotations:
       - !ProcIf
         value: agent.positions.0.z
-        cases: [36]
-        then: [180]
-        default: 0
+        cases: [4, 36]
+        then: [0, 180]
 
     - !Item
       name: WallTransparent
