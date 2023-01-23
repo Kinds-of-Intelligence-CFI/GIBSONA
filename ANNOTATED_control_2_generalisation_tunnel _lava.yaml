@@ -17,17 +17,16 @@ arenas:
 
     - !Item
       name: Wall
-      id: Wall1 # Please make Id to id
+      id: Wall1
       positions:
       - !ProcIf
         value: DeathZone1.positions.0.x
         condition: 13
         then: {x: 22, y: 0, z: 30} 
         default: !Vector3 {x: 10, y: 0, z: 30} 
-      #rotations: [90]
-      colors: !ProcRepeatChoice
-      	amount: 1 
-	value: !ProcColor 8
+      rotations: [90]
+      colors: 
+      - !ProcColor 8
       sizes: 
       - !ProcList [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 1, y: 3, z: 1}, !Vector3 {x: 10, y: 3, z: 1}, !Vector3 {x: 10, y: 2, z: 1}]
 
@@ -42,9 +41,8 @@ arenas:
         then: !Vector3 {x: 26, y: 0, z: 30}
         default: !Vector3 {x: 14, y: 0, z: 30} 
       rotations: [90]
-      colors: !ProcRepeatChoice 
-      	amount: 1 
-	value: !ProcColor 8
+      colors: 
+      - !ProcColor 8
       sizes:
       - !Proclist [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 1, y: 3, z: 1}, !Vector3 {x: 10, y: 3, z: 1}, !Vector3 {x: 10, y: 2, z: 1}]
 
@@ -59,9 +57,8 @@ arenas:
         then: !Vector3 {x: 24, y: 3.5, z: 30} 
         default: !Vector3 {x: 12, y: 3.5, z: 30} 
       rotations: [90] 
-      colors: !ProcRepeatChoice
-      	amount: 1 
-	value: !ProcColor 8
+      colors: 
+      - !ProcColor 8
       sizes:
       - !Proclist [!Vector3 {x: 6, y: 1, z: 5}, !Vector3 {x: 1, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}]
 
@@ -74,7 +71,7 @@ arenas:
       sizes:
       - !ProcList [!Vector3 {x: 26, y: 1.5, z: 5}, !Vector3 {x: 26, y: 1.5, z: 1}, !Vector3 {x: 26, y: 1.5, z: 10}, !Vector3 {x: 26, y: 3, z: 5}, 
 !Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 0, z: 5}, !Vector3 {x: 26, y: 0, z: 1}, !Vector3 {x: 26, y: 3, z: 10}]
-      #rotations: [0]
+      rotations: [0]
     - !Item
       name: DeathZone
       id: Deathzone2
@@ -87,7 +84,7 @@ arenas:
       sizes:
       - ProcList [!Vector3 {x: 9, y: 1.5, z: 5}, !Vector3 {x: 9, y: 1.5, z: 1}, !Vector3 {x: 9, y: 1.5, z: 10}, !Vector3 {x: 9, y: 3, z: 5}, 
 !Vector3 {x: 9, y: 3, z: 1}, !Vector3 {x: 9, y: 0, z: 10}, !Vector3 {x: 9, y: 0, z: 5}, !Vector3 {x: 9, y: 0, z: 1}, !Vector3 {x: 9, y: 3, z: 10}]
-      #rotations: [0]
+      rotations: [0]
 
     - !Item
       name: GoodGoal
