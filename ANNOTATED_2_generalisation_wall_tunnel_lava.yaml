@@ -7,6 +7,7 @@ arenas:
       cases: [3,4,5]
       then: [2,3,4]
     t: 250
+    
     items:
     - !Item
       name: Agent
@@ -24,9 +25,8 @@ arenas:
         cases: [13, 27]
         then: [!Vector3 {x: 22, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 30}]
       rotations: [90]
-      colors: !ProcRepeatChoice
-	      amount: 1 
-	      value: !ProcColor 8
+      colors: 
+      - !ProcColor 8
       sizes: 
       - !ProcList [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 1, y: 3, z: 1}, !Vector3 {x: 10, y: 3, z: 1}, !Vector3 {x: 10, y: 2, z: 1}]
 
@@ -40,9 +40,8 @@ arenas:
 	  cases: [13, 27]
 	  then: [!Vector3 {x: 26, y: 0, z: 30}, !Vector3 {x: 14, y: 0, z: 30}]
       rotations: [90]
-      colors: !ProcRepeatChoice 
-      	amount: 1 
-	value: !ProcColor 8
+      colors: 
+      - !ProcColor 8
       sizes:
       - !Proclist [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 1, y: 3, z: 1}, !Vector3 {x: 10, y: 3, z: 1}, !Vector3 {x: 10, y: 2, z: 1}]
 
@@ -56,9 +55,8 @@ arenas:
         cases: [13, 27]
         then: [!Vector3 {x: 24, y: 3.5, z: 30}, !Vector3 {x: 12, y: 3.5, z: 30}]
       rotations: [90] 
-      colors: !ProcRepeatChoice
-      	amount: 1 
-	value: !ProcColor 8
+      colors: 
+      - !ProcColor 8
       sizes:
       - !Proclist [!Vector3 {x: 6, y: 1, z: 5}, !Vector3 {x: 1, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}]
 
