@@ -1,4 +1,30 @@
 !ArenaConfig
+
+proc_labels:
+- !ProcIf:
+  value: [agent.positions.0.z, GoodGoal.positions.0.z]
+  cases: [[1, 36], [1, 26], [1, 31], [7, 36], [7, 26], [7, 31], [13, 36], [13, 26], [13, 31]] 
+  then: # CAN I SKIP THIS IF I DON'T NEED IT? yes it can 
+  labels: [dis_far, dis_med, dis_far, dis_med, dis_close, dis_med, dis_med, dis_close, dis_close]
+# IF I WANTED TO ADD OCCLUSION LABELS FOR SAME CONTIDIONS, HOW COULD I DO THAT? SO I WANT TO PAIR EACH DISTANCE LABEL WITH OCCLUSION LABEL.
+- !ProcIfLabelled: 
+# here put other labels 
+
+OCCLUSION LABELS CONTINGENT ON GOODGOAL POSITION, AGENT POSITION, WALL SIZE AND GOODGOAL SIZE
+# WHAT ABOUT, UNLIKE THE CASE ABOVE, WHEN OCCLUSION LABELS DO NOT DEPEND ON SAME CONDITIONS AS DISTANCE LABELS? DO I CREATE A NEW PROCIF? 
+# THEN WHERE DO I ATTACH IT? 
+# AND IF THERE IS A BIG AMOUNT OF COMBINATIONS THAT WILL GET THE SAME LABEL CAN WE COMEHOW MAKE THIS SHORTER? 
+      - !ProcIf:
+        value: [agent.positions.0.z, GoodGoal.0.positions.z, GoodGoal.0.sizes.x]
+        cases: [[1, 36, 1], [1, 36, 2], [1, 36, 3],
+	        [1, 26, 1], [1, 26, 2], [1, 26, 3],
+		[1, 31, 1], [1, 31, 2], [1, 31, 3]
+		[7, 36, 1], [7, 36, 2], [7, 36, 3] # and so forth 
+		[7, 26], [7, 31], [13, 36], [13, 26], [13, 31]] 
+        labels: [occ_0, occ_1] # and so forth 
+
+
+
 arenas:
   0: !Arena
     pass_mark: 
@@ -37,30 +63,9 @@ arenas:
       scales: [2, 3, 4, 5]
       
       
-DISTANCE LABELS CONTINGENT ON GOODGOAL AND AGENT POSITION      
-      - !ProcIf:
-        value: [agent.positions.0.z, GoodGoal.positions.0.z]
-        cases: [[1, 36], [1, 26], [1, 31], [7, 36], [7, 26], [7, 31], [13, 36], [13, 26], [13, 31]] 
-        then: # CAN I SKIP THIS IF I DON'T NEED IT? 
-        labels: [dis_far, dis_med, dis_far, dis_med, dis_close, dis_med, dis_med, dis_close, dis_close]
-	
-# IF I WANTED TO ADD OCCLUSION LABELS FOR SAME CONTIDIONS, HOW COULD I DO THAT? SO I WANT TO PAIR EACH DISTANCE LABEL WITH OCCLUSION LABEL.
-# WHERE DOES THIS PROCIF GO IF I DO NOT HAVE AN EXISTENT PROCIF? 
 
 
 
-OCCLUSION LABELS CONTINGENT ON GOODGOAL POSITION, AGENT POSITION, WALL SIZE AND GOODGOAL SIZE
-# WHAT ABOUT, UNLIKE THE CASE ABOVE, WHEN OCCLUSION LABELS DO NOT DEPEND ON SAME CONDITIONS AS DISTANCE LABELS? DO I CREATE A NEW PROCIF? 
-# THEN WHERE DO I ATTACH IT? 
-# AND IF THERE IS A BIG AMOUNT OF COMBINATIONS THAT WILL GET THE SAME LABEL CAN WE COMEHOW MAKE THIS SHORTER? 
-      - !ProcIf:
-        value: [agent.positions.0.z, GoodGoal.0.positions.z, GoodGoal.0.sizes.x]
-        cases: [[1, 36, 1], [1, 36, 2], [1, 36, 3],
-	        [1, 26, 1], [1, 26, 2], [1, 26, 3],
-		[1, 31, 1], [1, 31, 2], [1, 31, 3]
-		[7, 36, 1], [7, 36, 2], [7, 36, 3] # and so forth 
-		[7, 26], [7, 31], [13, 36], [13, 26], [13, 31]] 
-        labels: [occ_0, occ_1] # and so forth 
 
 
 
