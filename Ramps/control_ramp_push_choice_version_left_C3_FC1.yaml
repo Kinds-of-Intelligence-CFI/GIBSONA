@@ -1,0 +1,89 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 
+    - !ProcIf
+      value: GoodGoal.sizes.0.x
+      cases: [4, 4.5, 5]
+      then: [3, 3.5, 4]
+    t: 600
+
+    items:
+    - !Item
+      name: Agent
+      positions:	
+      - !Vector3 {x: !ProcList [1, 20, 39], y: 1, z: !ProcList [1, 4]}
+      rotations: [0]
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 19}
+      rotations: [90]
+      colors: 
+      - !ProcColor 8
+      sizes:
+      - !Vector3 {x: 1, y: 0.1, z: 40}
+
+    - !Item
+      name: DeathZone
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 10}
+      rotations: [0]
+      colors: 
+      - !RGB {r: 0, g: 0, b: 255}
+      sizes:
+      - !Vector3 {x: !ProcList [0.5, 1.5, 3], y: !ProcList [0, 1], z: 16}
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 2.25}
+      rotations: [90]
+      colors: 
+      - !ProcColor 8
+      sizes:
+      - !Vector3 {x: 4.5, y: 0.1, z: 40}
+   
+    - !Item
+      name: GoodGoal
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 24}, !Vector3 {x: 4, y: 0, z: 30}, !Vector3 {x: 35, y: 0, z: 30}, 
+        !Vector3 {x: 20, y: 0, z: 36}] 
+      sizes:
+      - !ProcVector3Scaled
+        scales: [4, 4.5, 5]
+
+    - !Item
+      name: Cardbox1
+      positions:
+      - !Vector3 {x: 5, y: 0, z: 15.5}
+      rotations: [90]
+      sizes:
+      - !Vector3 {x: 5.8, y: 2, z: 4}
+    - !Item
+      name: Ramp
+      positions:
+      - !Vector3 {x: 15, y: 0, z: 11}
+      rotations: [180]
+      colors: 
+      - !ProcColor 8
+      sizes:
+      - !Vector3 {x: !ProcList [1, 2, 3, 4], y: 2, z: 3} 
+
+    - !Item
+      name: Cardbox1
+      positions:
+      - !Vector3 {x: !ProcList [35, 25], y: 0, z: 15.5}
+      rotations: [90] 
+      sizes:
+      - !Vector3 {x: 5.8, y: !ProcList [0.2, 1, 2.6], z: 4}
+    - !Item
+      name: Ramp
+      positions:
+      - !Vector3 {x: 25, y: 0, z: !ProcList [7, 11]}}
+      rotations: [180] 
+      colors: 
+      - !ProcColor 8
+      sizes:
+      - !Vector3 {x: !ProcList [1, 2, 3, 4], y: 2, z: 3} 
