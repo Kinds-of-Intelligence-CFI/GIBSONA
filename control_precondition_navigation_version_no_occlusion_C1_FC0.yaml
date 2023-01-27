@@ -49,7 +49,7 @@ arenas:
       name: GoodGoal
       id: GoodGoal
       positions:
-      - !Vector3 {x: 21, y: 0, z: 20} 
+      - !ProcList [!Vector3 {x: 21, y: 0, z: 20}, !Vector3 {x: 21, y: 0, z: 26}, !Vector3 {x: 21, y: 0, z: 32}]   
       sizes:
       - !ProcVector3Scaled
         scales: [1, 1.5, 2] 
