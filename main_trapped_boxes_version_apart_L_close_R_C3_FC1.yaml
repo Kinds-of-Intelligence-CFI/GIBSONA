@@ -70,8 +70,9 @@ arenas:
       name: GoodGoal
       id: GoodGoal 
       positions:
+     - !Vector3 {x: 2, y: 0, z: 20}
      - !ProcList [!Vector3 {x: 38, y: 0, z: 7}, !Vector3 {x: 38, y: 0, z: 20}, !Vector3 {x: 38, y:0, z: 33}, !Vector3 {x: 31, y: 0, z: 20}]   
-      sizes: # SAME AS LAST FEW EXAMPLES 
+      sizes: 
       - !ProcVector3Scaled
       scales: [2, 3, 4]
       - !ProcVector3Scaled
