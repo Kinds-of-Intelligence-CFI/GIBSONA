@@ -56,13 +56,12 @@ arenas:
 
     - !Item
       name: GoodGoal
+      id: goodgoal
       positions:
       - !Vector3 {x: 25, y: 0.4, z: 21}      
       sizes:
       - !ProcVector3Scaled
         scales: [1, 1.8, 2.8]
-
-
 
     - !Item
       name: SignPosterboard
