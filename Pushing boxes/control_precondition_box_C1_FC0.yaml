@@ -1,0 +1,50 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: 
+    - !ProcIf
+      value: GoodGoal.sizes.0.x
+      cases: [3.5, 4.2, 4.9]
+      then: [2.5, 3.2, 3.9]
+    t: 400
+    
+    items:
+    - !Item
+      name: Agent
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 1, y: 0, z: 12}, !Vector3 {x: 39, y: 0, z: 12},  !Vector3 {x: 20, y: 0, z: 12}]
+      rotations: [0]
+
+
+    - !Item
+      name: Cardbox1
+      positions:
+      - !Vector3 {x: 2, y: 0, z: 28}
+      - !Vector3 {x: 6.5, y: 0, z: 28}
+      - !Vector3 {x: 11, y: 0, z: 28}
+      - !Vector3 {x: 15.5, y: 0, z: 28}
+      - !Vector3 {x: 20, y: 0, z: 28}
+      - !Vector3 {x: 24.5, y: 0, z: 28}
+      - !Vector3 {x: 29, y: 0, z: 28}
+      - !Vector3 {x: 33.5, y: 0, z: 28}
+      - !Vector3 {x: 38, y: 0, z: 28}
+
+      sizes: !ProcRepeatChoice
+        amount: 9
+        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 1, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
+      rotations: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    - !Item
+      name: GoodGoal
+      id: GoodGoal 
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 17}, !Vector3 {x: 3, y: 0, z: 24}, !Vector3 {x: 37, y: 0, z: 24}, !Vector3 {x: 37, y: 0, z: 31}]
+
+      sizes:
+      - !ProcVector3Scaled
+        scales: [3.5, 4.2, 4.9]
+
+
+ 
+
+
