@@ -1,4 +1,14 @@
 !ArenaConfig
+
+proc_labels:
+- !ProcIfLabels
+  variable: [agent.positions.0.z, GoodGoal.positions.0.z]
+  cases: [[1, 36], [1, 31], [1, 26], 
+           [7, 36], [7, 31], [7, 26], 
+	   [13, 36], [13, 36], [13, 36]]
+  labels: [dis_far, dis_far, dis_medi, 
+           dis_medi, dis_medi, dis_close, 
+	   dis_medi, dis_close, dis_close]
 arenas:
   0: !Arena
     pass_mark: 
