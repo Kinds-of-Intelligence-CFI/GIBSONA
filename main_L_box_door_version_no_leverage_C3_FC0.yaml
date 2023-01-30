@@ -16,7 +16,14 @@ arenas:
       - !ProcIf
         variable: wall.positions.0.z
         cases: [1, 4, 7]
-        then: !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7}]
+        then: 
+        - !ProcListLabelled
+          - label: dis_far
+            value: !Vector3 {x: 20, y: 0, z: 1}
+          - label: dis_medi
+            value: !Vector3 {x: 20, y: 0, z: 4}
+          - label: dis_close
+            value: !Vector3 {x: 20, y: 0, z: 7}]
       rotations: [0]
 
     - !Item
