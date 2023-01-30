@@ -13,10 +13,31 @@ arenas:
       name: Agent
       id: agent
       positions:	
-      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 6.5}, !Vector3 {x: 20, y: 0, z: 12}, 
-        !Vector3 {x: 39, y: 0, z: 20},!Vector3 {x: 33.5, y: 0, z: 20},!Vector3 {x: 28, y: 0, z: 20}, 
-        !Vector3 {x: 20, y: 0, z: 39},!Vector3 {x: 20, y: 0, z: 33.5},!Vector3 {x: 20, y: 0, z: 28}, 
-        !Vector3 {x: 1, y: 0, z: 20}, !Vector3 {x: 6.5, y: 0, z: 20}, !Vector3 {x: 12, y: 0, z: 20}]
+      - !ProcListLabelled
+        - label: dis_far
+          value: !Vector3 {x: 20, y: 0, z: 1}
+        - label: dis_medi
+          value: !Vector3 {x: 20, y: 0, z: 6.5}
+        - label: dis_close
+          value: !Vector3 {x: 20, y: 0, z: 12}
+        - label: dis_far
+          value: !Vector3 {x: 39, y: 0, z: 20}
+        - label: dis_medi
+          value: !Vector3 {x: 33.5, y: 0, z: 20}
+        - label: dis_close
+          value: !Vector3 {x: 28, y: 0, z: 20}
+        - label: dis_far
+          value: !Vector3 {x: 20, y: 0, z: 39}
+        - label: dis_medi
+          value: !Vector3 {x: 20, y: 0, z: 33.5}
+        - label: dis_close
+          value: !Vector3 {x: 20, y: 0, z: 28}
+        - label: dis_far
+          value: !Vector3 {x: 1, y: 0, z: 20}
+        - label: dis_medi
+          value: !Vector3 {x: 6.5, y: 0, z: 20}
+        - label: dis_close 
+          value: !Vector3 {x: 12, y: 0, z: 20}
       rotations: 
       - !ProcIf 
         variable: [agent.positions.0.x, agent.positions.0.z]                             
