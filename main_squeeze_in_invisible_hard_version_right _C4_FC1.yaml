@@ -7,8 +7,12 @@ arenas:
     items:
     - !Item
       name: Agent
-      positions:
-      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 8}]
+      positions: 
+      - !ProcListLabelled
+        - label: dis_far
+          value: !Vector3 {x: 20, y: 1, z: 1}
+        - label: dis_close
+          value: !Vector3 {x: 20, y: 1, z: 8}
       rotations: [0]
 
     - !Item
