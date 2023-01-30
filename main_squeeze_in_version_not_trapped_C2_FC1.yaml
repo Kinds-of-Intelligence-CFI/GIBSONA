@@ -1,9 +1,16 @@
 !ArenaConfig
+
+proc_labels:
+- !ProcIfLabels
+  variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.1.x]
+  cases: [[[20, 1], 36.5], [[23, 13], 36.5], [[17, 13], 36.5], [[20, 39], 36.5], [[23, 27], 36.5], [[17, 27], 36.5]]
+  labels: [dis_far, dis_close, dis_medi, dis_far, dis_close, dis_medi]
+
 arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf 
-      value: GoodGoal1.sizes.0.x
+      value: GoodGoal1.sizes.1.x
       cases: [1.5,2.5,3.5]
       then: [0.5,1.5,2.5]
     t: 250
@@ -12,19 +19,9 @@ arenas:
       name: Agent
       id: agent 
       positions:
-      - !ProcListLabelled
-      	- label: dis_far
-          value: !Vector3 {x: 20, y: 1, z: 1}
-       	- label: dis_close
-          value: !Vector3 {x: 23, y: 1, z: 13}
-	- label: dis_medi
-	  value: !Vector3 {x: 17, y: 1, z: 13}
-        - label: dis_far
-	  value: !Vector3 {x: 20, y: 1, z: 39}
-	- label: dis_close   
-	  value: !Vector3 {x: 23, y: 1, z: 27}
-	- label: dis_medi
-	  value: !Vector3 {x: 17, y: 1, z: 27}]
+      - !ProcList
+      	[!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 23, y: 1, z: 13}, !Vector3 {x: 17, y: 1, z: 13}, 
+	!Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 23, y: 1, z: 27}, !Vector3 {x: 17, y: 1, z: 27}]
       rotations:
       - !ProcIf
       	value: agent.positions.0.z
@@ -67,7 +64,7 @@ arenas:
 
     - !Item
       name: GoodGoal
-      id: GoodGoal1
+      id: GoodGoal
       positions:
       - !Vector3 {x: 3.5, y: 0, z: 19}       
       sizes:
