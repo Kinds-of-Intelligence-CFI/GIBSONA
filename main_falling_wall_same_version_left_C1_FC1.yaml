@@ -24,11 +24,6 @@ arenas:
 	      - label: dis_medi
 	        value: !Vector3 {x: 1, y: 1, z: 5}
 
-      
-      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 1, y: 1, z: 5}, !Vector3 {x: 39, y: 1, z: 5}, !Vector3 {x: 20, y: 1, z: 10}] 
-      rotations: [0]
-
-
     - !Item
       name: DeathZone 
       positions:
