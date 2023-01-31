@@ -1,4 +1,11 @@
 !ArenaConfig
+
+proc_labels:
+- !ProcIfLabels
+  variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.1.x]
+  cases: [[20, 1, 5], [24, 13, 5], [16, 13, 5], [20, 39, 5], [24, 27, 5], [16, 27, 5]]
+  labels: [dis_far, dis_medi, dis_close, dis_far, dis_medi, dis_close]
+
 arenas:
   0: !Arena
     pass_mark: 
@@ -50,7 +57,7 @@ arenas:
       positions:
       - !Vector3 {x: 35, y: 2, z: 20}   
       - !Vector3 {x: 5, y: 0.1, z: 20}     
-      sizes: # BOTH REWARDS CHANGE INDEPENDENT IN SIZE? 
+      sizes: 
       - !ProcVector3Scaled
         scales: [1, 2.5, 4]
       - !ProcVector3Scaled
