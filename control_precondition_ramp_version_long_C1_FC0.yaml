@@ -14,8 +14,18 @@ arenas:
       name: Agent
       id: agent 
       positions:	
-      - !ProcList [!Vector3 {x: 7.5, y: 0, z: 1}, !Vector3 {x: 7.5, y: 0, z: 10}, 
-         !Vector3 {x: 1, y: 0, z: 39},!Vector3 {x: 39, y: 0, z: 1}, !Vector3 {x: 39, y: 0, z: 39}]
+      - !ProcListLabelled
+        - label: dis_medi
+          value: !Vector3 {x: 7.5, y: 0, z: 1}
+        - label: dis_close
+          value: !Vector3 {x: 7.5, y: 0, z: 10}
+        - label: dis_medi
+          value:  !Vector3 {x: 1, y: 0, z: 39}
+        - label: dis_far
+          value: !Vector3 {x: 39, y: 0, z: 1}
+        - label: dis_far
+          value: !Vector3 {x: 39, y: 0, z: 39}
+         
       rotations: 
       - !ProcIf 
         variable: [agent.positions.0.x, agent.positions.0.z]                             
