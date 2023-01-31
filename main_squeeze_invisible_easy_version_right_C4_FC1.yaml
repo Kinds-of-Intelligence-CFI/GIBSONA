@@ -1,4 +1,11 @@
 !ArenaConfig
+
+proc_labels:
+- !ProcIfLabels
+  variable: [agent.positions.0.z, GoodGoal.positions.0.x]
+  cases: [[1, 32], [8, 32]]
+  labels: [dis_far, dis_close]
+
 arenas:
   0: !Arena
     pass_mark: 0
@@ -59,6 +66,7 @@ arenas:
 
     - !Item
       name: GoodGoal
+      id: GoodGoal 
       positions:
       - !Vector3 {x: 32, y: 0, z: 21}   
       - !Vector3 {x: 8, y: 0, z: 21}     
