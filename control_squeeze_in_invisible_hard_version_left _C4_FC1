@@ -10,9 +10,9 @@ arenas:
       positions:
       - !ProcListLabelled
         - label: dis_far
-          value: !Vector3 {x: 20, y: 1, z: 1}
+          value: !Vector3 {x: 20, y: 0.1, z: 1}
         - label: dis_close
-          value: !Vector3 {x: 20, y: 1, z: 8}
+          value: !Vector3 {x: 20, y: 0.1, z: 8}
       rotations:
       !ProcIf 
       variable: [agent.positions.0.x, agent.positions.0.z]                             
