@@ -1,4 +1,12 @@
 !ArenaConfig
+
+proc_labels:
+- !ProcIfLabels
+  variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x]
+  cases: [[20, 1, 7], [24, 13, 7], [16, 13, 7], [20, 39, 7], [24, 27, 7], [16, 27, 7]]
+            
+  labels: [dis_far, dis_medi, dis_close, dis_far, dis_medi, dis_close]
+
 arenas:
   0: !Arena
     pass_mark: 
@@ -7,8 +15,7 @@ arenas:
       cases: [2, 3.5, 5]
       then: [1, 2.5, 4]
     t: 250
-
-
+    
     items:
     - !Item
       name: Agent
@@ -52,7 +59,7 @@ arenas:
       positions:
       - !Vector3 {x: 7, y: 0, z: 20}   
       - !Vector3 {x: 33, y: 2.5, z: 20}     
-      sizes: # IS THIS THE CORECT WAY TO ANNOTATE IF I WANT FOR BOTH REWARD TO CHANGE INDEPENDENTLY IN SIZE? 
+      sizes:
       - !ProcVector3Scaled
         scales: [1, 2.5, 4]
       - !ProcVector3Scaled
