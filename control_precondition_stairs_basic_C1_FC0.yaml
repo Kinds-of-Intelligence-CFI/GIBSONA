@@ -37,7 +37,7 @@ arenas:
           value: !Vector3 {x: 1, y: 0, z: 20}
         - label: dis_far
           value: !Vector3 {x: 5, y: 0, z: 20}
-        - label: medi
+        - label: dis_medi
           value: !Vector3 {x: 9, y: 0, z: 20}
       rotations: 
       - !ProcIf 
