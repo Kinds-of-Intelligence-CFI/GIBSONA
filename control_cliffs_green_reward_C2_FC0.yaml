@@ -1,7 +1,12 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: 0
+    pass_mark: 
+      value: GoodGoal.sizes.0.x 
+      cases: [1, 2.5, 4] 
+      then: [0, 1.5, 3] 
+
+
     t: 500
     items:
     - !Item
@@ -46,7 +51,8 @@ arenas:
       positions:
       - !Vector3 {x: 25, y: 1, z: 29}    
       sizes:
-      - !Vector3 {x: 1, y: 1, z: 1}
+      - !ProcVector3Scaled
+        scales: [0, 1.5, 3]
 
 
 
