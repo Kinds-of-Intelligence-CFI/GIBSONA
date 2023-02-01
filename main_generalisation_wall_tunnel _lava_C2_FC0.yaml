@@ -1,4 +1,21 @@
 !ArenaConfig
+
+- !ProcIfLabels
+  variable: [agent.positions.0.x, GoodGoal.positions.0.z, GoodGoal.positions.0.x]
+  cases: [[20, 4, 5], [20, 4, 20], [20, 4, 35], [20, 4, 5], [20, 4, 20], [20, 4, 35],  
+          [20, 20, 5], [20, 20, 20], [20, 20, 35], [20, 20, 5], [20, 20, 20], [20, 20, 35], 
+          [4, 4, 5], [4, 4, 20], [4, 4, 35], [4, 4, 5], [4, 4, 20], [4, 4, 35], 
+          [36, 4, 5], [36, 4, 20], [36, 4, 35], [36, 4, 5], [36, 4, 20], [36, 4, 35], 
+          [4, 20, 5], [4, 20, 20], [4, 20, 35], [4, 20, 5], [4, 20, 20], [4, 20, 35], 
+          [36, 20, 5], [36, 20, 20], [36, 20, 35], [36, 20, 5], [36, 20, 20], [36, 20, 35]]
+          
+  labels: [dis_medi, dis_far, dis_far, dis_far, dis_far, dis_medi, 
+           dis_close, dis_medi, dis_medi, dis_medi, dis_medi, dis_close, 
+           dis_medi, dis_far, dis_far, dis_far, dis_far, dis_far, 
+           dis_far, dis_far, dis_far, dis_far, dis_far, dis_medi, 
+           dis_close, dis_close, dis_medi, dis_far, dis_medi, dis_medi, 
+           dis_medi, dis_medi, dis_far, dis_medi, dis_close, dis_close]
+
 arenas:
   0: !Arena
     pass_mark: 
