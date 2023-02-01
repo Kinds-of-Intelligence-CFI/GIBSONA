@@ -3,7 +3,7 @@ arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf
-      value: [GoodGoal.sizes.0.x, GoodGoalMulti.sizes.1.x] 
+      value: [GoodGoal.sizes.0.x, GoodGoalMulti1.sizes.0.x] 
       cases: [[1, 1], [1, 2.5], [1, 4], 
              [2.5, 1], [2.5, 2.5], [2.5, 4], 
              [4, 1], [4, 2.5], [4, 4]]
