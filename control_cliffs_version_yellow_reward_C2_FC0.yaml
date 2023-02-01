@@ -3,7 +3,7 @@ arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf
-      value: [GoodGoal.sizes.0.x, GoodGoalMulti.sizes.0.x] 
+      value: [GoodGoal.sizes.0.x, GoodGoalMulti1.sizes.0.x] 
       cases: [[1, 1], [1, 2.5], [1, 4], 
              [2.5, 1], [2.5, 2.5], [2.5, 4], 
              [4, 1], [4, 2.5], [4, 4]]
@@ -43,7 +43,7 @@ arenas:
 
    - !Item
       name: GoodGoalMulti
-      id: GoodGoalMulti
+      id: GoodGoalMulti1
       positions:
       - !ProcList [!Vector3 {x: 6 , y: 0.1, z: 8}, !Vector3 {x: 14 , y: 0.1, z: 8}, !Vector3 {x: 22 , y: 0.1, z: 8}]         
       sizes:
@@ -52,7 +52,7 @@ arenas:
         
     - !Item
       name: GoodGoalMulti
-      id: GoodGoalMulti
+      id: GoodGoalMulti2
       positions:
       - !Vector3 {x: 25, y: 0.1, z: 29}    
       sizes:
