@@ -7,15 +7,16 @@ arenas:
       cases: [[1, 1], [1, 2.5], [1, 4], 
              [2.5, 1], [2.5, 2.5], [2.5, 4], 
              [4, 1], [4, 2.5], [4, 4]]
-      then: [1, 2.5, 4, 2.5, 4, 5.5, 4, 5.5, 7]
-             
+      then: [1, 2.5, 4, 2.5, 4, 5.5, 4, 5.5, 7]       
     t: 500
     
     items:
     - !Item
       name: Agent
       positions:	
-      - !Vector3 {x: 20, y: 1, z: 1}
+      - !ProcListLabelled
+        - label: dis_medi
+          value: !Vector3 {x: 20, y: 1, z: 1}
       rotations: [0]
     - !Item
       name: Wall
