@@ -16,7 +16,9 @@ arenas:
     - !Item
       name: Agent
       positions:	
-      - !Vector3 {x: 20, y: 1, z: 1}
+      - !ProcListLabelled
+        - label: dis_far
+          value: !Vector3 {x: 20, y: 1, z: 1}
       rotations: [0]
 
     - !Item
