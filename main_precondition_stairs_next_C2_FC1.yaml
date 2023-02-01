@@ -3,7 +3,7 @@
 proc_labels:
 - !ProcIfLabels
   variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x]
-  cases: [[20, 1], 7], [[23, 13], 7], [[17, 13], 7], [[20, 39], 7], [[23, 27], 7], [[17, 27], 7]] 
+  cases: [[20, 1, 7], [23, 13, 7], [17, 13, 7], [20, 39, 7], [23, 27, 7], [17, 27, 7]] 
   labels: [dis_far, dis_medi, dis_close, dis_far, dis_medi, dis_close]
 
 arenas:
