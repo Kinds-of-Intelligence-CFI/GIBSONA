@@ -1,4 +1,21 @@
 !ArenaConfig
+
+proc_labels:
+- !ProcIfLabels
+  variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+  cases: [[20, 1, 14, 17, 32], [20, 1, 23, 32], [20, 1, 17, 12], [20, 1, 23, 12], 
+          [20, 39, 14, 17, 32], [20, 39, 23, 32], [20, 39, 17, 12], [20, 39, 23, 12], 
+          [1, 1, 14, 17, 32], [1, 1, 23, 32], [1, 1, 17, 12], [1, 1, 23, 12],
+          [39, 1, 14, 17, 32], [39, 1, 23, 32], [39, 1, 17, 12], [39, 1, 23, 12],
+          [1, 39, 14, 17, 32], [1, 39, 23, 32], [1, 39, 17, 12], [1, 39, 23, 12],
+          [39, 39, 14, 17, 32], [39, 39, 23, 32], [39, 39, 17, 12], [39, 39, 23, 12]]
+  labels: [dis_far, dis_far, dis_close, dis_close, 
+           dis_close, dis_close, dis_far, dis_far, 
+           dis_far, dis_far, dis_close, dis_medi, 
+           dis_far, dis_far, dis_medi, dis_close, 
+           dis_close, dis_medi, dis_far, dis_far, 
+           dis_medi, dis_close, dis_far, dis_far]
+
 arenas:
   0: !Arena
     pass_mark: 
@@ -35,6 +52,7 @@ arenas:
 
     - !Item
       name: GoodGoal
+      id: GoodGoal 
       positions:
        - !ProcIf
       value: tunnel.positions.0.x, tunnel.positions.0.z
