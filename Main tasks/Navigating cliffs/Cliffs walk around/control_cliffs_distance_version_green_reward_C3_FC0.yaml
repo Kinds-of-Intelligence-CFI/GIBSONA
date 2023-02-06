@@ -1,23 +1,29 @@
 !ArenaConfig
+
+proc_labels:
+ - !ProcIfLabels
+   variable: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+   cases: [15, 25]]
+   labels: [dis_medi]
+
+
 arenas:
   0: !Arena
     pass_mark: 
     !ProcIf
-      value: [GoodGoalMulti.sizes.0, GoodGoal.sizes.0]
-      cases: [[1, 1], [1, 2.5], [1, 4], 
-             [2.5, 1], [2.5, 2.5], [2.5, 4], 
-             [4, 1], [4, 2.5], [4, 4]]
-      then: [3, 7, 10, 8, 11.5, 14.5, 13, 16, 19]
-
+      value: [GoodGoal.sizes.0, GoodGoalMulti.sizes.0, GoodGoalMulti.sizes.3]
+      cases: [[1, 1, 1], [1, 2.5, 2.5], [1, 4, 4], 
+             [2.5, 1, 1], [2.5, 2.5, 2.5], [2.5, 4, 4], 
+             [4, 1, 1], [4, 2.5, 2.5], [4, 4, 4]]
+      then: [2, 5, 8, 3.5, 6.5, 9.5, 5, 8, 11]
+    t: 500
+   
+    
     items:
     - !Item
       name: Agent
-      positions:	
-      - !ProcListLabelled
-        - label: dis_medi
-          value: !Vector3 {x: 20, y: 0.1, z: 1}
+      positions: !Vector3 {x: 20, y: 0.1, z: 1}
       rotations: [0]
-
 
     - !Item
       name: Wall
@@ -43,26 +49,27 @@ arenas:
       - !Vector3 {x: 2, y: 0.1, z: 4}
 
     - !Item
-      name: GoodGoalMulti
-      id: GoodGoalMulti 
+      name: GoodGoal
+      id: GoodGoalMulti
       positions:
-      - !Vector3 {x: !ProcList [6, 14, 22], y: 0.1, z: 8}   
+      - !Vector3 {x: !ProcList [6, 14, 22], y: 0.1, z: 8}
       - !Vector3 {x: 20 , y: 0.1, z: 27}
-      - !Vector3 {x: 25, y: 0.1, z: 29}      
+      - !Vector3 {x: 25, y: 0.1, z: 29} 
+      - !Vector3 {x: 33, y: 0.1, z: 21}      
       sizes: !ProcRepeatChoice 
-        amount: 3
+        amount: 4
         item: !ProcVector3Scaled
         scales: [1, 2.5, 4]
 
     - !Item
-      name: GoodGoal
-      id: GoodGoal 
+      name: GoodGoal 
+      id: GoodGoal
       positions:
-      - !Vector3 {x: 33, y: 0.1, z: 21} 
-      sizes:
-      - !ProcVector3Scaled
+      - !Vector3 {x: 15, y: 0.1, z: 25}  
+      sizes:!ProcRepeatChoice 
+        amount: 1
+        item: !ProcVector3Scaled
         scales: [1, 2.5, 4]
-
 
 
 

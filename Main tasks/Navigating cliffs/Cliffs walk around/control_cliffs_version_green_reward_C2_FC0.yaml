@@ -1,21 +1,29 @@
 !ArenaConfig
+
+
+proc_labels:
+ - !ProcIfLabels
+   variable: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+   cases: [25, 29]
+   labels: [dis_medi]
+
 arenas:
   0: !Arena
     pass_mark: 
-      value: GoodGoal.sizes.0.x 
-      cases: [1, 2.5, 4] 
-      then: [0, 1.5, 3] 
-
-
+    - !ProcIf
+      value: [GoodGoal.sizes.0.x, GoodGoalMulti0.sizes.0.x, GoodGoalMulti0.sizes.1.x] 
+      cases: [[1, 1, 1], [1, 2.5, 2.5], [1, 4, 4], 
+             [2.5, 1, 1], [2.5, 2.5, 2.5], [2.5, 4, 4], 
+             [4, 1, 1], [4, 2.5, 2.5], [4, 4, 4]]
+      then: [2, 5, 8, 3.5, 6.5, 9.5, 5, 8, 11]       
     t: 500
+    
     items:
     - !Item
       name: Agent
-      positions:	
-      - !ProcListLabelled
-        - label: dis_medi
-          value: !Vector3 {x: 20, y: 0.1, z: 1}
+      positions: !Vector3 {x: 20, y: 0.1, z: 1}
       rotations: [0]
+
     - !Item
       name: Wall
       positions:
@@ -25,7 +33,7 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 21}
       - !Vector3 {x: 25, y: 0, z: 25.5}
       - !Vector3 {x: 25, y: 0, z: 29}
-      rotations: [0, 90, 0, 90, 0, 90] 
+      rotations: [0, 90, 0, 90, 0, 90]
       colors: !ProcRepeatChoice
         amount: 6
         value: !ProcColor 8 
@@ -36,29 +44,27 @@ arenas:
       - !Vector3 {x: 4, y: 0.1, z: 30} 
       - !Vector3 {x: 0.1, y: 0.1, z: 5}
       - !Vector3 {x: 2, y: 0.1, z: 2}
-      
+
     - !Item
       name: GoodGoalMulti
       positions:
-      - !ProcList [!Vector3 {x: 6, y: 1, z: 8}, !Vector3 {x: 14, y: 1, z: 8}, !Vector3 {x: 22, y: 1, z: 8}]   
-      - !ProcList [!Vector3 {x: 6, y: 1, z: 21}, !Vector3 {x: 19, y: 1, z: 21}, !Vector3 {x: 32, y: 1, z: 21}]  
-      sizes:
-      - !ProcVector3Scaled
+      - !ProcList [!Vector3 {x: 6, y: 0.1, z: 8}, !Vector3 {x: 14, y: 0.1, z: 8}, !Vector3 {x: 22, y: 0.1, z: 8}]   
+      - !ProcList [!Vector3 {x: 6, y: 0.1, z: 21}, !Vector3 {x: 19, y: 0.1, z: 21}, !Vector3 {x: 32, y: 0.1, z: 21}]  
+      sizes: !ProcRepeatChoice 
+        amount: 2
+        item: !ProcVector3Scaled
         scales: [1, 2.5, 4]
+
+    - !Item
+      name: GoodGoal
+      id: GoodGoal
+      positions:
+      - !Vector3 {x: 25, y: 0.1, z: 29}    
+      sizes:
       - !ProcVector3Scaled
         scales: [1, 2.5, 4]
         
-    - !Item
-      name: GoodGoal
-      positions:
-      - !Vector3 {x: 25, y: 1, z: 29}    
-      sizes:
-      - !ProcVector3Scaled
-        scales: [1, 2.5, 4]
-
-
-
-
+ 
 
 
 
