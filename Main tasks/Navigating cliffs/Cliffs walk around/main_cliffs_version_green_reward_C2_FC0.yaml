@@ -1,20 +1,27 @@
 !ArenaConfig
+
+
+proc_labels:
+ - !ProcIfLabels
+   variable: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+   cases: [25, 29]
+   labels: [dis_medi]
+
 arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf
-      value: GoodGoal.sizes.0.x
-      cases: [1, 2.5, 4]
-      then: [0, 1.5, 3]
+      value: [GoodGoal.sizes.0.x, GoodGoalMulti0.sizes.0.x, GoodGoalMulti0.sizes.1.x] 
+      cases: [[1, 1, 1], [1, 2.5, 2.5], [1, 4, 4], 
+             [2.5, 1, 1], [2.5, 2.5, 2.5], [2.5, 4, 4], 
+             [4, 1, 1], [4, 2.5, 2.5], [4, 4, 4]]
+      then: [2, 5, 8, 3.5, 6.5, 9.5, 5, 8, 11]       
     t: 500
     
     items:
     - !Item
       name: Agent
-      positions:
-      - !ProcListLabelled
-        - label: dis_medi
-          value: !Vector3 {x: 20, y: 1, z: 1}
+      positions: !Vector3 {x: 20, y: 1, z: 1}
       rotations: [0]
 
     - !Item
@@ -31,22 +38,21 @@ arenas:
         amount: 6
         value: !ProcColor 8 
       sizes:
-      - !Vector3 {x: 10, y: 0.7, z: 7} 
-      - !Vector3 {x: 2, y: 0.7, z: 20} 
-      - !Vector3 {x: 1, y: 0.7, z: 16}
-      - !Vector3 {x: 4, y: 0.7, z: 30} 
-      - !Vector3 {x: 0.1, y: 0.7, z: 5}
-      - !Vector3 {x: 2, y: 0.7, z: 2}
+      - !Vector3 {x: 10, y: 1, z: 7} 
+      - !Vector3 {x: 2, y: 1, z: 20} 
+      - !Vector3 {x: 1, y: 1, z: 16}
+      - !Vector3 {x: 4, y: 1, z: 30} 
+      - !Vector3 {x: 0.1, y: 1, z: 5}
+      - !Vector3 {x: 2, y: 1, z: 2}
 
     - !Item
       name: GoodGoalMulti
       positions:
       - !ProcList [!Vector3 {x: 6, y: 1, z: 8}, !Vector3 {x: 14, y: 1, z: 8}, !Vector3 {x: 22, y: 1, z: 8}]   
       - !ProcList [!Vector3 {x: 6, y: 1, z: 21}, !Vector3 {x: 19, y: 1, z: 21}, !Vector3 {x: 32, y: 1, z: 21}]  
-      sizes:
-      - !ProcVector3Scaled
-        scales: [1, 2.5, 4]
-      - !ProcVector3Scaled
+      sizes: !ProcRepeatChoice 
+        amount: 2
+        item: !ProcVector3Scaled
         scales: [1, 2.5, 4]
 
     - !Item
