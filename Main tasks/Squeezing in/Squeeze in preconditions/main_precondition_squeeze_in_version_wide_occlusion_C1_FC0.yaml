@@ -3,13 +3,13 @@
 proc_labels:
 - !ProcIfLabels
   variable: [agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
-  cases: [[1, [17, 26]], [1, [10, 26]], [1, [3, 26]], [1, [36, 26]], [1, [17, 35]], [1, [10, 35]], [1, [3, 35]], [1, [36, 35]], 
-         [7, [17, 26]], [7, [10, 26]], [7, [3, 26]], [7, [36, 26]], [7, [17, 35]], [7, [10, 35]], [7, [3, 35]], [7, [36, 35]],
-	 [13, [17, 26]], [13, [10, 26]], [13, [3, 26]], [13, [36, 26]], [13, [17, 35]], [13, [10, 35]], [13, [3, 35]], [13, [36, 35]]] 
+  cases: [[1, 17, 26], [1, 10, 26], [1, 3, 26], [1, 36, 26], [1, 17, 35], [1, 10, 35], [1, 3, 35], [1, 36, 35], 
+         [7, 17, 26], [7, 10, 26], [7, 3, 26], [7, 36, 26], [7, 17, 35], [7, 10, 35], [7, 3, 35], [7, 36, 35],
+	 [13, 17, 26], [13, 10, 26], [13, 3, 26], [13, 36, 26], [13, 17, 35], [13, 10, 35], [13, 3, 35], [13, 36, 35]] 
 	 
-  labels: [dis_medi, dis_medi, dis_far, dis_medi, dis_medi, dis_far, dis_far, dis_far, 
-           dis_medi, dis_medi, dis_medi, dis_medi, dis_medi, dis_medi, dis_far, dis_far, 
-	   dis_close, dis_close, dis_medi, dis_close, dis_close, dis_medi, dis_medi, dis_medi]
+  labels: [dis_medi, dis_medi, dis_far, dis_medi, dis_medi, dis_far, dis_far, dis_medi, 
+           dis_medi, dis_medi, dis_far, dis_medi, dis_medi, dis_medi, dis_far, dis_medi, 
+	   dis_close, dis_close, dis_medi, dis_close, dis_close, dis_medi, dis_medi, dis_close]
 
 arenas:
   0: !Arena
