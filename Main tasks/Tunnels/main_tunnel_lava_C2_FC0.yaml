@@ -2,7 +2,7 @@
 proc_meta:
   proc_labels:
   - !ProcIfLabels
-    variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, Tunnel.positions.0.x]
+    value: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, Tunnel.positions.0.x]
     cases: [[20, 4, 5, 11], [20, 4, 20, 11], [20, 4, 35, 11], [20, 4, 5, 29], [20, 4, 20, 29], [20, 4, 35, 29],  
             [20, 20, 5, 11], [20, 20, 20, 11], [20, 20, 35, 11], [20, 20, 5, 29], [20, 20, 20, 29], [20, 20, 35, 29], 
             [4, 4, 5, 11], [4, 4, 20, 11], [4, 4, 35, 11], [4, 4, 5, 29], [4, 4, 20, 29], [4, 4, 35, 29], 

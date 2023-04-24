@@ -2,7 +2,7 @@
 proc_meta:
   proc_labels:
   - !ProcIfLabels
-    variable: [agent.positions.0.z, GoodGoal.positions.0.x]
+    value: [agent.positions.0.z, GoodGoal.positions.0.x]
     cases: [[1, 8], [8, 8]]
     labels: [dis_far, dis_close]
 

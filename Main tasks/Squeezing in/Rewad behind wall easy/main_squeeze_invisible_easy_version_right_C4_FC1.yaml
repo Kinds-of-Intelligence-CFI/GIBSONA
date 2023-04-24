@@ -2,7 +2,7 @@
 proc_meta:
   proc_labels:
   - !ProcIfLabels
-    variable: [agent.positions.0.z, GoodGoal.positions.0.x]
+    value: [agent.positions.0.z, GoodGoal.positions.0.x]
     cases: [[1, 32], [8, 32]]
     labels: [dis_far, dis_close]
 
@@ -18,7 +18,7 @@ arenas:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 8}]
       rotations: 
       - !ProcIf 
-        variable: [agent.positions.0.x, agent.positions.0.z]                             
+        value: [agent.positions.0.x, agent.positions.0.z]                             
         cases: [[20, 1], [20, 8]]
         then: [0, 0]
 

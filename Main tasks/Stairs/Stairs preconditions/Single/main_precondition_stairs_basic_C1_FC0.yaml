@@ -39,7 +39,7 @@ arenas:
           value: !Vector3 {x: 12, y: 0, z: 20}
       rotations: 
       - !ProcIf 
-        variable: [agent.positions.0.x, agent.positions.0.z]                             
+        value: [agent.positions.0.x, agent.positions.0.z]                             
         cases: [[20, 1], [20, 6.5], [20, 12], 
               [39, 20], [33.5, 20], [28, 20], 
               [20, 39], [20, 33.5], [20, 28], 

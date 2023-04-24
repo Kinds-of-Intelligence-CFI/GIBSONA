@@ -2,7 +2,7 @@
 proc_meta:
   proc_labels:
   - !ProcIfLabels
-    variable: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    value: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
     cases: [33, 21]
     labels: [dis_medi] 
 

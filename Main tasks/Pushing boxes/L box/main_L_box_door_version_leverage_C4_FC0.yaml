@@ -13,7 +13,7 @@ arenas:
       id: agent
       positions:
       - !ProcIf
-        variable: wall.positions.0.z
+        value: wall.positions.0.z
         cases: [1, 4, 7]
         then: [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7}]
         labels: [dis_far, dis_medi, dis_close]
