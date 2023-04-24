@@ -1,10 +1,10 @@
 !ArenaConfig
-
-proc_labels:
-- !ProcIfLabels
-  variable: [agent.positions.0.z, GoodGoal.positions.0.x]
-  cases: [[1, 32], [8, 32]]
-  labels: [dis_far, dis_close]
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    variable: [agent.positions.0.z, GoodGoal.positions.0.x]
+    cases: [[1, 32], [8, 32]]
+    labels: [dis_far, dis_close]
 
 arenas:
   0: !Arena
