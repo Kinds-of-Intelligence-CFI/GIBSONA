@@ -13,7 +13,7 @@ arenas:
     - !Item
       name: Agent
       id: agent 
-      positions:	
+      positions:
         - label: dis_medi
           value: !Vector3 {x: 7.5, y: 0, z: 1}
         - label: dis_medi
@@ -51,7 +51,7 @@ arenas:
       colors: 
       - !ProcColor 8 
       sizes:
-      - !Vector3 {x: !ProcList[2, 4, 6] y: 1, z: 2} 
+      - !Vector3 {x: !ProcList [2, 4, 6], y: 1, z: 2} 
   
     - !Item
       name: GoodGoal

@@ -1,20 +1,21 @@
 !ArenaConfig
-
-- !ProcIfLabels
-  variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, Wall3.positions.0.x]
-  cases: [[20, 4, 5, 12], [20, 4, 20, 12], [20, 4, 35, 12], [20, 4, 5, 24], [20, 4, 20, 24], [20, 4, 35, 24],  
-          [20, 20, 5, 12], [20, 20, 20, 12], [20, 20, 35, 12], [20, 20, 5, 24], [20, 20, 20, 24], [20, 20, 35, 24], 
-          [4, 4, 5, 12], [4, 4, 20, 12], [4, 4, 35, 12], [4, 4, 5, 24], [4, 4, 20, 24], [4, 4, 35, 24], 
-          [36, 4, 5, 12], [36, 4, 20, 12], [36, 4, 35, 12], [36, 4, 5, 24], [36, 4, 20, 24], [36, 4, 35, 24], 
-          [4, 20, 5, 12], [4, 20, 20, 12], [4, 20, 35, 12], [4, 20, 5, 24], [4, 20, 20, 24], [4, 20, 35, 24], 
-          [36, 20, 5, 12], [36, 20, 20, 12], [36, 20, 35, 12], [36, 20, 5, 24], [36, 20, 20, 24], [36, 20, 35, 24]]
-          
-  labels: [dis_medi, dis_far, dis_far, dis_far, dis_far, dis_medi, 
-           dis_close, dis_medi, dis_medi, dis_medi, dis_medi, dis_close, 
-           dis_medi, dis_far, dis_far, dis_far, dis_far, dis_far, 
-           dis_far, dis_far, dis_far, dis_far, dis_far, dis_medi, 
-           dis_close, dis_close, dis_medi, dis_far, dis_medi, dis_medi, 
-           dis_medi, dis_medi, dis_far, dis_medi, dis_close, dis_close]
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, Wall3.positions.0.x]
+    cases: [[20, 4, 5, 12], [20, 4, 20, 12], [20, 4, 35, 12], [20, 4, 5, 24], [20, 4, 20, 24], [20, 4, 35, 24],  
+            [20, 20, 5, 12], [20, 20, 20, 12], [20, 20, 35, 12], [20, 20, 5, 24], [20, 20, 20, 24], [20, 20, 35, 24], 
+            [4, 4, 5, 12], [4, 4, 20, 12], [4, 4, 35, 12], [4, 4, 5, 24], [4, 4, 20, 24], [4, 4, 35, 24], 
+            [36, 4, 5, 12], [36, 4, 20, 12], [36, 4, 35, 12], [36, 4, 5, 24], [36, 4, 20, 24], [36, 4, 35, 24], 
+            [4, 20, 5, 12], [4, 20, 20, 12], [4, 20, 35, 12], [4, 20, 5, 24], [4, 20, 20, 24], [4, 20, 35, 24], 
+            [36, 20, 5, 12], [36, 20, 20, 12], [36, 20, 35, 12], [36, 20, 5, 24], [36, 20, 20, 24], [36, 20, 35, 24]]
+            
+    labels: [dis_medi, dis_far, dis_far, dis_far, dis_far, dis_medi, 
+            dis_close, dis_medi, dis_medi, dis_medi, dis_medi, dis_close, 
+            dis_medi, dis_far, dis_far, dis_far, dis_far, dis_far, 
+            dis_far, dis_far, dis_far, dis_far, dis_far, dis_medi, 
+            dis_close, dis_close, dis_medi, dis_far, dis_medi, dis_medi, 
+            dis_medi, dis_medi, dis_far, dis_medi, dis_close, dis_close]
 
 arenas:
   0: !Arena
@@ -30,7 +31,7 @@ arenas:
       name: Agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 20}, !Vector3 {x: 4, y: 0, z: 4},
-!Vector3 {x: 36, y: 0, z: 4}, !Vector3 {x: 4, y: 0, z: 20}, !Vector3 {x: 36, y: 0, z: 20}]
+            !Vector3 {x: 36, y: 0, z: 4}, !Vector3 {x: 4, y: 0, z: 20}, !Vector3 {x: 36, y: 0, z: 20}]
       rotations: [0]
 
     - !Item
@@ -53,14 +54,14 @@ arenas:
       id: Wall2
       positions:
         - !ProcIf
-	  value: DeathZone1.positions.0.x
-	  cases: [13, 27]
-	  then: [!Vector3 {x: 26, y: 0, z: 30}, !Vector3 {x: 14, y: 0, z: 30}]
+          value: DeathZone1.positions.0.x
+          cases: [13, 27]
+          then: [!Vector3 {x: 26, y: 0, z: 30}, !Vector3 {x: 14, y: 0, z: 30}]
       rotations: [90]
       colors: 
       - !ProcColor 8
       sizes:
-      - !Proclist [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 1, y: 3, z: 1}, !Vector3 {x: 10, y: 3, z: 1}, !Vector3 {x: 10, y: 2, z: 1}]
+      - !ProcList [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 1, y: 3, z: 1}, !Vector3 {x: 10, y: 3, z: 1}, !Vector3 {x: 10, y: 2, z: 1}]
 
 
     - !Item
@@ -75,7 +76,7 @@ arenas:
       colors: 
       - !ProcColor 8
       sizes:
-      - !Proclist [!Vector3 {x: 6, y: 1, z: 5}, !Vector3 {x: 1, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}]
+      - !ProcList [!Vector3 {x: 6, y: 1, z: 5}, !Vector3 {x: 1, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}]
 
 
     - !Item
@@ -85,7 +86,7 @@ arenas:
       - !ProcList [!Vector3 {x: 27, y: 0, z: 30}, !Vector3 {x: 13, y: 0, z: 30}] 
       sizes:
       - !ProcList [!Vector3 {x: 26, y: 1.5, z: 5}, !Vector3 {x: 26, y: 1.5, z: 1}, !Vector3 {x: 26, y: 1.5, z: 10}, !Vector3 {x: 26, y: 3, z: 5!}, 
-Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 0, z: 5}, !Vector3 {x: 26, y: 0, z: 1}, !Vector3 {x: 26, y: 3, z: 10}]
+          !Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 0, z: 5}, !Vector3 {x: 26, y: 0, z: 1}, !Vector3 {x: 26, y: 3, z: 10}]
       rotations: [0]
     - !Item
       name: DeathZone
@@ -96,8 +97,8 @@ Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 
         cases: [27, 13]
         then: [!Vector3 {x: 5, y: 0, z: 30}, !Vector3 {x: 35, y: 0, z: 30}]
       sizes:
-      - ProcList [!Vector3 {x: 9, y: 1.5, z: 5}, !Vector3 {x: 9, y: 1.5, z: 1}, !Vector3 {x: 9, y: 1.5, z: 10}, !Vector3 {x: 9, y: 3, z: 5!}, 
-Vector3 {x: 9, y: 3, z: 1}, !Vector3 {x: 9, y: 0, z: 10}, !Vector3 {x: 9, y: 0, z: 5}, !Vector3 {x: 9, y: 0, z: 1}, !Vector3 {x: 9, y: 3, z: 10}]
+      - !ProcList [!Vector3 {x: 9, y: 1.5, z: 5}, !Vector3 {x: 9, y: 1.5, z: 1}, !Vector3 {x: 9, y: 1.5, z: 10}, !Vector3 {x: 9, y: 3, z: 5!}, 
+          !Vector3 {x: 9, y: 3, z: 1}, !Vector3 {x: 9, y: 0, z: 10}, !Vector3 {x: 9, y: 0, z: 5}, !Vector3 {x: 9, y: 0, z: 1}, !Vector3 {x: 9, y: 3, z: 10}]
       rotations: [0]
 
     - !Item

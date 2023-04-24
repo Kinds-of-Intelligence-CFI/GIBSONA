@@ -1,5 +1,4 @@
 !ArenaConfig
-arenas:
 
 proc_labels:
 - !ProcIfLabels
@@ -17,8 +16,8 @@ proc_labels:
            dis_far, dis_far, dis_far, dis_far, dis_far, dis_medi, 
            dis_close, dis_close, dis_medi, dis_far, dis_medi, dis_medi, 
            dis_medi, dis_medi, dis_far, dis_medi, dis_close, dis_close]
-          
 
+arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf
@@ -30,8 +29,9 @@ proc_labels:
     - !Item
       name: Agent
       positions: #the agent can start at 6 different positions in the arena
+       # TODO: Make shorter
       - !ProcList [!Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 20}, 
-!Vector3 {x: 4, y: 0, z: 4},!Vector3 {x: 36, y: 0, z: 4}, !Vector3 {x: 4, y: 0, z: 20}, !Vector3 {x: 36, y: 0, z: 20}]
+        !Vector3 {x: 4, y: 0, z: 4},!Vector3 {x: 36, y: 0, z: 4}, !Vector3 {x: 4, y: 0, z: 20}, !Vector3 {x: 36, y: 0, z: 20}]
       rotations: [0]
 
     - !Item
@@ -47,7 +47,7 @@ proc_labels:
       - !ProcColor 8
       sizes:
       - !ProcList [!Vector3 {x: 6, y: 7, z: 5}, !Vector3 {x: 6, y: 3, z: 5}, !Vector3 {x: 6, y: 15, z: 5}, !Vector3 {x: 6, y: 7, z: 10}, 
-!Vector3 {x: 6, y: 7, z: 1}, !Vector3 {x: 6, y: 15, z: 10}, !Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 15, z: 1}, !Vector3 {x: 6, y: 3, z: 10}]
+        !Vector3 {x: 6, y: 7, z: 1}, !Vector3 {x: 6, y: 15, z: 10}, !Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 15, z: 1}, !Vector3 {x: 6, y: 3, z: 10}]
 
     - !Item
       name: DeathZone
@@ -56,7 +56,7 @@ proc_labels:
       - !ProcList [!Vector3 {x: 27, y: 0, z: 30}, !Vector3 {x: 13, y: 0, z: 30}] 
       sizes:
       - !ProcList [!Vector3 {x: 26, y: 1.5, z: 5}, !Vector3 {x: 26, y: 1.5, z: 1}, !Vector3 {x: 26, y: 1.5, z: 10}, !Vector3 {x: 26, y: 3, z: 5!}, 
-Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 0, z: 5}, !Vector3 {x: 26, y: 0, z: 1}, !Vector3 {x: 26, y: 3, z: 10}]
+                !Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 0, z: 5}, !Vector3 {x: 26, y: 0, z: 1}, !Vector3 {x: 26, y: 3, z: 10}]
       rotations: [0]
     - !Item
       name: DeathZone
@@ -68,7 +68,7 @@ Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 
         then: [!Vector3 {x: 4, y: 0, z: 30}, !Vector3 {x: 36, y: 0, z: 30}]
       sizes: 
       - !ProcList [!Vector3 {x: 8, y: 1.5, z: 5}, !Vector3 {x: 8, y: 1.5, z: 1}, !Vector3 {x: 8, y: 1.5, z: 10}, !Vector3 {x: 8, y: 3, z: 5!}, 
-Vector3 {x: 8, y: 3, z: 1}, !Vector3 {x: 8, y: 0, z: 10}, !Vector3 {x: 8, y: 0, z: 5}, !Vector3 {x: 8, y: 0, z: 1}, !Vector3 {x: 8, y: 3, z: 10}]
+            !Vector3 {x: 8, y: 3, z: 1}, !Vector3 {x: 8, y: 0, z: 10}, !Vector3 {x: 8, y: 0, z: 5}, !Vector3 {x: 8, y: 0, z: 1}, !Vector3 {x: 8, y: 3, z: 10}]
       rotations: [0]
 
     - !Item
@@ -78,6 +78,6 @@ Vector3 {x: 8, y: 3, z: 1}, !Vector3 {x: 8, y: 0, z: 10}, !Vector3 {x: 8, y: 0, 
       - !ProcList [!Vector3 {x: 5, y: 0, z: 37}, !Vector3 {x: 20, y: 0, z: 37}, !Vector3 {x: 35, y: 0, z: 37}]
       sizes:
       - !ProcVector3Scaled
-      scales: [3, 4, 5]
+        scales: [3, 4, 5]
 
     

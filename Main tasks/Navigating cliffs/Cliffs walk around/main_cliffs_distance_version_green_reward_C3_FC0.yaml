@@ -1,24 +1,21 @@
 !ArenaConfig
-
-proc_labels:
- - !ProcIfLabels
-   variable: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
-   cases: [15, 25]]
-   labels: [dis_medi]
-
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    variable: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [15, 25]
+    labels: [dis_medi]
 
 arenas:
   0: !Arena
-    pass_mark: 
-    !ProcIf
+    pass_mark: !ProcIf
       value: [GoodGoal.sizes.0, GoodGoalMulti.sizes.0, GoodGoalMulti.sizes.3]
       cases: [[1, 1, 1], [1, 2.5, 2.5], [1, 4, 4], 
              [2.5, 1, 1], [2.5, 2.5, 2.5], [2.5, 4, 4], 
              [4, 1, 1], [4, 2.5, 2.5], [4, 4, 4]]
       then: [2, 5, 8, 3.5, 6.5, 9.5, 5, 8, 11]
     t: 500
-   
-    
+
     items:
     - !Item
       name: Agent
@@ -59,17 +56,17 @@ arenas:
       sizes: !ProcRepeatChoice 
         amount: 4
         item: !ProcVector3Scaled
-        scales: [1, 2.5, 4]
+          scales: [1, 2.5, 4]
 
     - !Item
       name: GoodGoal 
       id: GoodGoal
       positions:
       - !Vector3 {x: 15, y: 1, z: 25}  
-      sizes:!ProcRepeatChoice 
+      sizes: !ProcRepeatChoice 
         amount: 1
         item: !ProcVector3Scaled
-        scales: [1, 2.5, 4]
+          scales: [1, 2.5, 4]
 
     - !Item
       name: DeathZone

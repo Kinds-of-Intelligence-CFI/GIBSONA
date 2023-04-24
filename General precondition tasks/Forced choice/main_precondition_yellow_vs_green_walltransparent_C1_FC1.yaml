@@ -25,7 +25,7 @@ arenas:
         - label: dis_close
           value: !Vector3 {x: 23, y: 1, z: 27}
         - label: dis_medi
-          value: !Vector3 {x: 17, y: 1, z: 27}]
+          value: !Vector3 {x: 17, y: 1, z: 27}
 
       rotations: 
       - !ProcIf

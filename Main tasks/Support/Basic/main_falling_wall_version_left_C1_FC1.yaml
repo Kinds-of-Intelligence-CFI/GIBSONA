@@ -15,14 +15,14 @@ arenas:
       id: agent
       positions:
       - !ProcListLabelled
-	      - label: dis_medi
-	        value: !Vector3 {x: 20, y: 1, z: 1}
-	      - label: dis_far
-	        value: !Vector3 {x: 39, y: 1, z: 5}
-	      - label: dis_close
-	        value: !Vector3 {x: 20, y: 1, z: 10}
-	      - label: dis_medi
-	        value: !Vector3 {x: 1, y: 1, z: 5}
+          - label: dis_medi
+            value: !Vector3 {x: 20, y: 1, z: 1}
+          - label: dis_far
+            value: !Vector3 {x: 39, y: 1, z: 5}
+          - label: dis_close
+            value: !Vector3 {x: 20, y: 1, z: 10}
+          - label: dis_medi
+            value: !Vector3 {x: 1, y: 1, z: 5}
 
     - !Item
       name: DeathZone 
@@ -30,7 +30,7 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 27}
       rotations: [0]
       sizes:
-      - !Vector3 {x:!ProcList [0.5, 1.5, 2.5], y:!ProcList [0, 1, 2], z: 26} 
+      - !Vector3 {x: !ProcList [0.5, 1.5, 2.5], y: !ProcList [0, 1, 2], z: 26} 
 
 
 

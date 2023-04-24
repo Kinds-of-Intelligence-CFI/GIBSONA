@@ -12,20 +12,20 @@ arenas:
     - !Item
       name: Agent
       id: agent 
-      positions:	
+      positions:
         - !ProcListLabelled
-	        - label: dis_far
-	          value: !Vector3 {x: 20, y: 1, z: 1}
-	        - label: dis_medi
-	          value: !Vector3 {x: 20, y: 1, z: 8}
-	        - label: dis_close
-	          value: !Vector3 {x: 20, y: 1, z: 15}
-	        - label: dis_far
-	          value: !Vector3 {x: 20, y: 1, z: 39}
-	        - label: dis_medi
-	          value: !Vector3 {x: 20, y: 1, z: 32}
-	        - label: dis_close
-	          value: !Vector3 {x: 20, y: 1, z: 25}
+          - label: dis_far
+            value: !Vector3 {x: 20, y: 1, z: 1}
+          - label: dis_medi
+            value: !Vector3 {x: 20, y: 1, z: 8}
+          - label: dis_close
+            value: !Vector3 {x: 20, y: 1, z: 15}
+          - label: dis_far
+            value: !Vector3 {x: 20, y: 1, z: 39}
+          - label: dis_medi
+            value: !Vector3 {x: 20, y: 1, z: 32}
+          - label: dis_close
+            value: !Vector3 {x: 20, y: 1, z: 25}
       rotations: 
       - !ProcIf
         value: agent.positions.0.z

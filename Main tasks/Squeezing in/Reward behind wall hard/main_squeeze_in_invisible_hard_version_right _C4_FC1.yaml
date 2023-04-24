@@ -56,7 +56,7 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 25}
       rotations: [0]
       sizes:
-      - !Vector3 {x:!ProcList [0.5, 1.5, 2.5], y:!ProcList [0, 1, 2], z: 30} 
+      - !Vector3 {x: !ProcList [0.5, 1.5, 2.5], y: !ProcList [0, 1, 2], z: 30} 
 
     - !Item
       name: GoodGoal

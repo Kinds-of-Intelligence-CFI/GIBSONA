@@ -1,17 +1,15 @@
 !ArenaConfig
-
-
-proc_labels:
- - !ProcIfLabels
-   variable: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
-   cases: [33, 21]
-   labels: [dis_medi] 
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    variable: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [33, 21]
+    labels: [dis_medi] 
 
 
 arenas:
   0: !Arena
-    pass_mark: 
-    !ProcIf
+    pass_mark: !ProcIf
       value: [GoodGoalMulti.sizes.0, GoodGoalMulti.sizes.1, GoodGoal.sizes.0]
       cases: [[1, 1, 1], [1, 1, 2.5], [1, 1, 4], 
              [2.5, 2.5, 1], [2.5, 2.5, 2.5], [2.5, 2.5, 4], 
@@ -60,7 +58,7 @@ arenas:
       sizes: !ProcRepeatChoice 
         amount: 4
         item: !ProcVector3Scaled
-        scales: [1, 2.5, 4]
+          scales: [1, 2.5, 4]
 
     - !Item
       name: GoodGoal 

@@ -1,21 +1,20 @@
 !ArenaConfig
-
-proc_labels:
-- !ProcIfLabels
-  variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
-  cases: [[20, 4, 12, 30], [20, 4, 26, 30], [20, 4, 12, 15], [20, 4, 26, 15], 
-          [20, 36, 12, 30], [20, 36, 26, 30], [20, 36, 12, 15], [20, 36, 26, 15], 
-	  [4, 4, 12, 30], [4, 4, 26, 30], [4, 4, 12, 15], [4, 4, 26, 15], 
-	  [36, 4], 12, 30], [36, 4, 26, 30], [36, 4, 12, 15], [36, 4, 26, 15], 
-	  [4, 36, 12, 30], [4, 36, 26, 30], [4, 36, 12, 15], [4, 36, 26, 15], 
-	  [36, 36, 12, 30], [36, 36, 26, 30], [36, 36, 12, 15], [36, 36, 26, 15]]
-	  
-  labels: [dis_far, dis_far, dis_medi, dis_medi, 
-           dis_medi, dis_medi, dis_far, dis_far, 
-	   dis_medi, dis_far, dis_close, dis_medi, 
-	   dis_far, dis_medi, dis_medi, dis_close, 
-	   dis_close, dis_medi, dis_medi, dis_far, 
-	   dis_medi, dis_close, dis_far, dis_medi]
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [[20, 4, 12, 30], [20, 4, 26, 30], [20, 4, 12, 15], [20, 4, 26, 15], 
+            [20, 36, 12, 30], [20, 36, 26, 30], [20, 36, 12, 15], [20, 36, 26, 15], 
+            [4, 4, 12, 30], [4, 4, 26, 30], [4, 4, 12, 15], [4, 4, 26, 15], 
+            [36, 4, 12, 30], [36, 4, 26, 30], [36, 4, 12, 15], [36, 4, 26, 15], 
+            [4, 36, 12, 30], [4, 36, 26, 30], [4, 36, 12, 15], [4, 36, 26, 15], 
+            [36, 36, 12, 30], [36, 36, 26, 30], [36, 36, 12, 15], [36, 36, 26, 15]]
+    labels: [dis_far, dis_far, dis_medi, dis_medi, 
+            dis_medi, dis_medi, dis_far, dis_far, 
+            dis_medi, dis_far, dis_close, dis_medi, 
+            dis_far, dis_medi, dis_medi, dis_close, 
+            dis_close, dis_medi, dis_medi, dis_far, 
+            dis_medi, dis_close, dis_far, dis_medi]
 
 arenas:
   0: !Arena
@@ -42,13 +41,13 @@ arenas:
       name: Wall
       id: Wall1
       positions:
-      - !Proclist [!Vector3 {x: 10, y: 0, z: 30}, !Vector3 {x: 24, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 15}, !Vector3 {x: 24, y: 0, z: 15}]
+      - !ProcList [!Vector3 {x: 10, y: 0, z: 30}, !Vector3 {x: 24, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 15}, !Vector3 {x: 24, y: 0, z: 15}]
       rotations: [90]
       colors: !ProcRepeatChoice
-      	amount: 1 
-	value: !ProcColor 8
+        amount: 1 
+        value: !ProcColor 8
       sizes:
-       - !Proclist [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 1, z: 1}, !Vector3 {x: 3, y: 3, z: 1}, !Vector3 {x: 9, y: 3, z: 1}]
+       - !ProcList [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 1, z: 1}, !Vector3 {x: 3, y: 3, z: 1}, !Vector3 {x: 9, y: 3, z: 1}]
 
     - !Item
       name: Wall
@@ -60,8 +59,8 @@ arenas:
         then: [!Vector3 {x: 14, y: 0, z: 30}, !Vector3 {x: 28, y: 0, z: 30}, !Vector3 {x: 14, y: 0, z: 15}, !Vector3 {x: 28, y: 0, z: 15}]
       rotations: [90]
       colors: !ProcRepeatChoice
-      	amount: 1 
-	value: !ProcColor 8
+        amount: 1 
+        value: !ProcColor 8
       sizes:
       - !ProcIf 
         value: Wall1.sizes.0.x, Wall1.sizes.0.y
@@ -79,8 +78,8 @@ arenas:
         then: [!Vector3 {x: 12, y: 3.5, z: 30}, !Vector3 {x: 26, y: 3.5, z: 30},!Vector3 {x: 12, y: 3.5, z: 15},!Vector3 {x: 26, y: 3.5, z: 15}]
       rotations: [90]
       colors: !ProcRepeatChoice
-      	amount: 1 
-	value: !ProcColor 8
+        amount: 1 
+        value: !ProcColor 8
       sizes:
       - !ProcIf 
         value: Wall1.sizes.0.x
@@ -97,8 +96,8 @@ arenas:
         then: [!Vector3 {x: 12, y: 1.5, z: 22}, !Vector3 {x: 26, y: 1.5, z: 22}, !Vector3 {x: 12, y: 1.5, z: 7}, !Vector3 {x: 26, y: 1.5, z: 7}]
       rotations: [90]
       colors: !ProcRepeatChoice
-      	amount: 1 
-	value: !ProcColor 8
+        amount: 1 
+        value: !ProcColor 8
       sizes:
       - !ProcIf 
         value: Wall1.sizes.0.x
@@ -115,11 +114,10 @@ arenas:
         then: [!Vector3 {x: 12, y: 0, z: 22}, !Vector3 {x: 26, y: 1.5, z: 22}, !Vector3 {x: 12, y: 1.5, z: 7}, !Vector3 {x: 26, y: 1.5, z: 7}]
       rotations: [0]
       colors: !ProcRepeatChoice
-      	amount: 1 
-	value: !ProcColor 8
+        amount: 1 
+        value: !ProcColor 8
       sizes:
       - !Vector3 {x: 0.1, y: 0.1, z: 0.1}
-
 
     - !Item
       name: GoodGoal
@@ -131,7 +129,4 @@ arenas:
         then: [!Vector3 {x: 12, y: 6, z: 30}, !Vector3 {x: 26, y: 6, z: 30},!Vector3 {x: 12, y: 6, z: 15},!Vector3 {x: 26, y: 6, z: 15}] 
       sizes:
       - !ProcVector3Scaled
-      scales: [1, 2, 3, 4, 5]
-
-
-    
+        scales: [1, 2, 3, 4, 5]
