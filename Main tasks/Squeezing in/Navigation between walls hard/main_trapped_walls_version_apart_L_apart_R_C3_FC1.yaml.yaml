@@ -11,7 +11,7 @@ proc_meta:
               
     labels: [dis_close, dis_medi, dis_far, dis_medi, 
             dis_close, dis_close, dis_medi, dis_close, 
-            dis_close, dis_close, dis_medi, dis_close, 
+            # dis_close, dis_close, dis_medi, dis_close, # TODO: Verify this should be removed?
             dis_far, dis_medi, dis_close, dis_medi, 
             dis_medi, dis_close, dis_close, dis_close, 
             dis_medi, dis_close, dis_close, dis_close]
@@ -28,6 +28,7 @@ arenas:
     items:
     - !Item
       name: Agent
+      id: agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 23, y: 1, z: 13}, !Vector3 {x: 17, y: 1, z: 13},
         !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 23, y: 1, z: 27}, !Vector3 {x: 17, y: 1, z: 27}]
@@ -86,7 +87,7 @@ arenas:
       id: GoodGoal 
       positions:
       - !Vector3 {x: 2, y: 0, z: 20}
-      - !ProcList [!Vector3 {x: 38, y: 0, z: 7}, !Vector3 {x: 38, y: 0, z: 20}, !Vector3 {x: 38, y:0, z: 33}, !Vector3 {x: 31, y: 0, z: 20}]   
+      - !ProcList [!Vector3 {x: 38, y: 0, z: 7}, !Vector3 {x: 38, y: 0, z: 20}, !Vector3 {x: 38, y: 0, z: 33}, !Vector3 {x: 31, y: 0, z: 20}]   
       sizes: 
       - !ProcVector3Scaled
         scales: [2, 3, 4]

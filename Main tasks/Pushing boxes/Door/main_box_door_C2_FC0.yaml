@@ -26,7 +26,7 @@ arenas:
          
       rotations:
       - !ProcIf
-        value: [agent.positions.0.x, agents.positions.0.z]
+        value: [agent.positions.0.x, agent.positions.0.z]
         cases: [[20, 1], [20, 17], [4, 25],[36, 25], [13, 33]] 
         then: [0, 0, 90, 270, 180] 
 

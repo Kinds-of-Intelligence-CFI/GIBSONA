@@ -14,6 +14,7 @@ arenas:
     items:
     - !Item
       name: Agent
+      id: agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 8}]
       rotations: 
@@ -69,7 +70,8 @@ arenas:
       positions:
       - !Vector3 {x: 32, y: 0, z: 21}   
       - !Vector3 {x: 8, y: 0, z: 21}     
-      sizes: !ProcRestrictCombinations # I WANT FOR BOT REWARDS TO CHANGE INDEPENDENT OF EACH OTHER. HOW *EXACTLY* DO I DO THIS?
-        amount: 2
-        item: !ProcVector3Scaled
+      sizes:
+      - !ProcVector3Scaled
+          scales: [1, 2.5, 4]
+      - !ProcVector3Scaled
           scales: [1, 2.5, 4]

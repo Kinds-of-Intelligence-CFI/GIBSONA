@@ -3,7 +3,7 @@ proc_meta:
   proc_labels:
   - !ProcIfLabels
     value: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x]
-    cases: [[[20, 1], 4], [[23, 13], 4], [[17, 13], 4], [[20, 39], 4], [[23, 27], 4], [[17, 27], 4]]
+    cases: [[20, 1, 4], [23, 13, 4], [17, 13, 4], [20, 39, 4], [23, 27, 4], [17, 27, 4]]
     labels: [dis_far, dis_medi, dis_close, dis_far, dis_medi,  dis_close]
 
 arenas:
@@ -18,7 +18,7 @@ arenas:
     - !Item
       name: Agent
       id: agent
-      positions:	
+      positions:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 23, y: 1, z: 13}, !Vector3 {x: 17, y: 1, z: 13}, value: !Vector3 {x: 20, y: 1, z: 39}, 
             !Vector3 {x: 23, y: 1, z: 27}, value: !Vector3 {x: 17, y: 1, z: 27}]
       rotations: 

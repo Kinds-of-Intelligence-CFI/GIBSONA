@@ -11,8 +11,9 @@ arenas:
     items:
     - !Item
       name: Agent
-      id: agent 
-      positions:
+      id: agent
+      positions: 
+      - !ProcListLabelled
         - label: dis_medi
           value: !Vector3 {x: 7.5, y: 0, z: 1}
         - label: dis_medi

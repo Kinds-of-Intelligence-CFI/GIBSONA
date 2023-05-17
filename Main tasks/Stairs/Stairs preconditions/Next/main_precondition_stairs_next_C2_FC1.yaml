@@ -10,7 +10,7 @@ arenas:
   0: !Arena
     pass_mark: !ProcIf
       value: GoodGoal.sizes.0.x 
-      cases: [2, 3.5, 5]
+      cases: [1, 2.5, 4] # TODO: Verify
       then: [1, 2.5, 4]
     t: 250
 
@@ -19,7 +19,7 @@ arenas:
     - !Item
       name: Agent
       id: agent
-      positions:	
+      positions:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 24, y: 1, z: 13}, !Vector3 {x: 16, y: 1, z: 13}, 
                   !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 24, y: 1, z: 27}, !Vector3 {x: 16, y: 1, z: 27}]
       rotations: 

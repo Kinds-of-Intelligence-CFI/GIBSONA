@@ -1,15 +1,16 @@
 !ArenaConfig
-proc_meta:
-  proc_labels:
-  - !ProcIfLabels
-    value: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
-    cases: [15, 25]
-    labels: [dis_medi]
+# TODO: Unfinished
+# proc_meta:
+#   proc_labels:
+#   - !ProcIfLabels
+#     value: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+#     cases: [15, 25]
+#     labels: [dis_medi]
 
 arenas:
   0: !Arena
     pass_mark: !ProcIf
-      value: [GoodGoal.sizes.0, GoodGoalMulti.sizes.0, GoodGoalMulti.sizes.3]
+      value: [GoodGoal.sizes.0.x, GoodGoalMulti.sizes.0.x, GoodGoalMulti.sizes.3.x]
       cases: [[1, 1, 1], [1, 2.5, 2.5], [1, 4, 4], 
              [2.5, 1, 1], [2.5, 2.5, 2.5], [2.5, 4, 4], 
              [4, 1, 1], [4, 2.5, 2.5], [4, 4, 4]]
@@ -55,7 +56,7 @@ arenas:
       - !Vector3 {x: 33, y: 1, z: 21}      
       sizes: !ProcRepeatChoice 
         amount: 4
-        item: !ProcVector3Scaled
+        value: !ProcVector3Scaled
           scales: [1, 2.5, 4]
 
     - !Item
@@ -65,7 +66,7 @@ arenas:
       - !Vector3 {x: 15, y: 1, z: 25}  
       sizes: !ProcRepeatChoice 
         amount: 1
-        item: !ProcVector3Scaled
+        value: !ProcVector3Scaled
           scales: [1, 2.5, 4]
 
     - !Item
@@ -73,5 +74,5 @@ arenas:
       positions: 
       - !Vector3 {x: 20, y: 0, z: 20}
       sizes: 
-      - !Vector3 {x: 40, y: !ProcList [1.5, 1, 0.5]}
+      - !Vector3 {x: 40, y: !ProcList [1.5, 1, 0.5], z: 40} # TODO: Verify if correct (z was missing)
       rotations: [0]

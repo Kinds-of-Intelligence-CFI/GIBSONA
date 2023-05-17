@@ -20,17 +20,16 @@ proc_meta:
 arenas:
   0: !Arena
     pass_mark: !ProcIf
-      value: Goodgoal.sizes.0.x
+      value: GoodGoal.sizes.0.x
       cases: [3,4,5]
       then: [2,3,4]
     t: 250
     items:
     - !Item
       name: Agent
+      id: agent
       positions: #the agent can start at 6 different positions in the arena
-       # TODO: Make shorter
-      - !ProcList [!Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 20}, 
-        !Vector3 {x: 4, y: 0, z: 4},!Vector3 {x: 36, y: 0, z: 4}, !Vector3 {x: 4, y: 0, z: 20}, !Vector3 {x: 36, y: 0, z: 20}]
+      - !Vector3 {x: !ProcList [4, 20, 36], y: 0, z: !ProcList [4, 20]}
       rotations: [0]
 
     - !Item
