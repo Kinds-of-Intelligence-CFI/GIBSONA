@@ -83,8 +83,11 @@ arenas:
       sizes:
       - !ProcIf 
         value: Wall1.sizes.0.x
-        cases: [6, 3]
-        then: [!Vector3 {x: 6, y: 1, z: 5}, !Vector3 {x: 3, y: 1, z: 5}]
+        cases: [9, 6, 3]
+        then: [
+          !Vector3 {x: 9, y: 1, z : 5}, # TODO: Verify (I added this, together with case 9)
+          !Vector3 {x: 6, y: 1, z: 5},
+          !Vector3 {x: 3, y: 1, z: 5}]
 
     - !Item
       name: Wall
