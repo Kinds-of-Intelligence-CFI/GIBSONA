@@ -30,7 +30,7 @@ arenas:
       rotations:
       - !ProcIf
         value: agent.positions.0.z 
-        cases: [4, 36] # TODO: Verify if this is correct.
+        cases: [4, 36]
         then: [0, 180]
 
     - !Item

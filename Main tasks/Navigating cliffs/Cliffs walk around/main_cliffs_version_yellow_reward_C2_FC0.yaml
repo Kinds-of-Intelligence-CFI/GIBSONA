@@ -1,11 +1,10 @@
 !ArenaConfig
-# TODO: Unfinished
-# proc_meta:
-#   proc_labels:
-#   - !ProcIfLabels
-#     value: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
-#     cases: [33, 21]
-#     labels: [dis_medi]
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [[33, 21]]
+    labels: [dis_medi]
 
 arenas:
   0: !Arena
