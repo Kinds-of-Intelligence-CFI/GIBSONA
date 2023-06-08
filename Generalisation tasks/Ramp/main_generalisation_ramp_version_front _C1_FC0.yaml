@@ -83,7 +83,7 @@ arenas:
       sizes:
       - !ProcIf 
         value: Wall1.sizes.0.x
-        cases: [9, 6, 3]
+        cases: [9, 6, 3] # TODO: Alva is working on this.
         then: [
           !Vector3 {x: 9, y: 1, z: 5},
           !Vector3 {x: 6, y: 1, z: 5},

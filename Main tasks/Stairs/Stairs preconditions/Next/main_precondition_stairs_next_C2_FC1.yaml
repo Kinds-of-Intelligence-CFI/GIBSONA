@@ -10,8 +10,8 @@ arenas:
   0: !Arena
     pass_mark: !ProcIf
       value: GoodGoal.sizes.0.x 
-      cases: [1, 2.5, 4]
-      then: [0, 1.5, 3]
+      cases: [1, 2.5, 5]
+      then: [0, 1.5, 4]
     t: 250
 
 
@@ -60,8 +60,8 @@ arenas:
       - !Vector3 {x: 33, y: 2.5, z: 20}     
       sizes:
       - !ProcVector3Scaled
-        scales: [1, 2.5, 4]
+        scales: [1, 2.5, 5]
       - !ProcVector3Scaled
-        scales: [1, 2.5, 4]
+        scales: [1, 2.5, 5]
         
 
