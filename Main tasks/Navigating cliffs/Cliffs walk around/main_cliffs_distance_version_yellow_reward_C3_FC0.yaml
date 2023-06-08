@@ -1,18 +1,17 @@
 !ArenaConfig
-
-
-proc_labels:
- - !ProcIfLabels
-   variable: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
-   cases: [33, 21]
-   labels: [dis_medi] 
+#T ODO: Unfinished
+# proc_meta:
+#   proc_labels:
+#   - !ProcIfLabels
+#     value: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+#     cases: [33, 21]
+#     labels: [dis_medi] 
 
 
 arenas:
   0: !Arena
-    pass_mark: 
-    !ProcIf
-      value: [GoodGoalMulti.sizes.0, GoodGoalMulti.sizes.1, GoodGoal.sizes.0]
+    pass_mark: !ProcIf
+      value: [GoodGoalMulti.sizes.0.x, GoodGoalMulti.sizes.1.x, GoodGoal.sizes.0.x]
       cases: [[1, 1, 1], [1, 1, 2.5], [1, 1, 4], 
              [2.5, 2.5, 1], [2.5, 2.5, 2.5], [2.5, 2.5, 4], 
              [4, 4, 1], [4, 4, 2.5], [4, 4, 4]]
@@ -59,8 +58,8 @@ arenas:
       - !Vector3 {x: 25, y: 1, z: 29}      
       sizes: !ProcRepeatChoice 
         amount: 4
-        item: !ProcVector3Scaled
-        scales: [1, 2.5, 4]
+        value: !ProcVector3Scaled
+          scales: [1, 2.5, 4]
 
     - !Item
       name: GoodGoal 
@@ -76,5 +75,5 @@ arenas:
       positions: 
       - !Vector3 {x: 20, y: 0, z: 20}
       sizes: 
-      - !Vector3 {x: 40, y: !ProcList [1.5, 1, 0.5]}
+      - !Vector3 {x: 40, y: !ProcList [1.5, 1, 0.5], z: 40} # TODO: Verify if correct (z was missing)
       rotations: [0]

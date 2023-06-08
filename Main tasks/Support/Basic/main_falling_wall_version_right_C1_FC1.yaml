@@ -1,8 +1,7 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: 
-    - !ProcIf
+    pass_mark: !ProcIf
       value: GoodGoal.sizes.0.x 
       cases: [1, 1.8, 2.8]
       then: [0, 0.8, 1.8]
@@ -12,7 +11,7 @@ arenas:
     - !Item
       name: Agent
       id: agent
-      positions:	
+      positions:
       - !ProcListLabelled
         - label: dis_medi
           value: !Vector3 {x: 20, y: 1, z: 1}
@@ -31,7 +30,7 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 27}
       rotations: [0]
       sizes:
-      - !Vector3 {x:!ProcList [0.5, 1.5, 2.5], y:!ProcList [0, 1, 2], z: 26} 
+      - !Vector3 {x: !ProcList [0.5, 1.5, 2.5], y: !ProcList [0, 1, 2], z: 26} 
 
 
     - !Item
@@ -63,6 +62,7 @@ arenas:
 
     - !Item
       name: GoodGoal
+      id: GoodGoal
       positions:
       - !Vector3 {x: 25, y: 0.4, z: 21}      
       sizes:

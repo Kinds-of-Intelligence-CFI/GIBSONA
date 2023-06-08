@@ -1,17 +1,16 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark:  
-    - !ProcIf
+    pass_mark: !ProcIf
       value: GoodGoal.sizes.0.x
       cases: [1, 1.5, 2]
       then: [0, 0.5, 1]
     t: 500
-    
+
     items:
     - !Item
       name: Agent
-      positions:	
+      positions:
       - !Vector3 {x: 20, y: 0, z: 3}
       rotations: [0]
 
@@ -57,9 +56,3 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         scales: [1, 1.5, 2]
-
-
-
-
-
-

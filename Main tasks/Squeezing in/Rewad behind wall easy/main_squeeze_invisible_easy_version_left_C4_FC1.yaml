@@ -1,10 +1,10 @@
 !ArenaConfig
-
-proc_labels:
-- !ProcIfLabels
-  variable: [agent.positions.0.z, GoodGoal.positions.0.x]
-  cases: [[1, 8], [8, 8]]
-  labels: [dis_far, dis_close]
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [agent.positions.0.z, GoodGoal.positions.0.x]
+    cases: [[1, 8], [8, 8]]
+    labels: [dis_far, dis_close]
 
 
 arenas:
@@ -15,8 +15,9 @@ arenas:
     items:
     - !Item
       name: Agent
+      id: agent
       positions:
-      - !ProcList[!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 8}]
+      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 8}]
       rotations: [0]
 
 
@@ -56,7 +57,7 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 25}
       rotations: [0]
       sizes:
-      - !Vector3 {x:!ProcList [0.5, 1.5, 2.5], y:!ProcList [0, 1, 2], z: 30} 
+      - !Vector3 {x: !ProcList [0.5, 1.5, 2.5], y: !ProcList [0, 1, 2], z: 30} 
 
     - !Item
       name: GoodGoal
