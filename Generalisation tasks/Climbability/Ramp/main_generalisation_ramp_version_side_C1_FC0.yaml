@@ -46,7 +46,7 @@ arenas:
       colors: 
       - !ProcColor 8
       sizes:
-       - !ProcList [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 1, z: 1}, !Vector3 {x: 3, y: 3, z: 1}, !Vector3 {x: 9, y: 3, z: 1}]
+      - !Vector3 {x: 6, y: 3, z: 1}
 
     - !Item
       name: Wall
@@ -60,10 +60,7 @@ arenas:
       colors: 
       - !ProcColor 8
       sizes:
-      - !ProcIf 
-        value: [Wall1.sizes.0.x, Wall1.sizes.0.y]
-        cases: [[6, 3], [6, 1], [3, 3], [9, 3]]
-        then: [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 1, z: 1}, !Vector3 {x: 3, y: 3, z: 1}, !Vector3 {x: 9, y: 3, z: 1}]
+      - !Vector3 {x: 6, y: 3, z: 1}
 
 
     - !Item
@@ -78,10 +75,7 @@ arenas:
       colors: 
       - !ProcColor 8
       sizes:
-      - !ProcIf 
-        value: Wall1.sizes.0.x
-        cases: [6, 3]
-        then: [!Vector3 {x: 6, y: 1, z: 5}, !Vector3 {x: 3, y: 1, z: 5}]
+      - !Vector3 {x: 6, y: 1, z: 5}
 
     - !Item
       name: Wall
@@ -95,10 +89,7 @@ arenas:
       colors: 
       - !ProcColor 8
       sizes:
-      - !ProcIf 
-        value: Wall1.sizes.0.x
-        cases: [6, 3]
-        then: [!Vector3 {x: 0.1, y: 6.5, z: 5}, !Vector3 {x: 0.1, y: 8, z: 5}]
+      - !Vector3 {x: 0.1, y: 6.5, z: 5}
 
 
     - !Item
