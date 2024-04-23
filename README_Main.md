@@ -2,7 +2,7 @@
 
 The *Main suites* consist of three suites: the *Prerequisite (capabilities) suite*, the *Target (capability) suite*, and the *Functional generalisation suite*. 
 
-Each suite contains several Sub-suites, which in the case of Target (capability) suite and the Functional generalisation suite represent groups of tasks pertaining to one affordance type and in the case of Prerequisite (capabilities) suite specify different types of prerequisite tasks. 
+Each suite contains several Sub-suites, which in the case of *Target (capability) suite* and the *Functional generalisation suite* represent groups of tasks pertaining to one affordance type and in the case of *Prerequisite (capabilities) suite* specify different types of prerequisite tasks. 
 
 Each sub-suite is further divided into various *Object types*. In the *Target (capability) suite* and the *Functional generalization suite*, this classification specifies the object used in Experimental paradigms. In the *Prerequisite (capabilities) suite*, however, *Object types* classification refers both to the objects and affordance types. 
 
