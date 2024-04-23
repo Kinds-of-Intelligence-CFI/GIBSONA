@@ -3,7 +3,8 @@ Metadata file presents the structure of the battery, as described in the Read me
 * **Sub suites**
 * **Object type**
 * **Experimental paradigm**
-* **Basic tasks** 
+* **Basic tasks**
+* **Task variations**
 
 Additionally, we bolded the tasks in the *Basic tasks* to indicate which ones in the *Main suites* contain control tasks.
 
