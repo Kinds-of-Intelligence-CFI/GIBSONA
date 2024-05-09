@@ -1,12 +1,11 @@
 Metadata file presents the structure of the battery, as described in the Read me_Main. The first columns thus correspond to the following: 
 * **Main suites**
-* **Sub suites**
-* **Object type**
+* **Sub-suites**
 * **Experimental paradigm**
-* **Basic tasks**
+* **Core tasks**
 * **Task variations**
 
-Additionally, we bolded the tasks in the *Basic tasks* to indicate which ones in the *Main suites* contain control tasks.
+Additionally, we bolded the tasks in the *Core tasks* to indicate which ones in the *Main suites* contain control tasks.
 
 Besides the structure of the battery the metadata contains the following information: 
 * **What is measured**: This column briefly describes which *target* capability is measured by a given task.
