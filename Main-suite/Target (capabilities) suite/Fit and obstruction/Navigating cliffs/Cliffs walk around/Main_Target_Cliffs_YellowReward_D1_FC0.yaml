@@ -1,0 +1,71 @@
+!ArenaConfig
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [[33, 21]]
+    labels: [dis_medi]
+
+arenas:
+  0: !Arena
+    pass_mark: !ProcIf
+      value: [GoodGoal.sizes.0.x, GoodGoalMulti.sizes.0.x] 
+      cases: [[1, 1], [1, 2.5], [1, 4], 
+             [2.5, 1], [2.5, 2.5], [2.5, 4], 
+             [4, 1], [4, 2.5], [4, 4]]
+      then: [1, 2.5, 4, 2.5, 4, 5.5, 4, 5.5, 7]       
+    t: 500
+    
+    items:
+    - !Item
+      name: Agent
+      positions: !Vector3 {x: 20, y: 1, z: 1}
+      rotations: [0]
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 3.5}
+      - !Vector3 {x: 15, y: 0, z: 8}
+      - !Vector3 {x: 4.5, y: 0, z: 15}
+      - !Vector3 {x: 20, y: 0, z: 21}
+      - !Vector3 {x: 25, y: 0, z: 25.5}
+      - !Vector3 {x: 25, y: 0, z: 29}
+      rotations: [0, 90, 0, 90, 0, 90]
+      colors: !ProcRepeatChoice
+        amount: 6
+        value: !ProcColor 8 
+      sizes:
+      - !Vector3 {x: 10, y: 1, z: 7} 
+      - !Vector3 {x: 2, y: 1, z: 20} 
+      - !Vector3 {x: 1, y: 1, z: 16}
+      - !Vector3 {x: 4, y: 1, z: 30} 
+      - !Vector3 {x: 0.1, y: 1, z: 5}
+      - !Vector3 {x: 2, y: 1, z: 2}
+      
+    - !Item
+      name: GoodGoalMulti
+      id: GoodGoalMulti
+      positions:
+      - !ProcList [!Vector3 {x: 6 , y: 1, z: 8}, !Vector3 {x: 14 , y: 1, z: 8}, !Vector3 {x: 22 , y: 1, z: 8}]         
+      - !Vector3 {x: 25, y: 1, z: 29}  
+      sizes: !ProcRepeatChoice 
+        amount: 2
+        value: !ProcVector3Scaled
+          scales: [1, 2.5, 4]
+  
+    - !Item
+      name: GoodGoal
+      id: GoodGoal 
+      positions:
+      - !Vector3 {x: 33, y: 1, z: 21} 
+      sizes:
+      - !ProcVector3Scaled
+        scales: [1, 2.5, 4]
+        
+    - !Item
+      name: DeathZone
+      positions: 
+      - !Vector3 {x: 20, y: 0, z: 20}
+      sizes: 
+      - !ProcList [!Vector3 {x: 40, y: 1.5, z: 40}, {x: 40, y: 1, z: 40}, {x: 40, y: 0.5, z: 40}]
+      rotations: [0]

@@ -1,0 +1,118 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: !ProcIf
+      value: GoodGoal.sizes.0.x 
+      cases: [1, 1.8, 2.8]
+      then: [0, 0.8, 1.8]
+    t: 250
+
+
+    items:
+    - !Item
+      name: Agent
+      id: agent
+      positions:
+      - !ProcListLabelled
+        - label: dis_medi
+          value: !Vector3 {x: 20, y: 1, z: 1}
+        - label: dis_far
+          value: !Vector3 {x: 39, y: 1, z: 5}
+        - label: dis_close
+          value: !Vector3 {x: 20, y: 1, z: 10}
+        - label: dis_medi
+          value: !Vector3 {x: 1, y: 1, z: 5}
+
+    - !Item
+      name: DeathZone 
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 27}
+      rotations: [0]
+      sizes:
+      - !Vector3 {x: !ProcList [0.5, 1.5, 2.5], y: !ProcList [0, 1, 2], z: 26} 
+
+
+
+    - !Item
+      name: Ramp
+      positions:
+      - !Vector3 {x: 35, y: 0, z: 18.4}
+      - !Vector3 {x: 5, y: 0, z: 21}
+      rotations: [270, 90]
+      colors: !ProcRepeatChoice
+        amount: 2 
+        value: !ProcColor 8         
+      sizes:
+      - !Vector3 {x: 0.1, y: 0.1, z: 0.1}
+      - !Vector3 {x: 0.1, y: 0.1, z: 0.1}
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 35, y: .1, z: 18.4}
+      - !Vector3 {x: 5, y: .1, z: 21}
+      rotations: [0,0]
+      colors: !ProcRepeatChoice
+        amount: 2 
+        value: !ProcColor 8  
+      sizes:
+      - !Vector3 {x: 0.6, y: 13, z: 1.5}
+      - !Vector3 {x: 0.6, y: 13, z: 1.5}
+
+    - !Item
+      name: GoodGoal
+      id: GoodGoal
+      positions:
+      - !Vector3 {x: 15, y: 0.4, z: 21}      
+      sizes:
+      - !ProcVector3Scaled
+        scales: [1, 1.8, 2.8]
+
+
+    - !Item
+      name: SignPosterboard
+      positions:
+      - !Vector3 {x: 25, y: 0.4, z: 19.8}
+      - !Vector3 {x: 15, y: 0.4, z: 22.5}
+      rotations: [270, 270]
+      sizes:
+      - !Vector3 {x: 2, y: 2, z: 2} 
+      - !Vector3 {x: 2, y: 2, z: 2} 
+      symbolNames:
+      - "illumination_same" 
+      - 11/11
+      colors:
+      - !RGB {r: 237, g: 232, b: 237} 
+      - !RGB {r: 237, g: 232, b: 237} 
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 7}
+      rotations: [90]
+      colors: 
+      - !ProcColor 8  
+      sizes:
+      - !Vector3 {x: 14, y: 1, z: 40}
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 25, y: 0, z: 19.8}
+      - !Vector3 {x: 15, y: 0, z: 22.5}
+      rotations: [90, 90]
+      colors: !ProcRepeatChoice
+        amount: 2 
+        value: !ProcColor 8  
+      sizes:
+      - !Vector3 {x: 1, y: 0.4, z: 6}
+      - !Vector3 {x: 6.3, y: 0.4, z: 6}
+
+
+
+
+
+
+
+
+

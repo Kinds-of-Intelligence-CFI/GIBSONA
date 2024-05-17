@@ -1,0 +1,59 @@
+!ArenaConfig
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [[1, 17, 26], [1, 10, 26], [1, 3, 26], [1, 36, 26], [1, 17, 35], [1, 10, 35], [1, 3, 35], [1, 36, 35], 
+          [7, 17, 26], [7, 10, 26], [7, 3, 26], [7, 36, 26], [7, 17, 35], [7, 10, 35], [7, 3, 35], [7, 36, 35],
+          [13, 17, 26], [13, 10, 26], [13, 3, 26], [13, 36, 26], [13, 17, 35], [13, 10, 35], [13, 3, 35], [13, 36, 35]] 
+    
+    labels: [dis_medi, dis_medi, dis_far, dis_medi, dis_medi, dis_far, dis_far, dis_medi, 
+            dis_medi, dis_medi, dis_far, dis_medi, dis_medi, dis_medi, dis_far, dis_medi, 
+            dis_close, dis_close, dis_medi, dis_close, dis_close, dis_medi, dis_medi, dis_close]
+
+arenas:
+  0: !Arena
+    pass_mark: !ProcIf
+      value: GoodGoal.sizes.0.x
+      cases: [3,4,5]
+      then: [2,3,4]
+    t: 500 # time limit 
+    items:
+    - !Item
+      name: Agent
+      id: agent
+      positions:
+      - !ProcList [!Vector3 {x: 23, y: 0, z: 1}, !Vector3 {x: 23, y: 0, z: 7}, !Vector3 {x: 23, y: 0, z: 13}]
+      rotations: [0] 
+     
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 10.5, y: 0, z: 20} # wall 1 position
+      - !Vector3 {x: 36, y: 0, z: 20} # wall 2 position 
+      colors: !ProcRepeatChoice
+        amount: 2
+        value: !ProcColor 8
+      sizes:
+      - !Vector3 {x: 21, y: 0.6, z: 5} # wall 1 size
+      - !Vector3 {x: 8, y: 0.6, z: 5} # wall 2 size
+      rotations: [0, 0] 
+
+    - !Item
+      name: GoodGoal
+      id: GoodGoal
+      positions:
+      - !ProcList [!Vector3 {x: 17, y: 0, z: 26}, !Vector3 {x: 10, y: 0, z: 26}, !Vector3 {x: 3, y: 0, z: 26}, 
+                   !Vector3 {x: 36, y: 0, z: 26},
+                   !Vector3 {x: 17, y: 0, z: 35}, !Vector3 {x: 10, y: 0, z: 35}, !Vector3 {x: 3, y: 0, z: 35},
+                   !Vector3 {x: 36, y: 0, z: 35}]
+      sizes:
+      - !ProcVector3Scaled
+        scales: [3, 4, 5]
+      
+
+
+
+
+
+

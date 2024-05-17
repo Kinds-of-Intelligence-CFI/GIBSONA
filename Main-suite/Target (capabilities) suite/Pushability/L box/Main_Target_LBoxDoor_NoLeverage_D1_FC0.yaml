@@ -1,0 +1,76 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: !ProcIf
+     value: GoodGoal.sizes.0.x
+     cases: [2, 3, 4]
+     then: [1, 2, 3]
+    t: 400
+
+    items:
+    - !Item
+      name: Agent
+      id: agent
+      positions:
+      - !ProcIf
+        value: wall.positions.0.z
+        cases: [1, 4, 7]
+        then: [!Vector3 {x: 20, y: 0, z: 1},!Vector3 {x: 20, y: 0, z: 4},!Vector3 {x: 20, y: 0, z: 7}]
+        labels: [dis_far, dis_medi, dis_close]
+      rotations: [0]
+    - !Item
+      name: Wall
+      id: wall
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 7}]
+      colors: 
+      - !ProcColor 8
+      sizes:
+      - !Vector3 {x: 4, y: 3, z: 2}
+      rotations: [0]
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 25}
+      - !Vector3 {x: 25, y: 0, z: 22}
+      - !Vector3 {x: 15, y: 0, z: 22}
+      colors: !ProcRepeatChoice
+        amount: 3 
+        value: !ProcColor 8 
+      sizes:
+      - !Vector3 {x: 8, y: !ProcList [1, 2, 3], z: 2}
+      - !Vector3 {x: 8, y: !ProcList [1, 2, 3], z: 2}
+      - !Vector3 {x: 8, y: !ProcList [1, 2, 3], z: 2}
+      rotations: [0, 90, 90] 
+
+    - !Item
+      name: LObject2
+      positions:
+      - !Vector3 {x: 23, y: 0, z: 15.5}
+      sizes:
+      - !Vector3 { x: 25, y: !ProcList [0.5, 1, 1.5], z: 15}
+      rotations: [180]
+
+    - !Item
+      name: DeathZone
+      positions:
+      - !Vector3 {x: 25, y: 0, z: 17}
+      - !Vector3 {x: 15, y: 0, z: 17}
+      sizes:
+      - !Vector3 {x: 2, y: 0, z: 2}
+      - !Vector3 {x: 2, y: 0, z: 2}
+      rotations: [0, 0]
+
+    - !Item
+      name: GoodGoal    
+      id: GoodGoal
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 21} 
+      sizes:
+      - !ProcVector3Scaled
+        scales: [2, 3, 4]
+
+ 
+
+

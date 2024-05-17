@@ -1,0 +1,54 @@
+!ArenaConfig
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [agent.positions.0.z, GoodGoal.positions.0.z]
+    cases: [[1, 36], [1, 31], [1, 26], 
+            [7, 36], [7, 31], [7, 26],
+            [13, 36], [13, 31], [13, 26]]
+    labels: [dis_far, dis_far, dis_medi, 
+            dis_medi, dis_medi, dis_close, 
+          dis_medi, dis_medi, dis_close]
+
+arenas:
+  0: !Arena
+    pass_mark: !ProcIf 
+      value: GoodGoal.sizes.0.x
+      cases: [3,4,5]
+      then: [2,3,4]
+    t: 500
+    items:
+    - !Item
+      name: Agent
+      id: agent
+      positions:
+      - !ProcList [!Vector3 {x: 23, y: 0, z: 1}, !Vector3 {x: 23, y: 0, z: 7}, !Vector3 {x: 23, y: 0, z: 13}]
+      rotations: [0]
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 15.5, y: 0, z: 20}
+      - !Vector3 {x: 36, y: 0, z: 20}
+      colors: !ProcRepeatChoice
+        amount: 2
+        value: !ProcColor 8
+      sizes:
+      - !Vector3 {x: 31, y: 0.6, z: 1}
+      - !Vector3 {x: 8, y: 0.6, z: 1}
+      rotations: [0, 0]
+
+    - !Item
+      name: GoodGoal 
+      id: GoodGoal
+      positions:
+      - !ProcList [!Vector3 {x: 31, y: 0, z: 36}, !Vector3 {x: 31, y: 0, z: 31}, !Vector3 {x: 31, y: 0, z: 26}]
+      sizes:
+      - !ProcVector3Scaled
+        scales: [3, 4, 5]    
+
+
+
+
+
+

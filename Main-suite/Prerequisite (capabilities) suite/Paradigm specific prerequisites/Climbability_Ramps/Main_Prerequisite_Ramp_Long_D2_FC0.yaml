@@ -1,0 +1,62 @@
+!ArenaConfig
+arenas:
+  0: !Arena
+    pass_mark: !ProcIf
+      value: GoodGoal.sizes.0.x
+      cases: [1, 2.5, 4]
+      then: [0, 1.5, 3]
+    t: 250
+
+    items:
+    - !Item
+      name: Agent
+      id: agent 
+      positions:
+      - !ProcListLabelled
+        - label: dis_medi
+          value: !Vector3 {x: 7.5, y: 0, z: 1}
+        - label: dis_close
+          value: !Vector3 {x: 7.5, y: 0, z: 10}
+        - label: dis_far
+          value: !Vector3 {x: 1, y: 0, z: 39}
+        - label: dis_far
+          value: !Vector3 {x: 39, y: 0, z: 1} 
+        - label: dis_far
+          value: !Vector3 {x: 39, y: 0, z: 39}
+      rotations: 
+      - !ProcIf 
+        value: [agent.positions.0.x, agent.positions.0.z]                             
+        cases: [[7.5, 1], [7.5, 10], [1, 39], [39, 1], [39, 39]]
+        then: [0, 0, 180, 0, 180]
+
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 8, y: 0, z: 22}
+      rotations: [270]
+      colors: 
+      - !ProcColor 8 
+      sizes:
+      - !Vector3 {x: 3, y: 1, z: 4}
+
+    - !Item
+      name: Ramp
+      positions:
+      - !Vector3 {x: 8, y: 0, z: 16.5}
+      rotations: [180]
+      colors: 
+      - !ProcColor 8 
+      sizes:
+      - !Vector3 {x: !ProcList [2, 4, 6], y: 1, z: 8} 
+  
+    - !Item
+      name: GoodGoal
+      id: GoodGoal
+      positions:
+      - !Vector3 {x: 8, y: 2.1, z: 21.5} 
+      sizes:
+      - !ProcVector3Scaled
+        scales: [1, 2.5, 4]
+    
+

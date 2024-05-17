@@ -1,0 +1,76 @@
+!ArenaConfig
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [[15, 25]]
+    labels: [dis_medi]
+
+arenas:
+  0: !Arena
+    pass_mark: !ProcIf
+      value: [GoodGoal.sizes.0.x, GoodGoalMulti.sizes.0.x, GoodGoalMulti.sizes.3.x]
+      cases: [[1, 1, 1], [1, 2.5, 2.5], [1, 4, 4], 
+             [2.5, 1, 1], [2.5, 2.5, 2.5], [2.5, 4, 4], 
+             [4, 1, 1], [4, 2.5, 2.5], [4, 4, 4]]
+      then: [2, 5, 8, 3.5, 6.5, 9.5, 5, 8, 11]
+    t: 500
+
+    items:
+    - !Item
+      name: Agent
+      positions: !Vector3 {x: 20, y: 1, z: 1}
+      rotations: [0]
+
+    - !Item
+      name: Wall
+      positions:
+      - !Vector3 {x: 20, y: 0, z: 3.5}
+      - !Vector3 {x: 15, y: 0, z: 8}
+      - !Vector3 {x: 4.5, y: 0, z: 15}
+      - !Vector3 {x: 20, y: 0, z: 21}
+      - !Vector3 {x: 25, y: 0, z: 29}
+      - !Vector3 {x: 20, y: 0, z: 27}
+      - !Vector3 {x: 15, y: 0, z: 25.3}
+      rotations: [0, 90, 0, 90, 90, 0, 0]
+      colors: !ProcRepeatChoice
+        amount: 7 
+        value: !ProcColor 8 
+      sizes:
+      - !Vector3 {x: 10, y: 1, z: 7} 
+      - !Vector3 {x: 2, y: 1, z: 20} 
+      - !Vector3 {x: 1, y: 1, z: 16}
+      - !Vector3 {x: 4, y: 1, z: 30} 
+      - !Vector3 {x: 2, y: 1, z: 2}
+      - !Vector3 {x: 2, y: 1, z: 4}
+      - !Vector3 {x: 2, y: 1, z: 4}
+
+    - !Item
+      name: GoodGoal
+      id: GoodGoalMulti
+      positions:
+      - !Vector3 {x: !ProcList [6, 14, 22], y: 1, z: 8}
+      - !Vector3 {x: 20 , y: 1, z: 27}
+      - !Vector3 {x: 25, y: 1, z: 29} 
+      - !Vector3 {x: 33, y: 1, z: 21}      
+      sizes: !ProcRepeatChoice 
+        amount: 4
+        value: !ProcVector3Scaled
+          scales: [1, 2.5, 4]
+
+    - !Item
+      name: GoodGoal 
+      id: GoodGoal
+      positions:
+      - !Vector3 {x: 15, y: 1, z: 25}  
+      sizes: !ProcRepeatChoice 
+        amount: 1
+        value: !ProcVector3Scaled
+          scales: [1, 2.5, 4]
+
+    - !Item
+      name: DeathZone
+      positions: 
+      - !Vector3 {x: 20, y: 0, z: 20}
+      sizes: 
+      - !Vector3 {x: 40, y: !ProcList [1.5, 1, 0.5], z: 40}

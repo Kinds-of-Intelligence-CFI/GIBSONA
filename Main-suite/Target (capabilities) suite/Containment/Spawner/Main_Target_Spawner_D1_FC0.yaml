@@ -1,0 +1,41 @@
+!ArenaConfig
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [agent.positions.0.x, agent.positions.0.z, spawner.positions.0.x, spawner.positions.0.z]
+    cases: [[20, 4, 10, 30], [20, 4, 20, 30], [20, 4, 30, 30], [20, 4, 10, 10], [20, 4, 20, 10], [20, 4, 30, 10], 
+            [20, 36, 10, 30], [20, 36, 20, 30], [20, 36, 30, 30], [20, 36, 10, 10], [20, 36, 20, 10], [20, 36, 30, 10], 
+            [4, 4, 10, 30], [4, 4, 20, 30], [4, 4, 30, 30], [4, 4, 10, 10], [4, 4, 20, 10], [4, 4, 30, 10], 
+            [36, 4, 10, 30], [36, 4, 10, 20], [36, 4, 30, 30], [36, 4, 10, 10], [36, 4, 20, 10], [36, 4, 30, 10], 
+            [4, 36, 10, 30], [4, 36, 10, 20], [4, 36, 10, 30], [4, 36, 10, 10], [4, 36, 20, 10], [4, 36, 30, 10], 
+            [36, 36, 10, 30], [36, 36, 10, 20], [36, 36, 10, 30], [36, 36, 10, 10], [36, 36, 20, 10], [36, 36, 30, 10]]
+    labels: [dis_far, dis_far, dis_far, dis_close, dis_close, dis_close, 
+            dis_close, dis_close, dis_close, dis_far, dis_far, dis_far, 
+            dis_medi, dis_far, dis_far, dis_close, dis_close, dis_medi, 
+            dis_far, dis_far, dis_medi, dis_medi, dis_close, dis_close, 
+            dis_close, dis_close, dis_medi, dis_medi, dis_far, dis_far, 
+            dis_medi, dis_close, dis_close, dis_far, dis_far, dis_medi]
+
+arenas:
+  0: !Arena
+    pass_mark: 0
+    t: 250
+    items:
+    - !Item
+      name: Agent
+      id: agent
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 1, z: 4}, !Vector3 {x: 20, y: 1, z: 36}, !Vector3 {x: 4, y: 1, z: 4},
+                  !Vector3 {x: 36, y: 1, z: 4}, !Vector3 {x: 4, y: 1, z: 36}, !Vector3 {x: 36, y: 1, z: 36}]
+      rotations:
+      - !ProcIf
+        value: agent.positions.0.z 
+        cases: [4, 36]
+        then: [0, 180]
+
+    - !Item
+      name: SpawnerContainer
+      id: spawner
+      positions:
+      - !ProcList [!Vector3 {x: 10, y: 0, z: 30}, !Vector3 {x: 20, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 30}, 
+                    !Vector3 {x: 10, y: 0, z: 10}, !Vector3 {x: 20, y: 0, z: 10}, !Vector3 {x: 30, y: 0, z: 10}]

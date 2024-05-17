@@ -1,0 +1,81 @@
+!ArenaConfig
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, Tunnel.positions.0.x]
+    cases: [[20, 4, 5, 11], [20, 4, 20, 11], [20, 4, 35, 11], [20, 4, 5, 29], [20, 4, 20, 29], [20, 4, 35, 29],  
+            [20, 20, 5, 11], [20, 20, 20, 11], [20, 20, 35, 11], [20, 20, 5, 29], [20, 20, 20, 29], [20, 20, 35, 29], 
+            [4, 4, 5, 11], [4, 4, 20, 11], [4, 4, 35, 11], [4, 4, 5, 29], [4, 4, 20, 29], [4, 4, 35, 29], 
+            [36, 4, 5, 11], [36, 4, 20, 11], [36, 4, 35, 11], [36, 4, 5, 29], [36, 4, 20, 29], [36, 4, 35, 29], 
+            [4, 20, 5, 11], [4, 20, 20, 11], [4, 20, 35, 11], [4, 20, 5, 29], [4, 20, 20, 29], [4, 20, 35, 29], 
+            [36, 20, 5, 11], [36, 20, 20, 11], [36, 20, 35, 11], [36, 20, 5, 29], [36, 20, 20, 29], [36, 20, 35, 29]]
+            
+    labels: [dis_medi, dis_far, dis_far, dis_far, dis_far, dis_medi, 
+            dis_close, dis_medi, dis_medi, dis_medi, dis_medi, dis_close, 
+            dis_medi, dis_far, dis_far, dis_far, dis_far, dis_far, 
+            dis_far, dis_far, dis_far, dis_far, dis_far, dis_medi, 
+            dis_close, dis_close, dis_medi, dis_far, dis_medi, dis_medi, 
+            dis_medi, dis_medi, dis_far, dis_medi, dis_close, dis_close]
+
+arenas:
+  0: !Arena
+    pass_mark: !ProcIf
+      value: GoodGoal.sizes.0.x
+      cases: [3,4,5]
+      then: [2,3,4]
+    t: 250
+    items:
+    - !Item
+      name: Agent
+      id: agent
+      positions: #the agent can start at 6 different positions in the arena
+      - !Vector3 {x: !ProcList [4, 20, 36], y: 0, z: !ProcList [4, 20]}
+      rotations: [0]
+
+    - !Item
+      name: CylinderTunnel
+      id: Tunnel
+      positions:
+      - !ProcIf 
+        value: DeathZone1.positions.0.x
+        cases: [27, 13]
+        then: [!Vector3 {x: 11, y: 0, z: 30}, !Vector3 {x: 29, y: 0, z: 30}]
+      rotations: [0]
+      colors: 
+      - !ProcColor 8
+      sizes:
+      - !ProcList [!Vector3 {x: 6, y: 7, z: 5}, !Vector3 {x: 6, y: 3, z: 5}, !Vector3 {x: 6, y: 15, z: 5}, !Vector3 {x: 6, y: 7, z: 10}, 
+        !Vector3 {x: 6, y: 7, z: 1}, !Vector3 {x: 6, y: 15, z: 10}, !Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 15, z: 1}, !Vector3 {x: 6, y: 3, z: 10}]
+
+    - !Item
+      name: DeathZone
+      id: DeathZone1
+      positions:
+      - !ProcList [!Vector3 {x: 27, y: 0, z: 30}, !Vector3 {x: 13, y: 0, z: 30}] 
+      sizes:
+      - !ProcList [!Vector3 {x: 26, y: 1.5, z: 5}, !Vector3 {x: 26, y: 1.5, z: 1}, !Vector3 {x: 26, y: 1.5, z: 10}, !Vector3 {x: 26, y: 3, z: 5!}, 
+                !Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 0, z: 5}, !Vector3 {x: 26, y: 0, z: 1}, !Vector3 {x: 26, y: 3, z: 10}]
+      rotations: [0]
+    - !Item
+      name: DeathZone
+      id: DeathZone2
+      positions:
+      - !ProcIf 
+        value: DeathZone1.positions.0.x
+        cases: [27, 13]
+        then: [!Vector3 {x: 4, y: 0, z: 30}, !Vector3 {x: 36, y: 0, z: 30}]
+      sizes: 
+      - !ProcList [!Vector3 {x: 8, y: 1.5, z: 5}, !Vector3 {x: 8, y: 1.5, z: 1}, !Vector3 {x: 8, y: 1.5, z: 10}, !Vector3 {x: 8, y: 3, z: 5!}, 
+            !Vector3 {x: 8, y: 3, z: 1}, !Vector3 {x: 8, y: 0, z: 10}, !Vector3 {x: 8, y: 0, z: 5}, !Vector3 {x: 8, y: 0, z: 1}, !Vector3 {x: 8, y: 3, z: 10}]
+      rotations: [0]
+
+    - !Item
+      name: GoodGoal
+      id: GoodGoal
+      positions:
+      - !ProcList [!Vector3 {x: 5, y: 0, z: 37}, !Vector3 {x: 20, y: 0, z: 37}, !Vector3 {x: 35, y: 0, z: 37}]
+      sizes:
+      - !ProcVector3Scaled
+        scales: [3, 4, 5]
+
+    

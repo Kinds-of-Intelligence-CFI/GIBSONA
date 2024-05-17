@@ -1,0 +1,97 @@
+!ArenaConfig
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [[20, 1, 12, 30], [20, 1, 32, 30], [20, 1, 12, 10], [20, 1, 32, 10], 
+            [20, 39, 12, 30], [20, 39, 32, 30], [20, 39, 12, 10], [20, 39, 32, 10], 
+            [1, 1, 12, 30], [1, 1, 32, 30], [1, 1, 12, 10], [1, 1, 32, 10], 
+            [39, 1, 12, 30], [39, 1, 32, 30], [39, 1, 12, 10], [39, 1, 32, 10], 
+            [1, 39, 12, 30], [1, 39, 32, 30], [1, 39, 12, 10], [1, 39, 32, 10], 
+            [39, 39, 12, 30], [39, 39, 32, 30], [39, 39, 12, 10], [39, 39, 32, 10]] 
+    labels: [dis_medi, dis_medi, dis_close, dis_close, 
+              dis_close, dis_close, dis_medi, dis_medi, 
+              dis_medi, dis_far, dis_close, dis_medi, 
+              dis_far, dis_medi, dis_medi, dis_close,           
+              dis_close, dis_medi, dis_medi, dis_far, 
+              dis_medi, dis_close, dis_far, dis_medi] 
+
+arenas:
+  0: !Arena
+    pass_mark: !ProcIf
+      value: GoodGoal.sizes.0.x
+      cases: [1, 2, 3]
+      then: [0, 1, 2]
+    t: 250
+
+    items:
+    - !Item
+      name: Agent
+      id: agent
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 39}, !Vector3 {x: 1, y: 0, z: 1}, 
+          !Vector3 {x: 39, y: 0, z: 1}, !Vector3 {x: 1, y: 0, z: 39}, !Vector3 {x: 39, y: 0, z: 39}]
+      rotations:
+       - !ProcIf
+          value: agent.positions.0.z
+          cases: [1, 39]
+          then: [0, 180]
+
+    - !Item
+      name: Wall
+      id: Wall1
+      positions:
+       - !ProcList [!Vector3 {x: 10, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 10}, 
+          !Vector3 {x: 30, y: 0, z: 10}]
+      rotations: [90]
+      colors: 
+      - !ProcColor 8
+      sizes:
+       - !ProcList [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 1, y: 3, z: 1}, !Vector3 {x: 10, y: 3, z: 1}]
+
+    - !Item
+      name: Wall
+      id: Wall2
+      positions:
+        - !ProcIf
+          value: [Wall1.positions.0.x, Wall1.positions.0.z]
+          cases: [[10, 30], [30, 30], [10, 10], [30, 10]]
+          then: [!Vector3 {x: 14, y: 0, z: 30}, !Vector3 {x: 34, y: 0, z: 30}, !Vector3 {x: 14, y: 0, z: 10}, !Vector3 {x: 34, y: 0, z: 10}]
+      rotations: [90]
+      colors: 
+      - !ProcColor 8
+      sizes:
+        - !ProcIf
+          value: Wall1.sizes.0.x
+          cases: [6, 1, 10]
+          then: [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 1, y: 3, z: 1}, !Vector3 {x: 10, y: 3, z: 1}]
+
+    - !Item
+      name: Wall
+      id: Wall3
+      positions:
+        - !ProcIf
+          value: [Wall1.positions.0.x, Wall1.positions.0.z]
+          cases: [[10, 30], [30, 30], [10, 10], [30, 10]]
+          then: [!Vector3 {x: 12, y: 3.5, z: 30}, !Vector3 {x: 32, y: 3.5, z: 30}, !Vector3 {x: 12, y: 3.5, z: 10}, !Vector3 {x: 32, y: 3.5, z: 10}] 
+      rotations: [90]
+      colors: 
+      - !ProcColor 8
+      sizes:
+        - !ProcIf
+          value: Wall1.sizes.0.x
+          cases: [6, 1, 10]
+          then: [!Vector3 {x: 6, y: 1, z: 5}, !Vector3 {x: 1, y: 1, z: 5}, !Vector3 {x: 10, y: 1, z: 5}]
+      
+    - !Item
+      name: GoodGoal
+      id: GoodGoal 
+      positions:
+       - !ProcIf
+          value: [Wall3.positions.0.x, Wall3.positions.0.z]
+          cases: [[12, 30], [32, 30], [12, 10], [32, 10]]
+          then: [!Vector3 {x: 12, y: 0, z: 30}, !Vector3 {x: 32, y: 0, z: 30}, !Vector3 {x: 12, y: 0, z: 10}, 
+                !Vector3 {x: 32, y: 0, z: 10}]     
+      sizes:
+      - !ProcVector3Scaled
+        scales: [1, 2, 3]
