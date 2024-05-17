@@ -1,0 +1,65 @@
+!ArenaConfig
+
+proc_labels:
+- !ProcIfLabels
+  variable: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+  cases: [[20, 1, 14, 17, 32], [20, 1, 23, 32], [20, 1, 17, 12], [20, 1, 23, 12], 
+          [20, 39, 14, 17, 32], [20, 39, 23, 32], [20, 39, 17, 12], [20, 39, 23, 12], 
+          [1, 1, 14, 17, 32], [1, 1, 23, 32], [1, 1, 17, 12], [1, 1, 23, 12],
+          [39, 1, 14, 17, 32], [39, 1, 23, 32], [39, 1, 17, 12], [39, 1, 23, 12],
+          [1, 39, 14, 17, 32], [1, 39, 23, 32], [1, 39, 17, 12], [1, 39, 23, 12],
+          [39, 39, 14, 17, 32], [39, 39, 23, 32], [39, 39, 17, 12], [39, 39, 23, 12]]
+  labels: [dis_far, dis_far, dis_close, dis_close, 
+           dis_close, dis_close, dis_far, dis_far, 
+           dis_far, dis_far, dis_close, dis_medi, 
+           dis_far, dis_far, dis_medi, dis_close, 
+           dis_close, dis_medi, dis_far, dis_far, 
+           dis_medi, dis_close, dis_far, dis_far]
+
+arenas:
+  0: !Arena
+    pass_mark: 
+    - !ProcIf
+      value: GoodGoal.sizes.0.x
+      cases: [2, 3, 4]
+      then: [1, 2, 3]
+    t: 250
+
+    items:
+    - !Item
+      name: Agent
+      id: agent
+      positions:
+      - !ProcList [!Vector3 {x: 20, y: 0, z: 1}, !Vector3 {x: 20, y: 0, z: 39}, !Vector3 {x: 1, y: 0, z: 1}, 
+          !Vector3 {x: 39, y: 0, z: 1}, !Vector3 {x: 1, y: 0, z: 39}, !Vector3 {x: 39, y: 0, z: 39}]
+      rotations:
+      - !ProcIf
+      value: agent.positions.0.z
+      cases: [1, 39]
+      then: [0, 180]
+
+    - !Item
+      name: CylinderTunnel
+      id: tunnel
+      positions:
+      - !ProcList [!Vector3 {x: 11, y: 0, z: 30}, !Vector3 {x: 29, y: 0, z: 30}, !Vector3 {x: 11, y: 0, z: 10}, 
+          !Vector3 {x: 29, y: 0, z: 10}]
+      rotations: [0]
+      colors: 
+      - !ProcColor 8 
+      sizes:
+      - !ProcList [!Vector3 {x: 6, y: 10, z: 5}, !Vector3 {x: 6, y: 10, z: 8}, !Vector3 {x: 6, y: 10, z: 3}]
+
+    - !Item
+      name: GoodGoal
+      id: GoodGoal 
+      positions:
+       - !ProcIf
+      value: tunnel.positions.0.x, tunnel.positions.0.z
+      cases: [[11, 30], [29, 30], [11, 10], [29, 10]]
+      then: [!Vector3 {x: 17, y: 0, z: 32},!Vector3 {x: 23, y: 0, z: 32}, !Vector3 {x: 17, y: 0, z: 12}, !Vector3 {x: 23, y: 0, z: 12}]
+      sizes:
+      - !ProcVector3Scaled
+        scales: [2, 3, 4]
+
+    
