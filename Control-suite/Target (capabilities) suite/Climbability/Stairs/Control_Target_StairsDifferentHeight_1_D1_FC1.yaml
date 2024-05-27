@@ -72,9 +72,9 @@ arenas:
       - !Vector3 {x: 36, y: 4, z: 20}
       sizes: 
       - !ProcVector3Scaled
-      scales: [1, 2.5, 4]
+        scales: [1, 2.5, 4]
       - !ProcVector3Scaled
-      scales: [1, 2.5, 4]
+        scales: [1, 2.5, 4]
 
 
 

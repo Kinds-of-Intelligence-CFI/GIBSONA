@@ -38,7 +38,7 @@ arenas:
       - !Vector3 {x: 20, y: 0, z: 21.5}
       - !Vector3 {x: 20, y: 0, z: 2.25}
       rotations: [270, 270]
-     colors: !ProcRepeatChoice
+      colors: !ProcRepeatChoice
         amount: 2 
         value: !ProcColor 8 
       sizes:

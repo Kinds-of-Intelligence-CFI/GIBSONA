@@ -51,7 +51,7 @@ arenas:
       colors: 
       - !ProcColor 8 
       sizes:
-      - !Vector3 {x: !ProcList[2, 4, 6] y: 1, z: 8} 
+      - !Vector3 {x: !ProcList [2, 4, 6], y: 1, z: 8} 
 
     - !Item
       name: GoodGoal

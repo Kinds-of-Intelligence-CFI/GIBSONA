@@ -36,8 +36,7 @@ arenas:
       colors: 
       - !ProcColor 8
       rotations: [0]
-
-  - !Item
+    - !Item
       name: DeathZone
       positions:
       - !Vector3 {x: 20, y: 0, z: 30}

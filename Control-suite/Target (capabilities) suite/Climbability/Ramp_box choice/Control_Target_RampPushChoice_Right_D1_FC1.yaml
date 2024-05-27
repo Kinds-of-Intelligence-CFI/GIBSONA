@@ -98,7 +98,7 @@ arenas:
     - !Item
       name: Ramp
       positions:
-      - !Vector3 {x: 15, y: 0, z: !ProcList [7, 11]}}
+      - !Vector3 {x: 15, y: 0, z: !ProcList [7, 11]}
       rotations: [180] 
       colors: 
       - !ProcColor 8

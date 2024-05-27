@@ -48,12 +48,12 @@ arenas:
       name: Wall
       id: Wall1
       positions:
-      - !Proclist [!Vector3 {x: 10, y: 0, z: 30}, !Vector3 {x: 24, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 15}, !Vector3 {x: 24, y: 0, z: 15}]
+      - !ProcList [!Vector3 {x: 10, y: 0, z: 30}, !Vector3 {x: 24, y: 0, z: 30}, !Vector3 {x: 10, y: 0, z: 15}, !Vector3 {x: 24, y: 0, z: 15}]
       rotations: [90]
       colors: 
       - !ProcColor 8
       sizes:
-       - !Proclist [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 1, z: 1}, !Vector3 {x: 3, y: 3, z: 1}, !Vector3 {x: 9, y: 3, z: 1}]
+       - !ProcList [!Vector3 {x: 6, y: 3, z: 1}, !Vector3 {x: 6, y: 1, z: 1}, !Vector3 {x: 3, y: 3, z: 1}, !Vector3 {x: 9, y: 3, z: 1}]
       
     - !Item
       name: Wall
@@ -115,7 +115,7 @@ arenas:
         cases: [[19,30], [19,15]]
         then: [!Vector3 {x: 19, y: 0, z: 30}, !Vector3 {x: 19, y: 1.5, z: 15}]
       rotations: 
-      - !ProfIf 
+      - !ProcIf 
         value: Wall4.positions.0.x, Wall4.positions.0.z
         cases: [[19,30], [19,15]]
         then: [270, 90]

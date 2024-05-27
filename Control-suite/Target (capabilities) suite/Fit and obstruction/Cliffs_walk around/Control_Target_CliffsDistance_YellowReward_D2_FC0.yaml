@@ -11,12 +11,12 @@ proc_labels:
 arenas:
   0: !Arena
     pass_mark: 
-    !ProcIf
-      value: [GoodGoalMulti.sizes.0, GoodGoalMulti.sizes.1, GoodGoal.sizes.0]
-      cases: [[1, 1, 1], [1, 1, 2.5], [1, 1, 4], 
-             [2.5, 2.5, 1], [2.5, 2.5, 2.5], [2.5, 2.5, 4], 
-             [4, 4, 1], [4, 4, 2.5], [4, 4, 4]]
-      then: [2, 3.5, 5, 5, 6.5, 8, 8, 9.5, 11]
+      !ProcIf
+        value: [GoodGoalMulti.sizes.0, GoodGoalMulti.sizes.1, GoodGoal.sizes.0]
+        cases: [[1, 1, 1], [1, 1, 2.5], [1, 1, 4], 
+              [2.5, 2.5, 1], [2.5, 2.5, 2.5], [2.5, 2.5, 4], 
+              [4, 4, 1], [4, 4, 2.5], [4, 4, 4]]
+        then: [2, 3.5, 5, 5, 6.5, 8, 8, 9.5, 11]
     t: 500
    
     
@@ -60,7 +60,7 @@ arenas:
       sizes: !ProcRepeatChoice 
         amount: 4
         item: !ProcVector3Scaled
-        scales: [1, 2.5, 4]
+          scales: [1, 2.5, 4]
 
     - !Item
       name: GoodGoal 
