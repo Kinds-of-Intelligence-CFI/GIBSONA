@@ -3,8 +3,8 @@
 proc_meta:
   proc_labels:
   - !ProcIfLabels
-    value: [agent.positions.0.x, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
-    cases: [[20, 3, 21, 20], [20, 3, 21, 26], [20, 3, 21, 32]]           
+    value: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [[20, 3, 21, 20], [20, 3, 21, 26], [20, 3, 21, 32]]
     labels: [dis_close, dis_medi, dis_far]
 
 
