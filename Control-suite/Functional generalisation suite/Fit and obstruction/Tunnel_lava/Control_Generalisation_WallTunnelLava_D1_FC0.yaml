@@ -40,7 +40,7 @@ arenas:
       positions:
       - !ProcIf
         value: DeathZone1.positions.0.x
-        condition: 13
+        cases: [13]
         then: {x: 22, y: 0, z: 30} 
         default: !Vector3 {x: 10, y: 0, z: 30} 
       rotations: [90]
@@ -56,7 +56,7 @@ arenas:
       positions:
       - !ProcIf 
         value: DeathZone1.positions.0.x
-        condition: 13
+        cases: [13]
         then: !Vector3 {x: 26, y: 0, z: 30}
         default: !Vector3 {x: 14, y: 0, z: 30} 
       rotations: [90]
@@ -72,7 +72,7 @@ arenas:
       positions:
       - !ProcIf
         value: DeathZone1.positions.0.x
-        condition: 13
+        cases: [13]
         then: !Vector3 {x: 24, y: 3.5, z: 30} 
         default: !Vector3 {x: 12, y: 3.5, z: 30} 
       rotations: [90] 
@@ -97,7 +97,7 @@ arenas:
       positions:
       - !ProcIf 
         value: DeathZone1.positions.0.x
-        condition: 27
+        cases: [27]
         then: !Vector3 {x: 5, y: 0, z: 30} 
         else: !Vector3 {x: 35, y: 0, z: 30} 
       sizes:

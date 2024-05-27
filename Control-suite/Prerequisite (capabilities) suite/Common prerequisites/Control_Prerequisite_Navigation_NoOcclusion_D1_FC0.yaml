@@ -21,7 +21,7 @@ arenas:
     items:
     - !Item
       name: Agent
-      positions:	
+      positions:
       - !Vector3 {x: 20, y: 0, z: 3}
       rotations: [0]
 
