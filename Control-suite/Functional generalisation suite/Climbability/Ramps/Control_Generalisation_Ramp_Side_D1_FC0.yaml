@@ -128,7 +128,7 @@ arenas:
 
     - !Item
       name: GoodGoal
-      id: Goodgoal
+      id: GoodGoal
       positions:
       - !ProcIf
         value: Wall1.positions.0.x, Wall1.positions.0.z

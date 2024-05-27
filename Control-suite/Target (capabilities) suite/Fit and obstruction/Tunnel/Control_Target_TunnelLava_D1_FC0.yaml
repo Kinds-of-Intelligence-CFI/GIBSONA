@@ -77,9 +77,10 @@ arenas:
       name: GoodGoal
       id: GoodGoal
       positions:
-      value: tunnel.positions.0.x, tunnel.positions.0.z
-      cases: [[11, 30], [29, 30]]
-      then: [!Vector3 {x: 17, y: 0, z: 25},!Vector3 {x: 23, y: 0, z: 25}]
+      - !ProcIf
+        value: [tunnel.positions.0.x, tunnel.positions.0.z]
+        cases: [[11, 30], [29, 30]]
+        then: [!Vector3 {x: 17, y: 0, z: 25},!Vector3 {x: 23, y: 0, z: 25}]
       sizes:
       - !ProcVector3Scaled
           scales: [3, 4, 5]

@@ -12,7 +12,7 @@ arenas:
     - !Item
       name: Agent
       id: agent
-      position:
+      positions:
       - !ProcIf
         value: wall.positions.0.z
         cases: [1, 4, 7]

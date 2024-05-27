@@ -9,7 +9,7 @@ arenas:
     t: 250
 
 
-    items::
+    items:
     - !Item
       name: Agent
       id: agent

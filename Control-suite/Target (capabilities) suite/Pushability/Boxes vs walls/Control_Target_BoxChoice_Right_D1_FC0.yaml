@@ -25,7 +25,7 @@ arenas:
     - !Item
       name: Agent
       positions:
-      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3{x: 20, y: 1, z: 7}, !Vector3{x: 20, y: 1, z: 13}]
+      - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 7}, !Vector3 {x: 20, y: 1, z: 13}]
       rotations: [0]
 
     - !Item
@@ -42,7 +42,7 @@ arenas:
       positions:
       - !Vector3 {x: 20, y: 0, z: 30}
       sizes:
-      - !ProcList [!Vector3 {x: 1, y: 0, z: 20}, !Vector3{x: 2.5, y: 0, z: 20}, !Vector3{x: 4, y: 0, z: 20}]
+      - !ProcList [!Vector3 {x: 1, y: 0, z: 20}, !Vector3 {x: 2.5, y: 0, z: 20}, !Vector3 {x: 4, y: 0, z: 20}]
       rotations: [0]
    
 
@@ -55,7 +55,7 @@ arenas:
       - !Vector3 {x: 15.5, y: 0, z: 20}   
       sizes: !ProcRepeatChoice
         amount: 4 
-        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3{x: 4, y: 0.5, z: 2}]
+        value: !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
       colors: 
         amount: 4 
         value: !ProcColor 8 
@@ -69,7 +69,7 @@ arenas:
       - !Vector3 {x: 29, y: 0, z: 38}
       - !Vector3 {x: 24.5, y: 0, z: 38}
       sizes:
-      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3{x: 4, y: 0.5, z: 2}]
+      - !ProcList [!Vector3 {x: 4, y: 1.5, z: 2}, !Vector3 {x: 4, y: 0.5, z: 2}]
       rotations: [0]
 
  
@@ -85,7 +85,7 @@ arenas:
       name: GoodGoal
       id: GoodGoal 
       positions:
-      - !ProcList [!Vector3 {x: 26, y: 0, z: 30}, !Vector3{x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 34}]
+      - !ProcList [!Vector3 {x: 26, y: 0, z: 30}, !Vector3 {x: 37, y: 0, z: 30}, !Vector3 {x: 30, y: 0, z: 24}, !Vector3 {x: 30, y: 0, z: 34}]
       sizes:
       - !ProcVector3Scaled
         scales: [3, 4, 5]
