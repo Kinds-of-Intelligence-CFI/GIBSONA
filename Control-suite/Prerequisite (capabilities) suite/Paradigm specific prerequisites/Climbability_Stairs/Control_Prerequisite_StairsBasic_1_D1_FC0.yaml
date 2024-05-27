@@ -13,7 +13,7 @@ arenas:
     - !Item
       name: Agent
       id: agent
-      positions:	
+      positions:
       - !ProcListLabelled
         - label: dis_far
           value: !Vector3 {x: 20, y: 0, z: 1}

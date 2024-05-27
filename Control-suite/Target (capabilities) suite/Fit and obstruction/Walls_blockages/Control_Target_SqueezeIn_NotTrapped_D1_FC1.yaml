@@ -80,4 +80,4 @@ arenas:
       sizes:
       - !ProcVector3Scaled
         scales: [1.5, 2.5, 3.5]
-	
+

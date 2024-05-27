@@ -13,8 +13,8 @@ arenas:
     - !Item
       name: Agent
       id: agent
-      positions:	
-      - !ProcListLabelled	
+      positions:
+      - !ProcListLabelled
         - label: dis_medi
           value: !Vector3 {x: 20, y: 0.1, z: 1}
         - label: dis_far
