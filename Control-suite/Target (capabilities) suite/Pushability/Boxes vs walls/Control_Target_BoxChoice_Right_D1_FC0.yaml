@@ -1,15 +1,16 @@
 !ArenaConfig
 
-proc_labels:
-- !ProcIfLabels
-  value: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
-  cases: [[20, 1, 26, 30], [20, 1, 37, 30], [20, 1, 30, 24], [20, 1, 30, 34],
-          [20, 7, 26, 30], [20, 7, 37, 30], [20, 7, 30, 24], [20, 7, 30, 34],
-          [20, 13, 26, 30], [20, 13, 37, 30], [20, 13, 30, 24], [20, 13, 30, 34]]
-            
-  labels: [dis_far, dis_far, dis_medi, dis_far, 
-           dis_medi, dis_medi, dis_medi, dis_far, 
-           dis_close, dis_close, dis_close, dis_medi]
+proc_meta:
+  proc_labels:
+  - !ProcIfLabels
+    value: [agent.positions.0.x, agent.positions.0.z, GoodGoal.positions.0.x, GoodGoal.positions.0.z]
+    cases: [[20, 1, 26, 30], [20, 1, 37, 30], [20, 1, 30, 24], [20, 1, 30, 34],
+            [20, 7, 26, 30], [20, 7, 37, 30], [20, 7, 30, 24], [20, 7, 30, 34],
+            [20, 13, 26, 30], [20, 13, 37, 30], [20, 13, 30, 24], [20, 13, 30, 34]]
+              
+    labels: [dis_far, dis_far, dis_medi, dis_far, 
+            dis_medi, dis_medi, dis_medi, dis_far, 
+            dis_close, dis_close, dis_close, dis_medi]
 
 arenas:
   0: !Arena
