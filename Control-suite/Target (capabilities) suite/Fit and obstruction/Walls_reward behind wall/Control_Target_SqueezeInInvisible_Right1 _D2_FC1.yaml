@@ -7,6 +7,7 @@ arenas:
     items:
     - !Item
       name: Agent
+      id: agent
       positions:
       - !ProcListLabelled
         - label: dis_far

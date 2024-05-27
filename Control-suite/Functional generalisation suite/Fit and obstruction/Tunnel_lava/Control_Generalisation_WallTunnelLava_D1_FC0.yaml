@@ -22,13 +22,14 @@ arenas:
   0: !Arena
     pass_mark: 
     - !ProcIf 
-      value: Goodgoal.sizes.0.x
+      value: GoodGoal.sizes.0.x
       cases: [3,4,5]
       then: [2,3,4]
     t: 250
     items:
     - !Item
       name: Agent
+      id: agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 18}, !Vector3 {x: 4, y: 0, z: 4},
           !Vector3 {x: 36, y: 0, z: 4}, !Vector3 {x: 4, y: 0, z: 18}, !Vector3 {x: 36, y: 0, z: 18}]
@@ -41,7 +42,7 @@ arenas:
       - !ProcIf
         value: DeathZone1.positions.0.x
         cases: [13]
-        then: !Vector3 {x: 22, y: 0, z: 30} 
+        then: [!Vector3 {x: 22, y: 0, z: 30}]
         default: !Vector3 {x: 10, y: 0, z: 30} 
       rotations: [90]
       colors: 
@@ -57,7 +58,7 @@ arenas:
       - !ProcIf 
         value: DeathZone1.positions.0.x
         cases: [13]
-        then: !Vector3 {x: 26, y: 0, z: 30}
+        then: [!Vector3 {x: 26, y: 0, z: 30}]
         default: !Vector3 {x: 14, y: 0, z: 30} 
       rotations: [90]
       colors: 
@@ -68,12 +69,12 @@ arenas:
 
     - !Item
       name: Wall
-      Id: Wall3
+      id: Wall3
       positions:
       - !ProcIf
         value: DeathZone1.positions.0.x
         cases: [13]
-        then: !Vector3 {x: 24, y: 3.5, z: 30} 
+        then: [!Vector3 {x: 24, y: 3.5, z: 30}]
         default: !Vector3 {x: 12, y: 3.5, z: 30} 
       rotations: [90] 
       colors: 
@@ -98,8 +99,8 @@ arenas:
       - !ProcIf 
         value: DeathZone1.positions.0.x
         cases: [27]
-        then: !Vector3 {x: 5, y: 0, z: 30} 
-        else: !Vector3 {x: 35, y: 0, z: 30} 
+        then: [!Vector3 {x: 5, y: 0, z: 30}]
+        default: !Vector3 {x: 35, y: 0, z: 30} 
       sizes:
       - !ProcList [!Vector3 {x: 9, y: 1.5, z: 5}, !Vector3 {x: 9, y: 1.5, z: 1}, !Vector3 {x: 9, y: 1.5, z: 10}, !Vector3 {x: 9, y: 3, z: 5}, 
           !Vector3 {x: 9, y: 3, z: 1}, !Vector3 {x: 9, y: 0, z: 10}, !Vector3 {x: 9, y: 0, z: 5}, !Vector3 {x: 9, y: 0, z: 1}, !Vector3 {x: 9, y: 3, z: 10}]
