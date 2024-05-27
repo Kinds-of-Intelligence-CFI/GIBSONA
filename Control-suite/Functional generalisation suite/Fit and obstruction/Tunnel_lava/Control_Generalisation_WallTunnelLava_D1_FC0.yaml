@@ -41,7 +41,7 @@ arenas:
       - !ProcIf
         value: DeathZone1.positions.0.x
         cases: [13]
-        then: {x: 22, y: 0, z: 30} 
+        then: !Vector3 {x: 22, y: 0, z: 30} 
         default: !Vector3 {x: 10, y: 0, z: 30} 
       rotations: [90]
       colors: 
