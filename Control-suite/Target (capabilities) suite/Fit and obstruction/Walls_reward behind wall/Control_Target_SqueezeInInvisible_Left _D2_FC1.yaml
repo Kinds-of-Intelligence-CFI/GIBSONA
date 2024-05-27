@@ -15,7 +15,7 @@ arenas:
           value: !Vector3 {x: 20, y: 0.1, z: 8}
       rotations:
       !ProcIf 
-      variable: [agent.positions.0.x, agent.positions.0.z]                             
+      value: [agent.positions.0.x, agent.positions.0.z]                             
       cases: [[20, 1], [20, 8]]
       then: [0, 0]
 
