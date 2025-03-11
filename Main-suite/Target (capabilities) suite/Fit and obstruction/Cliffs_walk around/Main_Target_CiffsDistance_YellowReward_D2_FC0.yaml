@@ -10,19 +10,20 @@
 
 arenas:
   0: !Arena
-    pass_mark: !ProcIf
+    passMark: !ProcIf
       value: [GoodGoalMulti.sizes.0.x, GoodGoalMulti.sizes.1.x, GoodGoal.sizes.0.x]
       cases: [[1, 1, 1], [1, 1, 2.5], [1, 1, 4], 
              [2.5, 2.5, 1], [2.5, 2.5, 2.5], [2.5, 2.5, 4], 
              [4, 4, 1], [4, 4, 2.5], [4, 4, 4]]
       then: [2, 3.5, 5, 5, 6.5, 8, 8, 9.5, 11]
-    t: 500
+    timeLimit: 500
    
     
     items:
     - !Item
       name: Agent
-      positions: !Vector3 {x: 20, y: 1, z: 1}
+      positions: 
+      - !Vector3 {x: 20, y: 1, z: 1}
       rotations: [0]
 
     - !Item

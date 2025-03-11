@@ -1,4 +1,6 @@
 # For experimenting with procgen-companion
 tmp/
 
-Variations/
+Variations*
+/venv
+/logs

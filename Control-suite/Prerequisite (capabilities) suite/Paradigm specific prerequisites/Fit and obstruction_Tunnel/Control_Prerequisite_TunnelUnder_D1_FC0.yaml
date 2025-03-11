@@ -66,12 +66,11 @@ proc_meta:
 
 arenas:
   0: !Arena
-    pass_mark:
-      - !ProcIf
+    passMark: !ProcIf
         value: GoodGoal.sizes.0.x
         cases: [2, 3, 4]
-        then: [1, 2, 3]
-    t: 250
+        then: [[1], [2], [3]]
+    timeLimit: 250
 
     items:
       - !Item
@@ -86,11 +85,10 @@ arenas:
               !Vector3 { x: 1, y: 0, z: 39 },
               !Vector3 { x: 39, y: 0, z: 39 },
             ]
-        rotations:
-          - !ProcIf
+        rotations: !ProcIf
             value: agent.positions.0.z
             cases: [1, 39]
-            then: [0, 180]
+            then: [[0], [180]]
 
       - !Item
         name: CylinderTunnel

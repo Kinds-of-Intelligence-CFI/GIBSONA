@@ -5,17 +5,17 @@ proc_meta:
     value: [agent.positions.0.z, GoodGoal.positions.0.z]
     cases: [[1, 36], [1, 31], [1, 26], 
             [7, 36], [7, 31], [7, 26], 
-          [13, 36], [13, 31], [13, 36]]
+            [13, 36], [13, 31], [13, 26]]
     labels: [dis_far, dis_far, dis_medi, 
             dis_medi, dis_medi, dis_close, 
             dis_medi, dis_close, dis_close]
 arenas:
   0: !Arena
-    pass_mark: !ProcIf
+    passMark: !ProcIf
       value: GoodGoal.sizes.0.x
       cases: [2,3,4,5]
       then: [1,2,3,4]
-    t: 500 # time limit 
+    timeLimit: 500 # time limit 
     
     items:
     - !Item

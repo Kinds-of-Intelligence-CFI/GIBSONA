@@ -19,11 +19,11 @@ proc_meta:
 
 arenas:
   0: !Arena
-    pass_mark: !ProcIf
+    passMark: !ProcIf
       value: GoodGoal.sizes.0.x
       cases: [1,2,3,4,5]
       then: [0,1,2,3,4]
-    t: 250
+    timeLimit: 250
     items:
     - !Item
       name: Agent
@@ -31,11 +31,10 @@ arenas:
       positions:
       - !ProcList [!Vector3 {x: 20, y: 0, z: 4}, !Vector3 {x: 20, y: 0, z: 36}, !Vector3 {x: 4, y: 0, z: 4},
                   !Vector3 {x: 36, y: 0, z: 4}, !Vector3 {x: 4, y: 0, z: 36}, !Vector3 {x: 36, y: 0, z: 36}]
-      rotations:
-      - !ProcIf
+      rotations: !ProcIf
         value: agent.positions.0.z
         cases: [4, 36]
-        then: [0, 180]
+        then: [[0], [180]]
 
     - !Item
       name: Wall
@@ -99,8 +98,7 @@ arenas:
         value: [Wall4.positions.0.x, Wall4.positions.0.z]
         cases: [[19,30], [19,15]]
         then: [!Vector3 {x: 19, y: 0, z: 30}, !Vector3 {x: 19, y: 1.5, z: 15}]
-      rotations: 
-      - !ProcIf 
+      rotations: !ProcIf 
         value: [Wall4.positions.0.x, Wall4.positions.0.z]
         cases: [[19,30], [19,15]]
         then: [270, 90]
@@ -117,7 +115,7 @@ arenas:
       - !ProcIf
         value: [Wall1.positions.0.x, Wall1.positions.0.z]
         cases: [[10, 30], [24, 30], [10, 15], [24, 15]]
-        then: [!Vector3 {x: 12, y: 6, z: 30}, !Vector3 {x: 16, y: 6, z: 30},!Vector3 {x: 12, y: 6, z: 15},!Vector3 {x: 16, y: 6, z: 15}] 
+        then: [!Vector3 {x: 12, y: 6, z: 30}, !Vector3 {x: 26, y: 6, z: 30},!Vector3 {x: 12, y: 6, z: 15},!Vector3 {x: 26, y: 6, z: 15}] 
       sizes:
       - !ProcVector3Scaled
         scales: [1, 2, 3, 4, 5]

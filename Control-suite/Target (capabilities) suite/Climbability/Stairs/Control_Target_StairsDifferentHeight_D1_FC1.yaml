@@ -9,12 +9,11 @@ proc_meta:
 
 arenas:
   0: !Arena
-    pass_mark: 
-    - !ProcIf
+    passMark: !ProcIf
       value: GoodGoal.sizes.0.x 
       cases: [1, 2.5, 4]
       then: [0, 1.5, 3]
-    t: 400
+    timeLimit: 400
 
 
     items:
@@ -24,8 +23,7 @@ arenas:
       positions:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 23, y: 1, z: 13}, !Vector3 {x: 17, y: 1, z: 13}, 
         !Vector3 {x: 20, y: 1, z: 39}, !Vector3 {x: 23, y: 1, z: 27}, !Vector3 {x: 17, y: 1, z: 27}]
-      rotations: 
-      - !ProcIf 
+      rotations: !ProcIf 
         value: [agent.positions.0.x, agent.positions.0.z]                             
         cases: [[20, 1], [23, 13], [17, 13], [20, 39], [23, 27], [17, 27]]
         then: [0, 0, 0, 180, 180, 180]

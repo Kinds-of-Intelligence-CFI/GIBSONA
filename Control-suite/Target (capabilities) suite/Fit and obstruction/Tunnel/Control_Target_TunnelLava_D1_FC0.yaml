@@ -21,12 +21,11 @@ proc_meta:
 
 arenas:
   0: !Arena
-    pass_mark: 
-    - !ProcIf
+    passMark: !ProcIf
       value: GoodGoal.sizes.0.x
       cases: [3, 4, 5]
       then: [2, 3, 4]
-    t: 250
+    timeLimit: 250
 
     items:
     - !Item

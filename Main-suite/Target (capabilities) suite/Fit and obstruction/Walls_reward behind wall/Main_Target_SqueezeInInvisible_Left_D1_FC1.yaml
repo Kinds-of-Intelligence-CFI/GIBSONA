@@ -9,8 +9,8 @@ proc_meta:
 
 arenas:
   0: !Arena
-    pass_mark: 0
-    t: 400
+    passMark: 0
+    timeLimit: 400
 
     items:
     - !Item

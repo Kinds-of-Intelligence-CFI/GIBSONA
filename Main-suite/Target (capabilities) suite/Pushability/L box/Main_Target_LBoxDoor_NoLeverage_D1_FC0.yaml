@@ -1,11 +1,11 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: !ProcIf
+    passMark: !ProcIf
      value: GoodGoal.sizes.0.x
      cases: [2, 3, 4]
      then: [1, 2, 3]
-    t: 400
+    timeLimit: 400
 
     items:
     - !Item

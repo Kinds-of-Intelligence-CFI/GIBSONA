@@ -10,14 +10,13 @@ proc_meta:
 
 arenas:
   0: !Arena
-    pass_mark: 
-      !ProcIf
+    passMark: !ProcIf
         value: [GoodGoal.sizes.0.x, GoodGoalMulti.sizes.0.x, GoodGoalMulti.sizes.3.x]
         cases: [[1, 1, 1], [1, 2.5, 2.5], [1, 4, 4], 
               [2.5, 1, 1], [2.5, 2.5, 2.5], [2.5, 4, 4], 
               [4, 1, 1], [4, 2.5, 2.5], [4, 4, 4]]
         then: [2, 5, 8, 3.5, 6.5, 9.5, 5, 8, 11]
-    t: 500
+    timeLimit: 500
    
     
     items:

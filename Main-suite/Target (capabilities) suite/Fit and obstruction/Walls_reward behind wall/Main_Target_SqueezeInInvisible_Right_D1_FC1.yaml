@@ -8,8 +8,8 @@ proc_meta:
 
 arenas:
   0: !Arena
-    pass_mark: 0
-    t: 400
+    passMark: 0
+    timeLimit: 400
 
     items:
     - !Item
@@ -17,8 +17,7 @@ arenas:
       id: agent
       positions:
       - !ProcList [!Vector3 {x: 20, y: 1, z: 1}, !Vector3 {x: 20, y: 1, z: 8}]
-      rotations: 
-      - !ProcIf 
+      rotations: !ProcIf 
         value: [agent.positions.0.x, agent.positions.0.z]                             
         cases: [[20, 1], [20, 8]]
         then: [0, 0]

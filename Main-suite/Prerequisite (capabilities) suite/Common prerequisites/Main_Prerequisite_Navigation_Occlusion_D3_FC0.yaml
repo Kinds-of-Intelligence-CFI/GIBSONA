@@ -1,11 +1,11 @@
 !ArenaConfig
 arenas:
   0: !Arena
-    pass_mark: !ProcIf
+    passMark: !ProcIf
       value: GoodGoal.sizes.0.x
       cases: [3, 4, 5]
       then: [2, 3, 4]
-    t: 400
+    timeLimit: 400
       
     items:
     - !Item
@@ -19,11 +19,10 @@ arenas:
           value: !Vector3 {x: 2, y: 0, z: 24}
         - label: dis_medi
           value: !Vector3 {x: 33, y: 0, z: 35}
-      rotations:
-      - !ProcIf
+      rotations: !ProcIf
         value: [agent.positions.0.x, agent.positions.0.z]
         cases: [[20, 2], [2, 24], [33, 35]]
-        then: [0, 90, 210]
+        then: [[0], [90], [210]]
 
     - !Item
      name: Wall
