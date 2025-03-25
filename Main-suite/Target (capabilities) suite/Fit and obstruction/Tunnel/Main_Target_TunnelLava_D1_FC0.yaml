@@ -53,7 +53,7 @@ arenas:
       positions:
       - !ProcList [!Vector3 {x: 27, y: 0, z: 30}, !Vector3 {x: 13, y: 0, z: 30}] 
       sizes:
-      - !ProcList [!Vector3 {x: 26, y: 1.5, z: 5}, !Vector3 {x: 26, y: 1.5, z: 1}, !Vector3 {x: 26, y: 1.5, z: 10}, !Vector3 {x: 26, y: 3, z: 5!}, 
+      - !ProcList [!Vector3 {x: 26, y: 1.5, z: 5}, !Vector3 {x: 26, y: 1.5, z: 1}, !Vector3 {x: 26, y: 1.5, z: 10}, !Vector3 {x: 26, y: 3, z: 5}, 
                 !Vector3 {x: 26, y: 3, z: 1}, !Vector3 {x: 26, y: 0, z: 10}, !Vector3 {x: 26, y: 0, z: 5}, !Vector3 {x: 26, y: 0, z: 1}, !Vector3 {x: 26, y: 3, z: 10}]
       rotations: [0]
     - !Item
@@ -65,7 +65,7 @@ arenas:
         cases: [27, 13]
         then: [!Vector3 {x: 4, y: 0, z: 30}, !Vector3 {x: 36, y: 0, z: 30}]
       sizes: 
-      - !ProcList [!Vector3 {x: 8, y: 1.5, z: 5}, !Vector3 {x: 8, y: 1.5, z: 1}, !Vector3 {x: 8, y: 1.5, z: 10}, !Vector3 {x: 8, y: 3, z: 5!}, 
+      - !ProcList [!Vector3 {x: 8, y: 1.5, z: 5}, !Vector3 {x: 8, y: 1.5, z: 1}, !Vector3 {x: 8, y: 1.5, z: 10}, !Vector3 {x: 8, y: 3, z: 5}, 
             !Vector3 {x: 8, y: 3, z: 1}, !Vector3 {x: 8, y: 0, z: 10}, !Vector3 {x: 8, y: 0, z: 5}, !Vector3 {x: 8, y: 0, z: 1}, !Vector3 {x: 8, y: 3, z: 10}]
       rotations: [0]
 
