@@ -101,7 +101,7 @@ arenas:
       rotations: !ProcIf 
         value: [Wall4.positions.0.x, Wall4.positions.0.z]
         cases: [[19,30], [19,15]]
-        then: [270, 90]
+        then: [[270], [90]]
       colors: 
       - !ProcColor 8
       sizes:

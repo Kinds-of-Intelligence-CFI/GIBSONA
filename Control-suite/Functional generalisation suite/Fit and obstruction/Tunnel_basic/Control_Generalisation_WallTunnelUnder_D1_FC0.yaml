@@ -36,7 +36,7 @@ arenas:
        - !ProcIf
         value: agent.positions.0.z
         cases: [1, 39]
-        then: [0, 180]
+        then: [[0], [180]]
 
     - !Item
       name: Wall

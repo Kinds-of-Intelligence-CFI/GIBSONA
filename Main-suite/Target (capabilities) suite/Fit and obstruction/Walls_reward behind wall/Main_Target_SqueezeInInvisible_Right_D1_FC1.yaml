@@ -20,7 +20,7 @@ arenas:
         rotations: !ProcIf
           value: [agent.positions.0.x, agent.positions.0.z]
           cases: [[20, 1], [20, 8]]
-          then: [0, 0]
+          then: [[0], [0]]
 
       - !Item
         name: Wall
