@@ -32,9 +32,8 @@ arenas:
                    !Vector3 {x: 36, y: 0, z: 4}, !Vector3 {x: 4, y: 0, z: 36}, !Vector3 {x: 36, y: 0, z: 36}]
       rotations: !ProcIf
         value: agent.positions.0.z
-        cases: [36]
-        then: [[180]]
-        default: [[0]]
+        cases: [4, 36]
+        then: [[0], [180]]
 
     - !Item
       name: Wall
