@@ -69,7 +69,7 @@ arenas:
     passMark: !ProcIf
         value: GoodGoal.sizes.0.x
         cases: [2, 3, 4]
-        then: [[1], [2], [3]]
+        then: [1, 2, 3]
     timeLimit: 250
 
     items:

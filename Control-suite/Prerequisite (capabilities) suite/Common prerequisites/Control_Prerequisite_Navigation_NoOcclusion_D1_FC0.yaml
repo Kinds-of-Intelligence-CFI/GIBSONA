@@ -11,8 +11,7 @@ proc_meta:
 
 arenas:
   0: !Arena
-    passMark:
-      - !ProcIf
+    passMark: !ProcIf
         value: GoodGoal.sizes.0.x
         cases: [1, 1.5, 2]
         then: [0, 0.5, 1]
